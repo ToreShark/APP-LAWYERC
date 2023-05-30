@@ -1,3 +1,4 @@
+using APP_LAWYER.BLL;
 using APP_LAWYER.DAL.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext")));
+
+builder.Services.AddScoped<UOW>();
 
 var app = builder.Build();
 
@@ -25,7 +28,10 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.MapControllerRoute(
+    name : "areas",
+    pattern : "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+);
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
