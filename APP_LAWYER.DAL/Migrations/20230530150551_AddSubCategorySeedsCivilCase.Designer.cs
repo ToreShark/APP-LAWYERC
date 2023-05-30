@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APP_LAWYER.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230530110905_AddCategorySeeds")]
-    partial class AddCategorySeeds
+    [Migration("20230530150551_AddSubCategorySeedsCivilCase")]
+    partial class AddSubCategorySeedsCivilCase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,21 +50,21 @@ namespace APP_LAWYER.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1f6661ed-84ed-4a43-a89e-cf7d908333c7"),
+                            Id = new Guid("c52e228d-80bf-4e80-a434-73688cfa3efd"),
                             Description = "Категория 'Уголовное дело' на нашем юридическом сайте предназначена для тех, кто ищет надежную поддержку в разбирательствах с законом.",
                             Name = "Уголовное дело",
                             Slug = "ugolovnoe-delo"
                         },
                         new
                         {
-                            Id = new Guid("e2aa003e-b871-48d9-8860-64ccf46077c0"),
+                            Id = new Guid("5685ff16-2c4f-4e7c-ac20-4e59476007b8"),
                             Description = "Категория 'Гражданское дело' на нашем юридическом сайте предоставляет все необходимые инструменты для успешного решения ваших гражданских проблем.",
                             Name = "Гражданское дело",
                             Slug = "grazhdanskoe-delo"
                         },
                         new
                         {
-                            Id = new Guid("2a9cc717-e575-485b-b7d3-c8b4dccd4208"),
+                            Id = new Guid("ab0ff61b-b423-4ec3-84f4-23c649c442b6"),
                             Description = "Категория 'Административное дело' на нашем юридическом сайте предоставляет важную информацию для тех, кто столкнулся с административными проблемами.",
                             Name = "Административное дело",
                             Slug = "administrativnoe-delo"
@@ -220,6 +220,48 @@ namespace APP_LAWYER.DAL.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Subcategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("fcc26a14-8c43-47f1-8d73-a02b6ff1cc4f"),
+                            CategoryId = new Guid("c52e228d-80bf-4e80-a434-73688cfa3efd"),
+                            Content = "Краткое описание состава убийства и особенности расследования таких дел",
+                            Description = "Описание убийства",
+                            Image = "https://plus.unsplash.com/premium_photo-1661714112996-c782972c03e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWgelFyX8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+                            Name = "Убийство",
+                            Slug = "ubiystvo"
+                        },
+                        new
+                        {
+                            Id = new Guid("b22c84cf-4b8e-4374-8b4e-ec7136185fc3"),
+                            CategoryId = new Guid("c52e228d-80bf-4e80-a434-73688cfa3efd"),
+                            Content = "Краткое описание состава убийства по неосторожности и особенности расследования таких дел",
+                            Description = "Описание убийства по неосторожности",
+                            Image = "https://plus.unsplash.com/premium_photo-1661714112996-c782972c03e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWgelFyX8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+                            Name = "Убийство по неосторожности",
+                            Slug = "ubiystvo-po-neostorozhnosti"
+                        },
+                        new
+                        {
+                            Id = new Guid("eeac93a3-df42-4c95-bf9b-86a02d310a61"),
+                            CategoryId = new Guid("5685ff16-2c4f-4e7c-ac20-4e59476007b8"),
+                            Content = "Краткое описание иска о взыскании в твердой денежной сумме",
+                            Description = "Видеоурок и образец иска о взыскании в твердой денежной сумме",
+                            Image = "https://plus.unsplash.com/premium_photo-1664355810344-6f8131758d11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWgelFyX8fGVufDB8fHx8&auto=format&fit=crop&w=2942&q=80",
+                            Name = "Иск о взыскании алиментов в твердой денежной сумме",
+                            Slug = "isk-o-vzyiskanii-v-tverdoy-deneyshnoy-summe"
+                        },
+                        new
+                        {
+                            Id = new Guid("c25aacd8-001d-4610-97d5-6cd01ea20866"),
+                            CategoryId = new Guid("5685ff16-2c4f-4e7c-ac20-4e59476007b8"),
+                            Content = "Краткое описание иска о взыскании в твердой денежной сумме",
+                            Description = "Видеоурок и образец иска о взыскании в твердой денежной сумме",
+                            Image = "https://plus.unsplash.com/premium_photo-1664355810344-6f8131758d11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWgelFyX8fGVufDB8fHx8&auto=format&fit=crop&w=2942&q=80",
+                            Name = "Иск о взыскании алиментов",
+                            Slug = "isk-o-vzyiskanii-alimentov"
+                        });
                 });
 
             modelBuilder.Entity("APP_LAWYER.DAL.Entities.User", b =>
@@ -374,6 +416,43 @@ namespace APP_LAWYER.DAL.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("SubcategoryId");
+
+                            b1.HasData(
+                                new
+                                {
+                                    SubcategoryId = new Guid("fcc26a14-8c43-47f1-8d73-a02b6ff1cc4f"),
+                                    Id = 1,
+                                    Description = "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>",
+                                    Url = "https://youtu.be/AmUenqhE1mw"
+                                },
+                                new
+                                {
+                                    SubcategoryId = new Guid("b22c84cf-4b8e-4374-8b4e-ec7136185fc3"),
+                                    Id = 2,
+                                    Description = "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>",
+                                    Url = "https://youtu.be/AmUenqhE1mw"
+                                },
+                                new
+                                {
+                                    SubcategoryId = new Guid("eeac93a3-df42-4c95-bf9b-86a02d310a61"),
+                                    Id = 1,
+                                    Description = "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>",
+                                    Url = "https://youtu.be/AmUenqhE1mw"
+                                },
+                                new
+                                {
+                                    SubcategoryId = new Guid("c25aacd8-001d-4610-97d5-6cd01ea20866"),
+                                    Id = 1,
+                                    Description = "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>",
+                                    Url = "https://youtu.be/AmUenqhE1mw"
+                                },
+                                new
+                                {
+                                    SubcategoryId = new Guid("c25aacd8-001d-4610-97d5-6cd01ea20866"),
+                                    Id = 2,
+                                    Description = "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>",
+                                    Url = "https://youtu.be/1VxXyBo62yM"
+                                });
                         });
 
                     b.Navigation("Category");
