@@ -70,7 +70,7 @@ public class AppDbContext : DbContext
             }
         );
 
-        Guid categoryId = Guid.Parse("0e2b8700-82c9-4d92-a5b2-1126133bf7df");
+        Guid categoryId = Guid.Parse("1f6661ed-84ed-4a43-a89e-cf7d908333c7");
         Guid ubiystvoId = Guid.NewGuid();
         modelBuilder.Entity<Subcategory>().HasData(
             new Subcategory
@@ -88,6 +88,8 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Subcategory>().OwnsMany(s => s.Videos).HasData(
             new
             {
+                Id = 1,
+                SubcategoryId = ubiystvoId,
                 Url = "https://youtu.be/AmUenqhE1mw",
                 Description =
                     "<div class='App' style='text-align: center;'>" +
