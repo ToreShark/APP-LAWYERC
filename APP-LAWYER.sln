@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APP_LAWYER.DAL", "APP_LAWYER.DAL\APP_LAWYER.DAL.csproj", "{5C8ED0AA-9015-45FD-9BDE-B131DCE2D9C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APP_LAWYER.WEB", "APP_LAWYER.WEB\APP_LAWYER.WEB.csproj", "{FECE02B2-8127-4D08-A78A-3D621C6D24A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APP_LAWYER.BLL", "APP_LAWYER.BLL\APP_LAWYER.BLL.csproj", "{E6456D27-175A-4931-8A92-15E2B5368413}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C8ED0AA-9015-45FD-9BDE-B131DCE2D9C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C8ED0AA-9015-45FD-9BDE-B131DCE2D9C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C8ED0AA-9015-45FD-9BDE-B131DCE2D9C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C8ED0AA-9015-45FD-9BDE-B131DCE2D9C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FECE02B2-8127-4D08-A78A-3D621C6D24A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECE02B2-8127-4D08-A78A-3D621C6D24A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECE02B2-8127-4D08-A78A-3D621C6D24A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECE02B2-8127-4D08-A78A-3D621C6D24A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6456D27-175A-4931-8A92-15E2B5368413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6456D27-175A-4931-8A92-15E2B5368413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6456D27-175A-4931-8A92-15E2B5368413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6456D27-175A-4931-8A92-15E2B5368413}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
