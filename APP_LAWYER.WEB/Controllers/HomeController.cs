@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using APP_LAWYER.BLL;
 using Microsoft.AspNetCore.Mvc;
 using APP_LAWYER.WEB.Models;
 
@@ -6,16 +7,20 @@ namespace APP_LAWYER.WEB.Controllers;
 
 public class HomeController : Controller
 {
+    private readonly UOW _uow;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, UOW uow)
     {
         _logger = logger;
+        _uow = uow;
     }
+    
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var subcategories = await _uow.SubcategoryRepository.ListAllAsync(); 
+        return View(subcategories);
     }
 
     public IActionResult Privacy()
