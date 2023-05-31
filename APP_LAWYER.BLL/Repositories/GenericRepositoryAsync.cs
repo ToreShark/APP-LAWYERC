@@ -21,7 +21,10 @@ public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : cl
     {
         return await _db.Set<T>().FindAsync(id);
     }
-
+    public async Task<T> GetByGuidAsync(Guid id)
+    {
+        return await _db.Set<T>().FindAsync(id);
+    }
     public async Task<T> GetBySlugAsync(string slug)
     {
         return await _db.Set<T>().FindAsync(slug);
@@ -34,19 +37,16 @@ public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : cl
 
         return entity;
     }
-
     public async Task UpdateAsync(T entity)
     {
         _db.Entry(entity).State = EntityState.Modified;
         await _db.SaveChangesAsync();
     }
-
     public async Task DeleteAsync(T entity)
     {
         _db.Set<T>().Remove(entity);
         await _db.SaveChangesAsync();
     }
-
     public async Task<IReadOnlyList<T>> GetPagedAsync(int page, int size)
     {
         return await _db.Set<T>().Skip((page - 1) * size).Take(size).ToListAsync();

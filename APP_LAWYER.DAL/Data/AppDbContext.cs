@@ -198,5 +198,36 @@ public class AppDbContext : DbContext
                 }
             }
         );
+        
+        Guid admdtp = Guid.NewGuid();
+        modelBuilder.Entity<Subcategory>().HasData(
+            new Subcategory
+            {
+                Id = admdtp,
+                CategoryId = administrativnoeDeloId,
+                Name = "ДТП",
+                Slug = "dtp",
+                Description = "Краткое описание состава ДТП",
+                Image =
+                    "https://images.unsplash.com/photo-1573068111653-f18bef611c8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+                Content = "Краткое описание состава ДТП и особенности расследования таких дел"
+            }
+        );
+
+        modelBuilder.Entity<Subcategory>().OwnsMany(s => s.Videos).HasData(
+            new[]
+            {
+                new
+                {
+                    Id = 1,
+                    SubcategoryId = admdtp,
+                    Url = "https://youtu.be/AmUenqhE1mw",
+                    Description =
+                        "<div class='App' style='text-align: center;'>" +
+                        "<h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p>" +
+                        "<p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p>" +
+                        "<hr class='remove'></div>"
+                }
+            });
     }
 }

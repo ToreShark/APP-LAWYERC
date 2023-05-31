@@ -20,7 +20,13 @@ public class HomeController : Controller
     public async Task<IActionResult> Index()
     {
         var subcategories = await _uow.SubcategoryRepository.ListAllAsync(); 
-        return View(subcategories);
+        var categories = await _uow.CategoriRepository.ListAllAsync();
+        var model = new HomeViewModel
+        {
+            Categories = categories,
+            Subcategories = subcategories,
+        };
+        return View(model);
     }
 
     public IActionResult Privacy()

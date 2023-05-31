@@ -1,0 +1,52 @@
+@model APP_LAWYER.DAL.Entities.Subcategory
+
+@{
+    ViewBag.Title = "Create Subcategory";
+    Layout = "_Layout";
+}
+
+<h2>Create Subcategory</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="CategoryId">Category</label>
+        <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-control"></select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Slug">Slug</label>
+        <input asp-for="Slug" class="form-control"/>
+        <span asp-validation-for="Slug" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control"/>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Image URL</label>
+        <input asp-for="Image" class="form-control"/>
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Content">Content</label>
+        <input asp-for="Content" class="form-control"/>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Videos">Videos</label>
+        <input name="Videos" class="form-control" />
+        <span asp-validation-for="Videos" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="VideoDescription">Video Description</label>
+        <input name="VideoDescription" class="form-control" />
+        <span asp-validation-for="VideoDescription" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

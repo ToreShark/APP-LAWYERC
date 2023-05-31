@@ -1,0 +1,22 @@
+@model APP_LAWYER.WEB.Models.CategoryDetailsViewModel
+
+<h1>@Model.Category.Name</h1>
+<p>@Model.Category.Description</p>
+
+<div class="row">
+    @foreach (var subcategory in Model.Subcategories)
+    {
+        <div class="col-sm-4">
+            <div class="card shadow-sm mt-4 bg-light">
+                <div class="card-body">
+                    <img src="@subcategory.Image" alt="@subcategory.Description" class="card-img-top img-fluid"/>
+                    <div class="card-body">
+                        <h5 class="card-title text-muted">@subcategory.Name</h5>
+                        <p class="card-text text-muted">@subcategory.Description</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailsModal-@subcategory.Id">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

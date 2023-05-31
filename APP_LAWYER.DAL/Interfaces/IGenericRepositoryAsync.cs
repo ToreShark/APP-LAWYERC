@@ -4,6 +4,7 @@ public interface IGenericRepositoryAsync<T> where T : class
 {
     Task<IReadOnlyList<T>> ListAllAsync();
     Task<T> GetByIDAsync(int id);
+    Task<T> GetByGuidAsync(Guid id);
     Task<T> GetBySlugAsync(string slug);
     Task<T> InsertAsync(T entity);
     Task UpdateAsync(T entity);
