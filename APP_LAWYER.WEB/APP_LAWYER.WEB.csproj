@@ -34,4 +34,9 @@
       <Folder Include="Pages\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Subcategory\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Subcategory\Index.cshtml" />
+    </ItemGroup>
+
 </Project>

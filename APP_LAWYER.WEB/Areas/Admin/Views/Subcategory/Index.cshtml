@@ -5,4 +5,26 @@
     Layout = "_Layout";
 }
 
-<h2>title</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Имя подкатегории</th>
+        <th>Описание</th>
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var subcategory in Model)
+    {
+        <tr>
+            <td>@subcategory.Name</td>
+            <td>@subcategory.Description</td>
+            <td>
+                <a asp-area="Admin" asp-controller="Subcategory" asp-action="Create" asp-route-id="@subcategory.Id">Создать</a> |
+                <a asp-area="Admin" asp-controller="Subcategory" asp-action="Edit" asp-route-id="@subcategory.Id">Редактировать</a> |
+                <a asp-area="Admin" asp-controller="Subcategory" asp-action="Delete" asp-route-id="@subcategory.Id">Удалить</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

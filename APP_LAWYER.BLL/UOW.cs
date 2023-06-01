@@ -21,6 +21,7 @@ public class UOW
     private ReplyRepository _replyRepository;
     private VoteRepository _voteRepository;
     private OtpRepository _otpRepository;
+    private SubcategoryVideoRepository _subcategoryVideoRepository;
     
     public CategoriRepository CategoriRepository
     {
@@ -108,6 +109,17 @@ public class UOW
                 _otpRepository = new OtpRepository(_db);
             }
             return _otpRepository;
+        }
+    }
+    public SubcategoryVideoRepository SubcategoryVideoRepository
+    {
+        get
+        {
+            if (_subcategoryVideoRepository == null)
+            {
+                _subcategoryVideoRepository = new SubcategoryVideoRepository(_db);
+            }
+            return _subcategoryVideoRepository;
         }
     }
 }

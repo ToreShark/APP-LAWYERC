@@ -1,69 +1,64 @@
 @model APP_LAWYER.DAL.Entities.Subcategory
 @{
-    if (ViewBag.Categories != null)
-    {
-        <p>Количество категорий: @((ViewBag.Categories as SelectList).Count())</p>
-    }
-    else
-    {
-        <p>ViewBag.Categories is null.</p>
-    }
-}
-@{
     ViewBag.Title = "Create Subcategory";
     Layout = "_Layout";
 }
 
 <h2>Create Subcategory</h2>
 
-<form asp-action="Create">
+
+<form asp-action="Create" method="post">
     <div class="form-group">
-        <label asp-for="CategoryId">Category</label>
-        <select asp-for="CategoryId" class="form-control">
-            @if (ViewBag.Categories != null)
+        <label for="Name">Name</label>
+        <input id="Name" name="Name" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <input id="Description" name="Description" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="Image">Image</label>
+        <input id="Image" name="Image" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="Content">Content</label>
+        <input id="Content" name="Content" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="Slug">Slug</label>
+        <input id="Slug" name="Slug" class="form-control"/>
+    </div>
+    <button type="button" id="add-video">Add Video</button>
+
+    <div id="video-container">
+        <!-- Video fields will be added here -->
+    </div>
+    <div class="form-group">
+        <label for="CategoryId">Category</label>
+        <select id="CategoryId" name="CategoryId" class="form-control">
+            @if (ViewBag.Categories is List<APP_LAWYER.DAL.Entities.Category> categories)
             {
-                foreach (var category in ViewBag.Categories)
+                foreach (var category in categories)
                 {
-                    <option value="@category.Value">@category.Text</option>
+                    <option value="@category.Id">@category.Name</option>
                 }
             }
         </select>
-        <span asp-validation-for="CategoryId" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Name">Name</label>
-        <input asp-for="Name" class="form-control"/>
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Slug">Slug</label>
-        <input asp-for="Slug" class="form-control"/>
-        <span asp-validation-for="Slug" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Description">Description</label>
-        <input asp-for="Description" class="form-control"/>
-        <span asp-validation-for="Description" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Image">Image URL</label>
-        <input asp-for="Image" class="form-control"/>
-        <span asp-validation-for="Image" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Content">Content</label>
-        <input asp-for="Content" class="form-control"/>
-        <span asp-validation-for="Content" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label for="Videos">Videos</label>
-        <input name="Videos" class="form-control"/>
-        <span asp-validation-for="Videos" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label for="VideoDescription">Video Description</label>
-        <input name="VideoDescription" class="form-control"/>
-        <span asp-validation-for="VideoDescription" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
 </form>
+<script>
+document.getElementById('add-video').addEventListener('click', function() {
+    var videoContainer = document.getElementById('video-container');
+
+    var urlInput = document.createElement('input');
+    urlInput.name = 'videoUrls[]';
+    urlInput.placeholder = 'Video URL';
+    videoContainer.appendChild(urlInput);
+
+    var descriptionInput = document.createElement('input');
+    descriptionInput.name = 'videoDescriptions[]';
+    descriptionInput.placeholder = 'Video Description';
+    videoContainer.appendChild(descriptionInput);
+});
+</script>
