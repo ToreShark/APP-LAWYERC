@@ -1,5 +1,14 @@
 @model APP_LAWYER.DAL.Entities.Subcategory
-
+@{
+    if (ViewBag.Categories != null)
+    {
+        <p>Количество категорий: @((ViewBag.Categories as SelectList).Count())</p>
+    }
+    else
+    {
+        <p>ViewBag.Categories is null.</p>
+    }
+}
 @{
     ViewBag.Title = "Create Subcategory";
     Layout = "_Layout";
@@ -10,7 +19,15 @@
 <form asp-action="Create">
     <div class="form-group">
         <label asp-for="CategoryId">Category</label>
-        <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-control"></select>
+        <select asp-for="CategoryId" class="form-control">
+            @if (ViewBag.Categories != null)
+            {
+                foreach (var category in ViewBag.Categories)
+                {
+                    <option value="@category.Value">@category.Text</option>
+                }
+            }
+        </select>
         <span asp-validation-for="CategoryId" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -40,12 +57,12 @@
     </div>
     <div class="form-group">
         <label for="Videos">Videos</label>
-        <input name="Videos" class="form-control" />
+        <input name="Videos" class="form-control"/>
         <span asp-validation-for="Videos" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label for="VideoDescription">Video Description</label>
-        <input name="VideoDescription" class="form-control" />
+        <input name="VideoDescription" class="form-control"/>
         <span asp-validation-for="VideoDescription" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
