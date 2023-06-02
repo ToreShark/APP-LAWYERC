@@ -1,4 +1,5 @@
 using APP_LAWYER.DAL.Data;
+using APP_LAWYER.DAL.Entities;
 using APP_LAWYER.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -51,4 +52,13 @@ public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : cl
     {
         return await _db.Set<T>().Skip((page - 1) * size).Take(size).ToListAsync();
     }
+    public async Task<Subcategory> GetByGuidSubcategoryAsync(Guid id)
+    {
+        return await _db.Set<Subcategory>()
+            .Include(s => s.Category)
+            .Include(s => s.SubcategoryVideos)
+            .ThenInclude(sv => sv.Video)
+            .FirstOrDefaultAsync(s => s.Id == id);
+    }
+
 }

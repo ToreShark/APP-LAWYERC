@@ -1,0 +1,74 @@
+@model APP_LAWYER.DAL.Entities.Subcategory
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h2>@Model.Name</h2>
+    @if (Model.SubcategoryVideos != null)
+    {
+        <h3>Videos:</h3>
+        <div id="videoContainer" class="mb-3">
+            @for (int i = 0; i < Model.SubcategoryVideos.Count; i++)
+            {
+                var subcategoryVideo = Model.SubcategoryVideos[i];
+                <div class="video" style="display: @(i == 0 ? "block" : "none")" data-description="@subcategoryVideo.Video.Description">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/@(subcategoryVideo.Video.Url.Split('/').Last())" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            }
+            <button id="nextVideo" class="btn btn-primary">Next Video</button>
+        </div>
+    }
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="description-tab" data-bs-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="content-tab" data-bs-toggle="tab" href="#content" role="tab" aria-controls="content" aria-selected="false">Content</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="video-description-tab" data-bs-toggle="tab" href="#video-description" role="tab" aria-controls="video-description" aria-selected="false">Video Description</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+            <p>@Model.Description</p>
+        </div>
+        <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="content-tab">
+            <p>@Model.Content</p>
+        </div>
+        <div class="tab-pane fade" id="video-description" role="tabpanel" aria-labelledby="video-description-tab">
+            <p id="videoDescription"></p>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $(function () {
+            var currentVideoIndex = 0;
+            var videos = $("#videoContainer .video");
+
+            function updateVideoDescription() {
+                var description = $(videos[currentVideoIndex]).data("description");
+                $("#videoDescription").text(description);
+            }
+
+            $("#nextVideo").click(function () {
+                $(videos[currentVideoIndex]).hide();
+                currentVideoIndex++;
+                if (currentVideoIndex >= videos.length) {
+                    currentVideoIndex = 0;
+                }
+                $(videos[currentVideoIndex]).show();
+                updateVideoDescription();
+            });
+
+            updateVideoDescription();
+        });
+    </script>
+}
