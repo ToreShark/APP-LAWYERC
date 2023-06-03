@@ -23,6 +23,7 @@ public class UOW
     private OtpRepository _otpRepository;
     private SubcategoryVideoRepository _subcategoryVideoRepository;
     private VideoRepository _videoRepository;
+    public RoleRepository _roleRepository;
     
     public CategoriRepository CategoriRepository
     {
@@ -132,6 +133,17 @@ public class UOW
                 _videoRepository = new VideoRepository(_db);
             }
             return _videoRepository;
+        }
+    }
+    public RoleRepository RoleRepository
+    {
+        get
+        {
+            if (_roleRepository == null)
+            {
+                _roleRepository = new RoleRepository(_db);
+            }
+            return _roleRepository;
         }
     }
 }

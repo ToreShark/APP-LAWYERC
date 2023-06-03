@@ -9,12 +9,15 @@ public class User : BaseEntity
     public string LastName { get; set; }
 
     public string Email { get; set; }
+    
+    public string Password { get; set; }
 
     public List<Otp> OtpCodes { get; set; }
 
     public List<DocumentEntity> Docs { get; set; }
 
-    // public Role Role { get; set; } = Role.Regular;
+    public Guid RoleId { get; set; }
+    public virtual Role? Role { get; set; }
 
     public List<Comment> Comments { get; set; }
 

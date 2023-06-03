@@ -7,17 +7,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="correct create subcat">
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/VideoRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IVideoRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" afterDir="false" />
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="Added SubcategoryDeatils">
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/RoleRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Role.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IRoleRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/AccountController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/ViewModels/LoginviewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/ViewModels/RegisterViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Account/Login.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Account/Registration.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/GenericRepositoryAsync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/GenericRepositoryAsync.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/APP_LAWYER.BLL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/APP_LAWYER.BLL.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/UserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/UOW.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/UOW.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Subcategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Subcategory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230601071801_AddedCatSeed.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230601071801_AddedCatSeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603024856_Added.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230601072623_AddedCatSeedUgDelo.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230601072623_AddedCatSeedUgDelo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230601073746_AddedCatSeedUgDelo123.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603024856_Added.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230601073746_AddedCatSeedUgDelo123.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +43,7 @@
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Category/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bcae882191178c8bf44c9add4cdeffa874a7afe629e3e56e9280f5896e953425/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -49,7 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.4773562",
+    "XThreadsFramesViewSplitterKey": "0.4524362",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,7 +108,7 @@
       <workItem from="1685420952557" duration="25990000" />
       <workItem from="1685504994503" duration="390000" />
       <workItem from="1685505436255" duration="21410000" />
-      <workItem from="1685598307793" duration="21063000" />
+      <workItem from="1685598307793" duration="33737000" />
     </task>
     <task id="LOCAL-00001" summary="AddedSeed">
       <created>1685443831866</created>
@@ -152,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685636985536</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added SubcategoryDeatils">
+      <created>1685703476881</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685703476881</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +191,26 @@
     <MESSAGE value="Added Admin" />
     <MESSAGE value="rewritte AppDbContext" />
     <MESSAGE value="correct create subcat" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct create subcat" />
+    <MESSAGE value="Added SubcategoryDeatils" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SubcategoryDeatils" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/AccountController.cs</url>
+          <line>77</line>
+          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/AccountController.cs" initialLine="77" containingFunctionPresentation="Method 'Registration'">
+            <startOffsets>
+              <option value="2485" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2486" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

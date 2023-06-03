@@ -1,5 +1,6 @@
 using System.Reflection.Metadata;
 using APP_LAWYER.DAL.Entities;
+using APP_LAWYER.DAL.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace APP_LAWYER.DAL.Data;
@@ -20,6 +21,7 @@ public class AppDbContext : DbContext
     public DbSet<Vote> Votes { get; set; }
     public DbSet<Video> Videos { get; set; }
     public DbSet<SubcategoryVideo> SubcategoryVideos { get; set; }
+    public DbSet<Role> Roles { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -168,6 +170,24 @@ public class AppDbContext : DbContext
             {
                 SubcategoryId = ubiystvoponeostorozhnostiId,
                 VideoId = video2Id,
+            }
+        );
+        modelBuilder.Entity<Role>().HasData(new Role
+            {
+                Id = Guid.NewGuid(),
+                RoleName = RoleName.SuperAdmin,
+            }, new Role
+            {
+                Id = Guid.NewGuid(),
+                RoleName = RoleName.Admin,
+            }, new Role
+            {
+                Id = Guid.NewGuid(),
+                RoleName = RoleName.Moderator,
+            }, new Role
+            {
+                Id = Guid.NewGuid(),
+                RoleName = RoleName.Basic,
             }
         );
     }

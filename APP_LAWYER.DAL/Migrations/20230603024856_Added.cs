@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace APP_LAWYER.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class AddedCatSeed : Migration
+    public partial class Added : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -28,18 +28,15 @@ namespace APP_LAWYER.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "Roles",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    RoleName = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_Roles", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -74,6 +71,80 @@ namespace APP_LAWYER.DAL.Migrations
                         name: "FK_Subcategories_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Users_Roles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "Roles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubcategoryVideos",
+                columns: table => new
+                {
+                    SubcategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    VideoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubcategoryVideos", x => new { x.SubcategoryId, x.VideoId });
+                    table.ForeignKey(
+                        name: "FK_SubcategoryVideos_Subcategories_SubcategoryId",
+                        column: x => x.SubcategoryId,
+                        principalTable: "Subcategories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SubcategoryVideos_Videos_VideoId",
+                        column: x => x.VideoId,
+                        principalTable: "Videos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Comments",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedAt = table.Column<byte[]>(type: "timestamp", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    SubcategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Comments_Subcategories_SubcategoryId",
+                        column: x => x.SubcategoryId,
+                        principalTable: "Subcategories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Comments_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -115,57 +186,6 @@ namespace APP_LAWYER.DAL.Migrations
                         name: "FK_Otps_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Comments",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<byte[]>(type: "timestamp", nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    SubcategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Comments", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Comments_Subcategories_SubcategoryId",
-                        column: x => x.SubcategoryId,
-                        principalTable: "Subcategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Comments_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SubcategoryVideos",
-                columns: table => new
-                {
-                    SubcategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    VideoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SubcategoryVideos", x => new { x.SubcategoryId, x.VideoId });
-                    table.ForeignKey(
-                        name: "FK_SubcategoryVideos_Subcategories_SubcategoryId",
-                        column: x => x.SubcategoryId,
-                        principalTable: "Subcategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SubcategoryVideos_Videos_VideoId",
-                        column: x => x.VideoId,
-                        principalTable: "Videos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -231,9 +251,49 @@ namespace APP_LAWYER.DAL.Migrations
                 columns: new[] { "Id", "Description", "Name", "Slug" },
                 values: new object[,]
                 {
-                    { new Guid("8ceaee1a-ddc0-4dcd-badb-c33f6ad00c48"), "Категория 'Административное дело' на нашем юридическом сайте предоставляет важную информацию для тех, кто столкнулся с административными проблемами.", "Административное дело", "administrativnoe-delo" },
-                    { new Guid("e2200c1a-9151-4ca5-980f-aacdfa48dc38"), "Категория 'Гражданское дело' на нашем юридическом сайте предоставляет все необходимые инструменты для успешного решения ваших гражданских проблем.", "Гражданское дело", "grazhdanskoe-delo" },
-                    { new Guid("f86a1658-27b3-4584-abd8-4c37ac88a12a"), "Категория 'Уголовное дело' на нашем юридическом сайте предназначена для тех, кто ищет надежную поддержку в разбирательствах с законом.", "Уголовное дело", "ugolovnoe-delo" }
+                    { new Guid("168c38c8-8955-4abc-a597-3c6c2de66e92"), "Категория 'Уголовное дело' на нашем юридическом сайте предназначена для тех, кто ищет надежную поддержку в разбирательствах с законом.", "Уголовное дело", "ugolovnoe-delo" },
+                    { new Guid("66f8eb0e-46cb-4ef2-bc7b-38e18400f71d"), "Категория 'Гражданское дело' на нашем юридическом сайте предоставляет все необходимые инструменты для успешного решения ваших гражданских проблем.", "Гражданское дело", "grazhdanskoe-delo" },
+                    { new Guid("8cdc4161-60a0-4b91-978b-b776f16d90b0"), "Категория 'Административное дело' на нашем юридическом сайте предоставляет важную информацию для тех, кто столкнулся с административными проблемами.", "Административное дело", "administrativnoe-delo" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Roles",
+                columns: new[] { "Id", "RoleName" },
+                values: new object[,]
+                {
+                    { new Guid("4aa35355-76a9-4ba1-b6c0-4c613e4ebba8"), 3 },
+                    { new Guid("68c2afab-ed0c-4d48-83c8-3ddbd8cc4389"), 1 },
+                    { new Guid("6e6a9257-f100-4969-a64a-aed781a50ced"), 4 },
+                    { new Guid("bfc57fc1-fecb-496e-bfcf-2134cc3fc1e8"), 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Videos",
+                columns: new[] { "Id", "Description", "Url" },
+                values: new object[,]
+                {
+                    { new Guid("21205da9-7952-4635-ba2d-8cb59b3d586c"), "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>", "https://youtu.be/AmUenqhE1mw" },
+                    { new Guid("2c7e9275-0e69-41ce-ae41-2041fe2ac6d2"), "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>", "https://youtu.be/AmUenqhE1mw" },
+                    { new Guid("4144d776-25d2-414b-a7e6-80fc20af635b"), "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>", "https://youtu.be/AmUenqhE1mw" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Subcategories",
+                columns: new[] { "Id", "CategoryId", "Content", "Description", "Image", "Name", "Slug" },
+                values: new object[,]
+                {
+                    { new Guid("571ef634-cc1b-4158-9590-eb4d4f3b2d34"), new Guid("168c38c8-8955-4abc-a597-3c6c2de66e92"), "Краткое описание состава убийства и особенности расследования таких дел", "Описание убийства", "https://plus.unsplash.com/premium_photo-1661714112996-c782972c03e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWgelFyX8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80", "Убийство", "ubiystvo" },
+                    { new Guid("7c3e1f30-5094-4b56-89b4-a07f9a0145a4"), new Guid("168c38c8-8955-4abc-a597-3c6c2de66e92"), "Краткое описание состава убийства по неосторожности и особенности расследования таких дел", "Описание убийства по неосторожности", "https://images.unsplash.com/photo-1605806616949-1e87b487fc2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80", "Убийство по неосторожности", "ubiystvo-po-neostorozhnosti" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "SubcategoryVideos",
+                columns: new[] { "SubcategoryId", "VideoId" },
+                values: new object[,]
+                {
+                    { new Guid("571ef634-cc1b-4158-9590-eb4d4f3b2d34"), new Guid("4144d776-25d2-414b-a7e6-80fc20af635b") },
+                    { new Guid("7c3e1f30-5094-4b56-89b4-a07f9a0145a4"), new Guid("21205da9-7952-4635-ba2d-8cb59b3d586c") },
+                    { new Guid("7c3e1f30-5094-4b56-89b4-a07f9a0145a4"), new Guid("2c7e9275-0e69-41ce-ae41-2041fe2ac6d2") }
                 });
 
             migrationBuilder.CreateIndex(
@@ -275,6 +335,11 @@ namespace APP_LAWYER.DAL.Migrations
                 name: "IX_SubcategoryVideos_VideoId",
                 table: "SubcategoryVideos",
                 column: "VideoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_RoleId",
+                table: "Users",
+                column: "RoleId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Votes_CommentId",
@@ -319,6 +384,9 @@ namespace APP_LAWYER.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Roles");
         }
     }
 }
