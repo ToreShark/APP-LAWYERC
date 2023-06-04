@@ -1,0 +1,27 @@
+@model System.Collections.Generic.IReadOnlyList<APP_LAWYER.DAL.Entities.DocumentTemplate>
+
+@{
+    ViewBag.Title = "Create Document";
+    Layout = "_Layout";
+}
+
+<h2>Create Document</h2>
+
+<form method="post" action="/User/CreateDocumentForUser">
+    <div>
+        <label for="templateId">Template:</label>
+        <select id="templateId" name="templateId" onchange="document.getElementById('documentContent').value = this.options[this.selectedIndex].getAttribute('data-description')" required>
+            @foreach (var template in Model)
+            {
+                <option value="@template.Id" data-description="@template.Description">@template.Title</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="documentContent">Document Content:</label>
+        <textarea id="documentContent" name="documentContent" required></textarea>
+    </div>
+    <div>
+        <button type="submit">Create Document</button>
+    </div>
+</form>

@@ -17,7 +17,7 @@ public class UserRepository: GenericRepositoryAsync<User>, IUserRepository
         User user = await _db.Users.Where(x=>x.Phone == phoneNumber).FirstAsync();
         if(user == null)
         {
-            return null;
+            throw new InvalidOperationException("User with provided phone number not found");
         }
         bool newPassword = BCrypt.Net.BCrypt.Verify(password, user.Password);
         if(newPassword)

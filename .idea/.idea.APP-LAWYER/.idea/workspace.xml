@@ -7,27 +7,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/DocumentTemplateRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/DocumentTemplate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IDocumentTemplateRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603171047_AddedDocTemplate.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603171047_AddedDocTemplate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603181421_AddedDocTemplate123.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603181421_AddedDocTemplate123.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/DocumentTemplateController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Create.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Delete.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Index.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Update.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Update.cshtml" afterDir="false" />
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="Added DocTemplate">
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/UserController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/UOW.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/UOW.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/DocumentEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/DocumentEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603024856_Added.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603024856_Added.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230604101416_AddedDocTemplate123.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603171047_AddedDocTemplate.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603171047_AddedDocTemplate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603181421_AddedDocTemplate123.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230604101416_AddedDocTemplate123.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230603181421_AddedDocTemplate123.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/APP_LAWYER.WEB.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/APP_LAWYER.WEB.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +102,7 @@
       <workItem from="1685504994503" duration="390000" />
       <workItem from="1685505436255" duration="21410000" />
       <workItem from="1685598307793" duration="47173000" />
-      <workItem from="1685813151427" duration="7272000" />
+      <workItem from="1685813151427" duration="20015000" />
     </task>
     <task id="LOCAL-00001" summary="AddedSeed">
       <created>1685443831866</created>
@@ -177,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685774351121</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added DocTemplate">
+      <created>1685851992051</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1685851992051</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +201,8 @@
     <MESSAGE value="correct create subcat" />
     <MESSAGE value="Added SubcategoryDeatils" />
     <MESSAGE value="Added authorize" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added authorize" />
+    <MESSAGE value="Added DocTemplate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DocTemplate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -207,10 +212,10 @@
           <line>77</line>
           <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/AccountController.cs" initialLine="77" containingFunctionPresentation="Method 'Registration'">
             <startOffsets>
-              <option value="2485" />
+              <option value="2717" />
             </startOffsets>
             <endOffsets>
-              <option value="2486" />
+              <option value="2718" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="12" />

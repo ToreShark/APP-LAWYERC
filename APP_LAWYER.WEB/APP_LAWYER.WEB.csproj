@@ -39,4 +39,8 @@
       <_ContentIncludedByDefault Remove="Areas\Admin\Views\Subcategory\Index.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <AdditionalFiles Include="Views\User\Create.cshtml" />
+    </ItemGroup>
+
 </Project>

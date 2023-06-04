@@ -36,13 +36,19 @@ namespace APP_LAWYER.WEB.Controllers
         {
             if(ModelState.IsValid)
             {
-                User? user = await _uow.UserRepository.ValidateLoginPasswordAsync(loginViewModel.PhoneNumber, loginViewModel.Password);
-                if (user != null)
+                try
                 {
-                    await Authenticate(user); // аутентификация
-                    return RedirectToAction("Index", "Home");
+                    User? user = await _uow.UserRepository.ValidateLoginPasswordAsync(loginViewModel.PhoneNumber, loginViewModel.Password);
+                    if (user != null)
+                    {
+                        await Authenticate(user); // аутентификация
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
-                ModelState.AddModelError("", "Нет такого пользователя");
+                catch (InvalidOperationException ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
             }
             return View(loginViewModel);
         }
@@ -51,7 +57,8 @@ namespace APP_LAWYER.WEB.Controllers
             var claims = new List<Claim>
             {
                 new Claim(ClaimsIdentity.DefaultNameClaimType, user.Email),
-                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.RoleId.ToString())
+                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.RoleId.ToString()),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
             };
             ClaimsIdentity id = new ClaimsIdentity(
                 claims,
