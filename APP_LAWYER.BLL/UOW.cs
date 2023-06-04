@@ -24,6 +24,7 @@ public class UOW
     private SubcategoryVideoRepository _subcategoryVideoRepository;
     private VideoRepository _videoRepository;
     public RoleRepository _roleRepository;
+    public DocumentTemplateRepository _documentTemplateRepository;
     
     public CategoriRepository CategoriRepository
     {
@@ -144,6 +145,17 @@ public class UOW
                 _roleRepository = new RoleRepository(_db);
             }
             return _roleRepository;
+        }
+    }
+    public DocumentTemplateRepository DocumentTemplateRepository
+    {
+        get
+        {
+            if (_documentTemplateRepository == null)
+            {
+                _documentTemplateRepository = new DocumentTemplateRepository(_db);
+            }
+            return _documentTemplateRepository;
         }
     }
 }

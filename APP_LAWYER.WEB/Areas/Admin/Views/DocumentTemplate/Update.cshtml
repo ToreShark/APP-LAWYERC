@@ -1,0 +1,22 @@
+@model APP_LAWYER.DAL.Entities.DocumentTemplate
+
+@{
+    ViewBag.Title = "Update Document Template";
+    Layout = "_Layout";
+}
+
+<h2>Update Document Template</h2>
+
+<form asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input id="Title" name="Title" class="form-control" value="@Model.Title" />
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <input id="Description" name="Description" class="form-control" value="@Model.Description" />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

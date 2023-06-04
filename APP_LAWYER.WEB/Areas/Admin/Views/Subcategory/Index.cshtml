@@ -5,6 +5,11 @@
     Layout = "_Layout";
 }
 
+<form action="@Url.Action("Create", "Subcategory", new { area = "Admin" })">
+    <button type="submit" class="btn btn-primary">Создать подкатегорию</button>
+</form>
+
+
 <table class="table">
     <thead>
     <tr>
@@ -20,8 +25,7 @@
             <td>@subcategory.Name</td>
             <td>@subcategory.Description</td>
             <td>
-                <a asp-area="Admin" asp-controller="Subcategory" asp-action="Create" asp-route-id="@subcategory.Id">Создать</a> |
-                <a asp-area="Admin" asp-controller="Subcategory" asp-action="Edit" asp-route-id="@subcategory.Id">Редактировать</a> |
+                <a href="@Url.Action("Update", "Subcategory", new { id = subcategory.Id })">Редактировать</a> |
                 <a asp-area="Admin" asp-controller="Subcategory" asp-action="Delete" asp-route-id="@subcategory.Id">Удалить</a>
             </td>
         </tr>

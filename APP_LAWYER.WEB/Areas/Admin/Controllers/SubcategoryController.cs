@@ -12,13 +12,16 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
     public class SubcategoryController : Controller
     {
         private readonly UOW _uow;
+        private readonly ILogger _logger;
         
-        public SubcategoryController(UOW uow)
+        public SubcategoryController(UOW uow, ILogger<SubcategoryController> logger)
         {
             _uow = uow;
+            _logger = logger;
         }
         public async Task<IActionResult> Index()
         {
+            _logger.LogInformation("Create method called");
             return View(await _uow.SubcategoryRepository.ListAllAsync());
         }
         [HttpGet]
@@ -72,6 +75,31 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
                 await _uow.SubcategoryVideoRepository.InsertAsync(subcategoryVideo);
             }
             return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public async Task<IActionResult> Update(Guid id)
+        {
+            Console.WriteLine("Searching for subcategory with id: " + id);
+            Subcategory subcategory = await _uow.SubcategoryRepository.GetByGuidSubcategoryAsync(id);
+            if (subcategory == null)
+            {
+                Console.WriteLine("Subcategory not found");
+                return NotFound();
+            }
+            ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
+            return View(subcategory);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(Subcategory subcategory)
+        {
+            ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
+            if (ModelState.IsValid)
+            {
+                await _uow.SubcategoryRepository.UpdateAsync(subcategory);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(subcategory);
         }
     }
 }

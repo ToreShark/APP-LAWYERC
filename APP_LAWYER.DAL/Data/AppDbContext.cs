@@ -22,6 +22,7 @@ public class AppDbContext : DbContext
     public DbSet<Video> Videos { get; set; }
     public DbSet<SubcategoryVideo> SubcategoryVideos { get; set; }
     public DbSet<Role> Roles { get; set; }
+    public DbSet<DocumentTemplate> DocumentTemplates { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

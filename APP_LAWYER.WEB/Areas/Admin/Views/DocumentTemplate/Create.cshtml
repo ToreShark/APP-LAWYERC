@@ -1,0 +1,28 @@
+@model APP_LAWYER.DAL.Entities.DocumentTemplate
+
+@{
+    ViewBag.Title = "Create Document Template";
+    Layout = "_Layout";
+}
+
+<h2>Create Document Template</h2>
+
+<form asp-action="Create" method="post" class="mt-4">
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input class="form-control" name="Title" id="Title" type="text" required>
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <input class="form-control" name="Description" id="Description" type="text" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

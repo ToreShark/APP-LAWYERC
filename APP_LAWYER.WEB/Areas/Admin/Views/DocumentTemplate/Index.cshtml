@@ -1,0 +1,35 @@
+@model System.Collections.Generic.IReadOnlyList<APP_LAWYER.DAL.Entities.DocumentTemplate>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var template in Model)
+    {
+        <tr>
+            <td>@template.Title</td>
+            <td>@template.Description</td>
+            <td>
+                <a href="@Url.Action("Update", "DocumentTemplate", new { id = template.Id })">Update</a> |
+                <a href="@Url.Action("Delete", "DocumentTemplate", new { id = template.Id })">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<p>
+    <a href="@Url.Action("Create", "DocumentTemplate")">Create New Template</a>
+</p>
