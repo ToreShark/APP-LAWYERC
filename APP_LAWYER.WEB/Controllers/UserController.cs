@@ -87,5 +87,51 @@ namespace APP_LAWYER.WEB.Controllers
 
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public async Task<IActionResult> Update(Guid id)
+        {
+            DocumentEntity document = await _uow.DocumentRepository.GetByGuidAsync(id);
+            if (document == null)
+            {
+                return NotFound();
+            }
+            return View(document);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(DocumentEntity document)
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return BadRequest("User claim not found.");
+            }
+            var userId = Guid.Parse(userIdClaim.Value);
+
+            // Получить существующий документ из базы данных
+            DocumentEntity existingDocument = await _uow.DocumentRepository.GetByGuidAsync(document.Id);
+            if (existingDocument == null)
+            {
+                return NotFound();
+            }
+
+            // Обновите поля существующего документа
+            existingDocument.Name = document.Name;
+            existingDocument.Description = document.Description;
+            // Обновите другие поля по мере необходимости...
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
+                {
+                    Console.WriteLine(error.ErrorMessage);
+                }
+                return View(document);
+            }
+    
+            // Сохраните обновленный документ
+            await _uow.DocumentRepository.UpdateAsync(existingDocument);
+            return RedirectToAction("Index");
+        }
     }
 }

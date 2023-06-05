@@ -19,10 +19,10 @@
         <tr>
             <td>@documents.Name</td>
             <td>@documents.Description</td>
-            @* <td> *@
-            @*     <a href="@Url.Action("Update", "Subcategory", new { id = subcategory.Id })">Редактировать</a> | *@
-            @*     <a asp-area="Admin" asp-controller="Subcategory" asp-action="Delete" asp-route-id="@subcategory.Id">Удалить</a> *@
-            @* </td> *@
+            <td>
+                <a href="@Url.Action("Update", "User", new { id = documents.Id })">Редактировать</a> |
+                @* <a asp-area="Admin" asp-controller="Subcategory" asp-action="Delete" asp-route-id="@subcategory.Id">Удалить</a> *@
+            </td>
         </tr>
     }
     </tbody>
