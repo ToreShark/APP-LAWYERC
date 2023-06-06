@@ -8,28 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/CommentViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/ReplyViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230606102122_AddedComments.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230606102122_AddedComments.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CommentController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/ReplyController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/_Comments.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/CommentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/CommentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/ReplyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/ReplyRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/DocumentEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/DocumentEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Reply.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Reply.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Subcategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Subcategory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230604101416_AddedDocTemplate123.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230606054113_AddedNew.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230604101416_AddedDocTemplate123.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230606054113_AddedNew.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +83,8 @@
       <workItem from="1685505436255" duration="21410000" />
       <workItem from="1685598307793" duration="47173000" />
       <workItem from="1685813151427" duration="47615000" />
-      <workItem from="1686045323135" duration="7751000" />
+      <workItem from="1686045323135" duration="10025000" />
+      <workItem from="1686060782335" duration="43000" />
     </task>
     <task id="LOCAL-00001" summary="AddedSeed">
       <created>1685443831866</created>
@@ -197,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685956617334</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added Comment Reply">
+      <created>1686057034725</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1686057034725</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +207,8 @@
     <MESSAGE value="Added DocTemplate" />
     <MESSAGE value="Added CreateDocument" />
     <MESSAGE value="Added upadte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added upadte" />
+    <MESSAGE value="Added Comment Reply" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Comment Reply" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
