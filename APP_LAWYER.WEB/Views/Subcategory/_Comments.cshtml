@@ -1,0 +1,37 @@
+@model IEnumerable<APP_LAWYER.DAL.Entities.Comment>
+
+@foreach (var comment in Model)
+{
+    <div class="comment">
+        <p>@comment.Content</p>
+        @if (comment.User != null)
+        {
+            <p>By: @comment.User.FirstName</p>
+        }
+        else
+        {
+            <p>No user associated with this comment.</p>
+        }
+
+        <!-- Replies to the comment -->
+        <div class="replies">
+            @if (comment.Replies != null)
+            {
+                foreach (var reply in comment.Replies)
+                {
+                    <div class="reply">
+                        <p>@reply.Text</p>
+                        @if (reply.User != null)
+                        {
+                            <p>By: @reply.User.FirstName</p>
+                        }
+                        else
+                        {
+                            <p>No user associated with this reply.</p>
+                        }
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}

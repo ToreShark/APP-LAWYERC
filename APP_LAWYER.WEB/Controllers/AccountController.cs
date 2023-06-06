@@ -56,7 +56,7 @@ namespace APP_LAWYER.WEB.Controllers
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Email),
+                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Phone),
                 new Claim(ClaimsIdentity.DefaultRoleClaimType, user.RoleId.ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
             };

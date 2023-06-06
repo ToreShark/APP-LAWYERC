@@ -7,6 +7,7 @@ using APP_LAWYER.BLL;
 using APP_LAWYER.DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity;
 
 namespace APP_LAWYER.WEB.Controllers
 {
@@ -22,7 +23,15 @@ namespace APP_LAWYER.WEB.Controllers
        
         public async Task<IActionResult> Index()
         {
-            return View(await _uow.DocumentRepository.ListAllAsync());
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return BadRequest("User claim not found.");
+            }
+            var userId = Guid.Parse(userIdClaim.Value);
+            var documents = await _uow.DocumentRepository.ListAllAsync();
+            var userDocuments = documents.Where(d => d.UserId == userId);
+            return View(userDocuments);
         }
         [HttpGet]
         public async Task<IActionResult> Create()
@@ -103,6 +112,7 @@ namespace APP_LAWYER.WEB.Controllers
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
             if (userIdClaim == null)
             {
+                Console.WriteLine("User claim not found Test Radik.", ClaimTypes.NameIdentifier);
                 return BadRequest("User claim not found.");
             }
             var userId = Guid.Parse(userIdClaim.Value);
@@ -124,7 +134,7 @@ namespace APP_LAWYER.WEB.Controllers
                 var errors = ModelState.Values.SelectMany(v => v.Errors);
                 foreach (var error in errors)
                 {
-                    Console.WriteLine(error.ErrorMessage);
+                    Console.WriteLine("TEST TORE",error.ErrorMessage);
                 }
                 return View(document);
             }

@@ -38,6 +38,7 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
             ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
             if (!ModelState.IsValid)
             {
+                Console.WriteLine("Model state is invalid");
                 var errors = ModelState
                     .Where(x => x.Value.Errors.Count > 0)
                     .Select(x => new { x.Key, x.Value.Errors })

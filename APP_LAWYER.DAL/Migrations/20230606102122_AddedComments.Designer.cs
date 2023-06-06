@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APP_LAWYER.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230604101416_AddedDocTemplate123")]
-    partial class AddedDocTemplate123
+    [Migration("20230606102122_AddedComments")]
+    partial class AddedComments
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,21 +50,21 @@ namespace APP_LAWYER.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5711d142-1b59-4867-8b00-9edcfbb91843"),
+                            Id = new Guid("d6ee0529-70a0-463c-bf54-e072e10634ec"),
                             Description = "Категория 'Уголовное дело' на нашем юридическом сайте предназначена для тех, кто ищет надежную поддержку в разбирательствах с законом.",
                             Name = "Уголовное дело",
                             Slug = "ugolovnoe-delo"
                         },
                         new
                         {
-                            Id = new Guid("6151d66c-c730-41ca-afe2-6fc7873ae6e1"),
+                            Id = new Guid("a5205ea6-7d56-4957-bbb9-464fe6e7edab"),
                             Description = "Категория 'Гражданское дело' на нашем юридическом сайте предоставляет все необходимые инструменты для успешного решения ваших гражданских проблем.",
                             Name = "Гражданское дело",
                             Slug = "grazhdanskoe-delo"
                         },
                         new
                         {
-                            Id = new Guid("5332deeb-bc8b-4133-b90f-5b8af20c5592"),
+                            Id = new Guid("488099d9-00ce-4b90-a473-1ebda1aebcc6"),
                             Description = "Категория 'Административное дело' на нашем юридическом сайте предоставляет важную информацию для тех, кто столкнулся с административными проблемами.",
                             Name = "Административное дело",
                             Slug = "administrativnoe-delo"
@@ -109,7 +109,8 @@ namespace APP_LAWYER.DAL.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -217,22 +218,22 @@ namespace APP_LAWYER.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c88f3361-d1dd-4625-b56f-43b51b483472"),
+                            Id = new Guid("61278fa0-2fe9-408a-b479-ddbeff40fd90"),
                             RoleName = 1
                         },
                         new
                         {
-                            Id = new Guid("269145da-0357-4f30-9517-5dce7c086555"),
+                            Id = new Guid("37cec8ae-c878-4546-921e-26905b18b65b"),
                             RoleName = 2
                         },
                         new
                         {
-                            Id = new Guid("f2d3f5d6-3e8f-438d-a092-45168a427041"),
+                            Id = new Guid("7a822931-4bab-484a-8e7d-e56710be9ef6"),
                             RoleName = 3
                         },
                         new
                         {
-                            Id = new Guid("0f4c0028-e606-4cd8-8e28-ecae63c2bbf6"),
+                            Id = new Guid("96d88778-eff2-4906-9b7e-0c577ba94d3b"),
                             RoleName = 4
                         });
                 });
@@ -275,8 +276,8 @@ namespace APP_LAWYER.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("907370a5-85e0-4a69-a40f-be0593a5f996"),
-                            CategoryId = new Guid("5711d142-1b59-4867-8b00-9edcfbb91843"),
+                            Id = new Guid("680beae1-3acc-482a-9a54-759a2453e7dd"),
+                            CategoryId = new Guid("d6ee0529-70a0-463c-bf54-e072e10634ec"),
                             Content = "Краткое описание состава убийства и особенности расследования таких дел",
                             Description = "Описание убийства",
                             Image = "https://plus.unsplash.com/premium_photo-1661714112996-c782972c03e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWgelFyX8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
@@ -285,8 +286,8 @@ namespace APP_LAWYER.DAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("66475022-9053-4751-8ff7-0c6bc6f2cd01"),
-                            CategoryId = new Guid("5711d142-1b59-4867-8b00-9edcfbb91843"),
+                            Id = new Guid("7c307bb6-021b-487e-ac7d-41fc474995c8"),
+                            CategoryId = new Guid("d6ee0529-70a0-463c-bf54-e072e10634ec"),
                             Content = "Краткое описание состава убийства по неосторожности и особенности расследования таких дел",
                             Description = "Описание убийства по неосторожности",
                             Image = "https://images.unsplash.com/photo-1605806616949-1e87b487fc2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
@@ -312,18 +313,18 @@ namespace APP_LAWYER.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            SubcategoryId = new Guid("907370a5-85e0-4a69-a40f-be0593a5f996"),
-                            VideoId = new Guid("a0932c42-7b9a-40b3-bbee-1a16639b7db1")
+                            SubcategoryId = new Guid("680beae1-3acc-482a-9a54-759a2453e7dd"),
+                            VideoId = new Guid("741d3ae1-edd0-4c05-80b7-9649ce06c0ef")
                         },
                         new
                         {
-                            SubcategoryId = new Guid("66475022-9053-4751-8ff7-0c6bc6f2cd01"),
-                            VideoId = new Guid("9c1dd316-0987-44b4-b920-1e26169d463a")
+                            SubcategoryId = new Guid("7c307bb6-021b-487e-ac7d-41fc474995c8"),
+                            VideoId = new Guid("17dc4922-8eb5-47f1-8b00-e05ab4d07bf2")
                         },
                         new
                         {
-                            SubcategoryId = new Guid("66475022-9053-4751-8ff7-0c6bc6f2cd01"),
-                            VideoId = new Guid("12e33251-a252-4db6-b02d-a9d80c213ff9")
+                            SubcategoryId = new Guid("7c307bb6-021b-487e-ac7d-41fc474995c8"),
+                            VideoId = new Guid("5a119861-5536-45c0-970f-d168b8e5250e")
                         });
                 });
 
@@ -384,19 +385,19 @@ namespace APP_LAWYER.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a0932c42-7b9a-40b3-bbee-1a16639b7db1"),
+                            Id = new Guid("741d3ae1-edd0-4c05-80b7-9649ce06c0ef"),
                             Description = "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>",
                             Url = "https://youtu.be/AmUenqhE1mw"
                         },
                         new
                         {
-                            Id = new Guid("9c1dd316-0987-44b4-b920-1e26169d463a"),
+                            Id = new Guid("17dc4922-8eb5-47f1-8b00-e05ab4d07bf2"),
                             Description = "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>",
                             Url = "https://youtu.be/AmUenqhE1mw"
                         },
                         new
                         {
-                            Id = new Guid("12e33251-a252-4db6-b02d-a9d80c213ff9"),
+                            Id = new Guid("5a119861-5536-45c0-970f-d168b8e5250e"),
                             Description = "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>",
                             Url = "https://youtu.be/AmUenqhE1mw"
                         });
@@ -437,7 +438,7 @@ namespace APP_LAWYER.DAL.Migrations
             modelBuilder.Entity("APP_LAWYER.DAL.Entities.Comment", b =>
                 {
                     b.HasOne("APP_LAWYER.DAL.Entities.Subcategory", "Subcategory")
-                        .WithMany()
+                        .WithMany("Comments")
                         .HasForeignKey("SubcategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -573,6 +574,8 @@ namespace APP_LAWYER.DAL.Migrations
 
             modelBuilder.Entity("APP_LAWYER.DAL.Entities.Subcategory", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("SubcategoryVideos");
                 });
 
