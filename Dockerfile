@@ -4,6 +4,7 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+RUN dotnet tool install --global dotnet-ef
 WORKDIR /
 COPY ["APP_LAWYER.WEB/APP_LAWYER.WEB.csproj", "APP_LAWYER.WEB/"]
 COPY ["APP_LAWYER.BLL/APP_LAWYER.BLL.csproj", "APP_LAWYER.BLL/"]
