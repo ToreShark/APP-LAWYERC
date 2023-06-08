@@ -53,10 +53,10 @@
         <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
             <div class="container">
                 <!-- Add comment form -->
-                <h4>Оставьте комментарий:</h4>
+                <h4>Оставьте вопрос:</h4>
                 <form id="createCommentForm" method="post" action="/Comment/Create">
                     <div class="form-group">
-                        <label for="commentContent">Комментарий:</label>
+                        <label for="commentContent">Вопрос:</label>
                         <textarea class="form-control" id="commentContent" name="Content" rows="3"></textarea>
                     </div>
                     <input type="hidden" name="SubcategoryId" value="@Model.Id"/>
@@ -64,56 +64,9 @@
                 </form>
                 <!-- Existing comments -->
                 <!-- Existing comments -->
-                <h3>Comments:</h3>
+                <h3>Вопросы и ответы:</h3>
                 <div id="commentContainer">
-                    @if (Model.Comments != null)
-                    {
-                        foreach (var comment in Model.Comments)
-                        {
-                            <div class="comment">
-                                <p>@comment.Content</p>
-                                @if (comment.User != null)
-                                {
-                                    <p>By: @comment.User.FirstName</p>
-                                }
-                                else
-                                {
-                                    <p>No user associated with this comment.</p>
-                                }
-
-                                <!-- Replies to the comment -->
-                                <div class="replies">
-                                    @if (comment.Replies != null)
-                                    {
-                                        foreach (var reply in comment.Replies)
-                                        {
-                                            <div class="reply">
-                                                <p>@reply.Text</p>
-                                                @if (reply.User != null)
-                                                {
-                                                    <p>By: @reply.User.FirstName</p>
-                                                }
-                                                else
-                                                {
-                                                    <p>No user associated with this reply.</p>
-                                                }
-                                            </div>
-                                        }
-                                    }
-                                </div>
-
-                                <!-- Add reply form -->
-                                <form class="createReplyForm" method="post" action="/Reply/Create">
-                                    <div class="form-group">
-                                        <label for="replyText">Reply:</label>
-                                        <textarea class="form-control" id="replyText" name="Text" rows="2"></textarea>
-                                    </div>
-                                    <input type="hidden" name="CommentId" value="@comment.Id"/>
-                                    <button type="submit" class="btn btn-primary">Reply</button>
-                                </form>
-                            </div>
-                        }
-                    }
+                    
                 </div>
             </div>
         </div>
@@ -143,46 +96,58 @@
 
             updateVideoDescription();
             var subcategoryId = $('[name="SubcategoryId"]').val();
-                $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
-                    $("#commentContainer").html(data);
-                });
+            $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
+                $("#commentContainer").html(data);
+            });
+
             // Code for comment form
-            $("#createCommentForm").on('submit', function (event) {
-                event.preventDefault();
-                var form = $(this);
-                $.ajax({
-                    url: form.attr("action"),
-                    method: form.attr("method"),
-                    data: form.serialize(),
-                    success: function () {
-                        // Reload comments
-                        $.get("/Subcategory/Comments/" + form.find('[name="SubcategoryId"]').val(), function(data) {
-                            $("#commentContainer").html(data);
-                        });
-                    },
-                    error: function () {
-                        alert('Error! Could not submit form.');
-                    }
-                });
-            });
-            $(".createReplyForm").on('submit', function (event) {
-                event.preventDefault();
-                var form = $(this);
-                $.ajax({
-                    url: form.attr("action"),
-                    method: form.attr("method"),
-                    data: form.serialize(),
-                    success: function () {
-                        // Reload comments
-                        $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
-                            $("#commentContainer").html(data);
-                        });
-                    },
-                    error: function () {
-                        alert('Error! Could not submit form.');
-                    }
-                });
-            });
+            // Code for comment form
+           $("#createCommentForm").on('submit', function (event) {
+               event.preventDefault();
+               var form = $(this);
+               $.ajax({
+                   url: form.attr("action"),
+                   method: form.attr("method"),
+                   data: form.serialize(),
+                   xhrFields: {
+                       withCredentials: true
+                   },
+                   success: function (data) {
+                       console.log(data); // Log the response data
+                       // Reload comments
+                       $.get("/Subcategory/Comments/" + form.find('[name="SubcategoryId"]').val(), function(data) {
+                           $("#commentContainer").html(data);
+                       });
+                   },
+                   error: function () {
+                       alert('Error! Could not submit form.');
+                   }
+               });
+           });
+           
+           // Code for reply form
+           $("#commentContainer").on('submit', '.createReplyForm', function (event) {
+               event.preventDefault();
+               var form = $(this);
+               $.ajax({
+                   url: form.attr("action"),
+                   method: form.attr("method"),
+                   data: form.serialize(),
+                   xhrFields: {
+                       withCredentials: true
+                   },
+                   success: function (data) {
+                       console.log(data); // Log the response data
+                       // Reload comments
+                       $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
+                           $("#commentContainer").html(data);
+                       });
+                   },
+                   error: function () {
+                       alert('Error! Could not submit form.');
+                   }
+               });
+           });
         });
     </script>
 }

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace APP_LAWYER.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class AddedNew : Migration
+    public partial class AddedTimeSetup : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -141,7 +141,7 @@ namespace APP_LAWYER.DAL.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<byte[]>(type: "timestamp", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SubcategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
@@ -208,23 +208,21 @@ namespace APP_LAWYER.DAL.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Text = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CommentId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CommentId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CommentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Replies", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Replies_Comments_CommentId1",
-                        column: x => x.CommentId1,
+                        name: "FK_Replies_Comments_CommentId",
+                        column: x => x.CommentId,
                         principalTable: "Comments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Replies_Users_UserId1",
-                        column: x => x.UserId1,
+                        name: "FK_Replies_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -263,9 +261,9 @@ namespace APP_LAWYER.DAL.Migrations
                 columns: new[] { "Id", "Description", "Name", "Slug" },
                 values: new object[,]
                 {
-                    { new Guid("1dc7127d-4c86-41f3-af08-4bd145072f69"), "Категория 'Уголовное дело' на нашем юридическом сайте предназначена для тех, кто ищет надежную поддержку в разбирательствах с законом.", "Уголовное дело", "ugolovnoe-delo" },
-                    { new Guid("8c0f820a-3943-4678-89f6-8f5ed76a28d5"), "Категория 'Гражданское дело' на нашем юридическом сайте предоставляет все необходимые инструменты для успешного решения ваших гражданских проблем.", "Гражданское дело", "grazhdanskoe-delo" },
-                    { new Guid("f1532549-5362-4161-a9db-ece564bbad67"), "Категория 'Административное дело' на нашем юридическом сайте предоставляет важную информацию для тех, кто столкнулся с административными проблемами.", "Административное дело", "administrativnoe-delo" }
+                    { new Guid("08e6b94c-619a-41a8-a7e9-82525cd0800a"), "Категория 'Гражданское дело' на нашем юридическом сайте предоставляет все необходимые инструменты для успешного решения ваших гражданских проблем.", "Гражданское дело", "grazhdanskoe-delo" },
+                    { new Guid("45b258cd-0156-45d6-a6e5-c98800f25dfa"), "Категория 'Административное дело' на нашем юридическом сайте предоставляет важную информацию для тех, кто столкнулся с административными проблемами.", "Административное дело", "administrativnoe-delo" },
+                    { new Guid("aa6c440c-e1a1-4b6a-a779-d9dd6204a284"), "Категория 'Уголовное дело' на нашем юридическом сайте предназначена для тех, кто ищет надежную поддержку в разбирательствах с законом.", "Уголовное дело", "ugolovnoe-delo" }
                 });
 
             migrationBuilder.InsertData(
@@ -273,10 +271,10 @@ namespace APP_LAWYER.DAL.Migrations
                 columns: new[] { "Id", "RoleName" },
                 values: new object[,]
                 {
-                    { new Guid("3cd465e8-cdb6-496f-b1f0-a97b012aba24"), 1 },
-                    { new Guid("6cc6f5f6-d632-4704-9639-a0e86726c1ee"), 3 },
-                    { new Guid("a84ae8d3-2b7c-4386-a70b-6a72fe2a7ca5"), 4 },
-                    { new Guid("cf529606-816a-42d6-ad8b-8a539316165a"), 2 }
+                    { new Guid("00512e8f-9f2e-4782-900b-b776984584f8"), 1 },
+                    { new Guid("ab7f0d21-5261-479f-bb34-2242726cf9ab"), 3 },
+                    { new Guid("b5f616d2-d8dd-4839-a352-43226140014d"), 4 },
+                    { new Guid("ba213d7c-7f28-4957-b398-d4fc6b247c10"), 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -284,9 +282,9 @@ namespace APP_LAWYER.DAL.Migrations
                 columns: new[] { "Id", "Description", "Url" },
                 values: new object[,]
                 {
-                    { new Guid("20e7061f-a147-423e-a219-e1e81cd06643"), "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>", "https://youtu.be/AmUenqhE1mw" },
-                    { new Guid("40bf4f19-270a-4d3d-a607-c1f29ba9d34f"), "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>", "https://youtu.be/AmUenqhE1mw" },
-                    { new Guid("85223da7-ec7b-4d8f-9cff-caddbd84936c"), "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>", "https://youtu.be/AmUenqhE1mw" }
+                    { new Guid("271b9621-2248-43d9-8135-9cb78d2e5395"), "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>", "https://youtu.be/AmUenqhE1mw" },
+                    { new Guid("337beb77-5ca4-413f-9c35-f531c611ac93"), "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>", "https://youtu.be/AmUenqhE1mw" },
+                    { new Guid("4faba2ef-d0b5-4c14-979e-8f9d58189e3a"), "<div class='App' style='text-align: center;'><h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p><p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p><hr class='remove'></div>", "https://youtu.be/AmUenqhE1mw" }
                 });
 
             migrationBuilder.InsertData(
@@ -294,8 +292,8 @@ namespace APP_LAWYER.DAL.Migrations
                 columns: new[] { "Id", "CategoryId", "Content", "Description", "Image", "Name", "Slug" },
                 values: new object[,]
                 {
-                    { new Guid("dbb40dc5-58d2-4eec-ba8d-3c179fff6835"), new Guid("1dc7127d-4c86-41f3-af08-4bd145072f69"), "Краткое описание состава убийства по неосторожности и особенности расследования таких дел", "Описание убийства по неосторожности", "https://images.unsplash.com/photo-1605806616949-1e87b487fc2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80", "Убийство по неосторожности", "ubiystvo-po-neostorozhnosti" },
-                    { new Guid("e4df1c2a-775f-4573-8210-3130a11ae3a4"), new Guid("1dc7127d-4c86-41f3-af08-4bd145072f69"), "Краткое описание состава убийства и особенности расследования таких дел", "Описание убийства", "https://plus.unsplash.com/premium_photo-1661714112996-c782972c03e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWgelFyX8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80", "Убийство", "ubiystvo" }
+                    { new Guid("9d947f1e-c608-458f-a25a-0cb6aea93831"), new Guid("aa6c440c-e1a1-4b6a-a779-d9dd6204a284"), "Краткое описание состава убийства и особенности расследования таких дел", "Описание убийства", "https://plus.unsplash.com/premium_photo-1661714112996-c782972c03e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWgelFyX8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80", "Убийство", "ubiystvo" },
+                    { new Guid("9f2589ec-4eaf-4d40-96d0-046e67b7b825"), new Guid("aa6c440c-e1a1-4b6a-a779-d9dd6204a284"), "Краткое описание состава убийства по неосторожности и особенности расследования таких дел", "Описание убийства по неосторожности", "https://images.unsplash.com/photo-1605806616949-1e87b487fc2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80", "Убийство по неосторожности", "ubiystvo-po-neostorozhnosti" }
                 });
 
             migrationBuilder.InsertData(
@@ -303,9 +301,9 @@ namespace APP_LAWYER.DAL.Migrations
                 columns: new[] { "SubcategoryId", "VideoId" },
                 values: new object[,]
                 {
-                    { new Guid("dbb40dc5-58d2-4eec-ba8d-3c179fff6835"), new Guid("20e7061f-a147-423e-a219-e1e81cd06643") },
-                    { new Guid("dbb40dc5-58d2-4eec-ba8d-3c179fff6835"), new Guid("40bf4f19-270a-4d3d-a607-c1f29ba9d34f") },
-                    { new Guid("e4df1c2a-775f-4573-8210-3130a11ae3a4"), new Guid("85223da7-ec7b-4d8f-9cff-caddbd84936c") }
+                    { new Guid("9d947f1e-c608-458f-a25a-0cb6aea93831"), new Guid("4faba2ef-d0b5-4c14-979e-8f9d58189e3a") },
+                    { new Guid("9f2589ec-4eaf-4d40-96d0-046e67b7b825"), new Guid("271b9621-2248-43d9-8135-9cb78d2e5395") },
+                    { new Guid("9f2589ec-4eaf-4d40-96d0-046e67b7b825"), new Guid("337beb77-5ca4-413f-9c35-f531c611ac93") }
                 });
 
             migrationBuilder.CreateIndex(
@@ -329,14 +327,14 @@ namespace APP_LAWYER.DAL.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Replies_CommentId1",
+                name: "IX_Replies_CommentId",
                 table: "Replies",
-                column: "CommentId1");
+                column: "CommentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Replies_UserId1",
+                name: "IX_Replies_UserId",
                 table: "Replies",
-                column: "UserId1");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Subcategories_CategoryId",

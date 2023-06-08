@@ -3,16 +3,7 @@
 @foreach (var comment in Model)
 {
     <div class="comment">
-        <p>@comment.Content</p>
-        @if (comment.User != null)
-        {
-            <p>By: @comment.User.FirstName</p>
-        }
-        else
-        {
-            <p>No user associated with this comment.</p>
-        }
-
+        <p><strong>@comment.User.FirstName:</strong> @comment.Content <span class="text-muted">@comment.CreatedAt.ToString("g")</span></p>
         <!-- Replies to the comment -->
         <div class="replies">
             @if (comment.Replies != null)

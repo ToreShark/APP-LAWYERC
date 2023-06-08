@@ -53,7 +53,7 @@ namespace APP_LAWYER.WEB.Controllers
             await _uow.CommentRepository.InsertAsync(comment);
     
             // Redirect back to the same subcategory page after creating the comment.
-            return RedirectToAction("Index", "Subcategory", new { id = model.SubcategoryId });
+            return Json(comment);
         }
 
         [HttpPut("{id}")]

@@ -5,8 +5,8 @@ namespace APP_LAWYER.DAL.Entities;
 public class Comment : BaseEntity
 {
     public string Content { get; set; }
-    [Column(TypeName = "timestamp")]
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    [Column(TypeName = "datetime2")]
+    // [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
     public DateTime CreatedAt { get; set; }
     public virtual User? User { get; set; }
     public virtual Subcategory? Subcategory { get; set; }
