@@ -83,6 +83,11 @@
                 var description = $(videos[currentVideoIndex]).data("description");
                 $("#videoDescription").text(description);
             }
+            $(document).ajaxComplete(function() {
+                $(".replyButton").off('click').click(function() {
+                    $(this).next(".replies").toggle();
+                });
+            });
 
             $("#nextVideo").click(function () {
                 $(videos[currentVideoIndex]).hide();
@@ -118,6 +123,7 @@
                        $.get("/Subcategory/Comments/" + form.find('[name="SubcategoryId"]').val(), function(data) {
                            $("#commentContainer").html(data);
                        });
+                       form[0].reset();
                    },
                    error: function () {
                        alert('Error! Could not submit form.');
@@ -142,6 +148,7 @@
                        $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
                            $("#commentContainer").html(data);
                        });
+                       form[0].reset();
                    },
                    error: function () {
                        alert('Error! Could not submit form.');

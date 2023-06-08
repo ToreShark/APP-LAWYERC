@@ -7,15 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="#3 Added create doc">
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="#4 added comments and date for comments">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230606054113_AddedNew.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230606054113_AddedNew.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230608072632_AddedTimeSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230606102122_AddedComments.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230608072632_AddedTimeSetup.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230606102122_AddedComments.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CommentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CommentController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/ReplyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/ReplyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/_Comments.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/_Comments.cshtml" afterDir="false" />
     </list>
@@ -111,7 +105,7 @@
       <workItem from="1685813151427" duration="47615000" />
       <workItem from="1686045323135" duration="10025000" />
       <workItem from="1686060782335" duration="43000" />
-      <workItem from="1686060826475" duration="16923000" />
+      <workItem from="1686060826475" duration="19629000" />
     </task>
     <task id="LOCAL-00001" summary="AddedSeed">
       <created>1685443831866</created>
@@ -253,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686197754233</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="#4 added comments and date for comments">
+      <created>1686210649659</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1686210649659</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +284,8 @@
     <MESSAGE value="#1 added my documents for user" />
     <MESSAGE value="#2 Added Delete index.cshtml user" />
     <MESSAGE value="#3 Added create doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="#3 Added create doc" />
+    <MESSAGE value="#4 added comments and date for comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="#4 added comments and date for comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -339,6 +341,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/ReplyController.cs</url>
+          <line>27</line>
+          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/ReplyController.cs" initialLine="27" containingFunctionPresentation="Method 'Create'">
+            <startOffsets>
+              <option value="724" />
+            </startOffsets>
+            <endOffsets>
+              <option value="725" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

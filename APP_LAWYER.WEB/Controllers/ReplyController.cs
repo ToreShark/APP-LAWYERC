@@ -50,7 +50,8 @@ namespace APP_LAWYER.WEB.Controllers
             await _uow.ReplyRepository.InsertAsync(reply);
 
             // Redirect back to the same comment page after creating the reply.
-            return RedirectToAction("Index", "Comment", new { id = model.CommentId });
+            // return RedirectToAction("Index", "Comment", new { id = model.CommentId });
+            return Json(new { success = true, reply = reply });
         }
         [HttpPut("{id}")]
         public async Task<ActionResult> Update(Guid id, [FromBody] Reply reply)

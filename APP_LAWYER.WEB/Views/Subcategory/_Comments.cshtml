@@ -1,11 +1,29 @@
 @model IEnumerable<APP_LAWYER.DAL.Entities.Comment>
+<style>
+.comment {
+    background-color: #f8f9fa; /* Light gray */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.reply {
+    background-color: #e9ecef; /* Darker gray */
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px; /* Indent replies */
+}
+</style>
 
 @foreach (var comment in Model)
 {
     <div class="comment">
-        <p><strong>@comment.User.FirstName:</strong> @comment.Content <span class="text-muted">@comment.CreatedAt.ToString("g")</span></p>
+        <p>
+            <strong>@comment.User.FirstName:</strong> @comment.Content <span class="text-muted">@comment.CreatedAt.ToString("g")</span>
+        </p>
+        <!-- Button to show replies -->
+        <button class="btn btn-link replyButton">Ответы</button>
         <!-- Replies to the comment -->
-        <div class="replies">
+        <div class="replies" style="display: none;">
             @if (comment.Replies != null)
             {
                 foreach (var reply in comment.Replies)
@@ -23,6 +41,15 @@
                     </div>
                 }
             }
+            <!-- Add reply form -->
+            <form class="createReplyForm" method="post" action="/Reply/Create">
+                <div class="form-group">
+                    <label for="replyText">Reply:</label>
+                    <textarea class="form-control" id="replyText" name="Text" rows="2"></textarea>
+                </div>
+                <input type="hidden" name="CommentId" value="@comment.Id"/>
+                <button type="submit" class="btn btn-primary">Reply</button>
+            </form>
         </div>
     </div>
 }
