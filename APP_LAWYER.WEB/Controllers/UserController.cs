@@ -152,6 +152,42 @@ namespace APP_LAWYER.WEB.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
-        
+        [HttpGet]
+        public async Task<IActionResult> EditProfile()
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return BadRequest("User claim not found.");
+            }
+            var userId = Guid.Parse(userIdClaim.Value);
+            User user = await _uow.UserRepository.GetByGuidAsync(userId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditProfile(User model)
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return BadRequest("User claim not found.");
+            }
+            var userId = Guid.Parse(userIdClaim.Value);
+            User user = await _uow.UserRepository.GetByGuidAsync(userId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            user.Email = model.Email;
+            await _uow.UserRepository.UpdateAsync(user);
+            return RedirectToAction("Index");
+        }
     }
 }
