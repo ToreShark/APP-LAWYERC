@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/appsettings.json" afterDir="false" />
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="#1 added my documents for user">
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +30,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/User/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bcae882191178c8bf44c9add4cdeffa874a7afe629e3e56e9280f5896e953425/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -100,7 +99,7 @@
       <workItem from="1685813151427" duration="47615000" />
       <workItem from="1686045323135" duration="10025000" />
       <workItem from="1686060782335" duration="43000" />
-      <workItem from="1686060826475" duration="5576000" />
+      <workItem from="1686060826475" duration="6137000" />
     </task>
     <task id="LOCAL-00001" summary="AddedSeed">
       <created>1685443831866</created>
@@ -221,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686062990675</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="#1 added my documents for user">
+      <created>1686196344304</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1686196344304</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +254,8 @@
     <MESSAGE value="Added dockerfile" />
     <MESSAGE value="Added net6" />
     <MESSAGE value="Added appset" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added appset" />
+    <MESSAGE value="#1 added my documents for user" />
+    <option name="LAST_COMMIT_MESSAGE" value="#1 added my documents for user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

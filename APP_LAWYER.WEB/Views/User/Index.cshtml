@@ -21,6 +21,7 @@
             <td>@documents.Description</td>
             <td>
                 <a href="@Url.Action("Update", "User", new { id = documents.Id })">Редактировать</a> |
+                <a asp-action="Delete" asp-route-id="@documents.Id">Удалить</a>
                 @* <a asp-area="Admin" asp-controller="Subcategory" asp-action="Delete" asp-route-id="@subcategory.Id">Удалить</a> *@
             </td>
         </tr>

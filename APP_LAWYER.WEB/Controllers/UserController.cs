@@ -143,5 +143,15 @@ namespace APP_LAWYER.WEB.Controllers
             await _uow.DocumentRepository.UpdateAsync(existingDocument);
             return RedirectToAction("Index");
         }
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            DocumentEntity document = await _uow.DocumentRepository.GetByGuidAsync(id);
+            if (document != null)
+            {
+                await _uow.DocumentRepository.DeleteAsync(document);
+            }
+            return RedirectToAction(nameof(Index));
+        }
+        
     }
 }
