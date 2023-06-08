@@ -4,7 +4,9 @@
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
-
+<p>
+    <a href="@Url.Action("Create", "User")" class="btn btn-primary">Создать документ</a>
+</p>
 <table class="table">
     <thead>
     <tr>
@@ -20,9 +22,10 @@
             <td>@documents.Name</td>
             <td>@documents.Description</td>
             <td>
-                <a href="@Url.Action("Update", "User", new { id = documents.Id })">Редактировать</a> |
-                <a asp-action="Delete" asp-route-id="@documents.Id">Удалить</a>
-                @* <a asp-area="Admin" asp-controller="Subcategory" asp-action="Delete" asp-route-id="@subcategory.Id">Удалить</a> *@
+                <div class="d-flex">
+                    <a href="@Url.Action("Update", "User", new { id = documents.Id })" class="btn btn-primary mr-2">Редактировать</a>
+                    <a asp-action="Delete" asp-route-id="@documents.Id" class="btn btn-danger">Удалить</a>
+                </div>
             </td>
         </tr>
     }
