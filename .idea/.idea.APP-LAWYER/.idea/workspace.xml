@@ -7,7 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added src" />
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="Add database migration at startup">
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/AdminController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Models/AdminViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Admin/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/APP_LAWYER.WEB.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/APP_LAWYER.WEB.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/appsettings.Development.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +36,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Category/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Subcategory/_Comments.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
@@ -102,7 +111,7 @@
       <workItem from="1685813151427" duration="47615000" />
       <workItem from="1686045323135" duration="10025000" />
       <workItem from="1686060782335" duration="43000" />
-      <workItem from="1686060826475" duration="25060000" />
+      <workItem from="1686060826475" duration="34696000" />
     </task>
     <task id="LOCAL-00001" summary="AddedSeed">
       <created>1685443831866</created>
@@ -279,7 +288,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686230888673</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added test1">
+      <created>1686246626850</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1686246626851</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Add database migration at startup">
+      <created>1686281502035</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1686281502036</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,8 +312,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="AddedSeed" />
-    <MESSAGE value="Added Seed CatSubCategory" />
     <MESSAGE value="Create new cat &amp;&amp; subcat" />
     <MESSAGE value="Added BLL" />
     <MESSAGE value="Added front" />
@@ -314,50 +335,13 @@
     <MESSAGE value="#6 added edit firstName &amp; lastName" />
     <MESSAGE value="added DF" />
     <MESSAGE value="added src" />
-    <option name="LAST_COMMIT_MESSAGE" value="added src" />
+    <MESSAGE value="Added test1" />
+    <MESSAGE value="Add database migration at startup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add database migration at startup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CommentController.cs</url>
-          <line>52</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CommentController.cs" initialLine="52" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="1567" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1617" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CommentController.cs</url>
-          <line>44</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CommentController.cs" initialLine="44" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="1277" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1554" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CommentController.cs</url>
-          <line>55</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CommentController.cs" initialLine="55" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="1721" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1742" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/ReplyController.cs</url>
           <line>27</line>
