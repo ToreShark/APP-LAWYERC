@@ -1,5 +1,7 @@
 using APP_LAWYER.BLL;
 using APP_LAWYER.DAL.Data;
+using APP_LAWYER.DAL.Entities;
+using APP_LAWYER.DAL.Enums;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -49,7 +51,33 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var context = services.GetRequiredService<AppDbContext>();
+        var uow = services.GetRequiredService<UOW>();
         context.Database.Migrate(); // Apply migrations
+
+        // Получаем Guid для роли SuperAdmin
+        // var superAdminRole = context.Roles.FirstOrDefault<Role>(r => r.RoleName == "SuperAdmin")?.Id;
+        var superAdminRole = context.Roles.FirstOrDefault<Role>(r => r.RoleName == RoleName.SuperAdmin)?.Id;
+        
+        if (superAdminRole == null)
+        {
+            throw new Exception("Роль SuperAdmin не найдена в базе данных");
+        }
+
+        // Создаем пользователя SuperAdmin, если он еще не существует
+        if (!context.Users.Any(u => u.RoleId == superAdminRole))
+        {
+            var superAdminUser = new User
+            {
+                Phone = "87073816081", // Замените на желаемый номер телефона
+                Password = uow.UserRepository.PasswordHash("123"), // Замените на желаемый пароль
+                RoleId = superAdminRole.Value,
+                Email = "superadmin@example.com",
+                FirstName = "Super",
+                LastName = "Admin"
+            };
+            context.Users.Add(superAdminUser);
+            context.SaveChanges();
+        }
     }
     catch (Exception ex)
     {
@@ -57,4 +85,5 @@ using (var scope = app.Services.CreateScope())
         logger.LogError(ex, "An error occurred while migrating the database.");
     }
 }
+
 app.Run();
