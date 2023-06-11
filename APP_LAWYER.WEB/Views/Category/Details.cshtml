@@ -5,10 +5,15 @@
         <h1>@Model.Category.Name</h1>
         <p>@Model.Category.Description</p>
         <figure>
-            <img src="@Model.Category.ImageUrl" alt="@Model.Category.Name" class="img-fluid" style="max-width: 1200px; height: auto;"/>
+            <picture>
+                <source media="(max-width: 768px)" srcset="@Model.Category.ImageUrlSmall">
+                <source media="(max-width: 1200px)" srcset="@Model.Category.ImageUrlMedium">
+                <img src="@Model.Category.ImageUrl" alt="@Model.Category.Name" class="img-fluid" style="width: 100%; height: auto;"/>
+            </picture>
             <figcaption>@Model.Category.Name</figcaption>
         </figure>
     </header>
+
 
     <div class="row">
         @foreach (var subcategory in Model.Subcategories)
