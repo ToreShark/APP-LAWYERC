@@ -107,7 +107,10 @@ public class AppDbContext : DbContext
                 Description = "Описание убийства",
                 Image =
                     "https://plus.unsplash.com/premium_photo-1661714112996-c782972c03e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWgelFyX8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-                Content = "Краткое описание состава убийства и особенности расследования таких дел"
+                Content = "Краткое описание состава убийства и особенности расследования таких дел",
+                MetaTitle = "Убийство: Категория уголовного дела и особенности расследования",
+                MetaKeywords = "убийство, уголовное дело, расследование, уголовное право",
+                MetaDescription = "Описание убийства в контексте уголовного дела: состав, особенности расследования и подробности события",
             }
         );
         modelBuilder.Entity<Video>().HasData(
@@ -143,7 +146,10 @@ public class AppDbContext : DbContext
                 Description = "Описание убийства по неосторожности",
                 Image =
                     "https://images.unsplash.com/photo-1605806616949-1e87b487fc2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-                Content = "Краткое описание состава убийства по неосторожности и особенности расследования таких дел"
+                Content = "Краткое описание состава убийства по неосторожности и особенности расследования таких дел",
+                MetaTitle = "Убийство по неосторожности: Категория уголовного дела и расследование",
+                MetaKeywords = "убийство по неосторожности, уголовное дело, расследование, уголовное право",
+                MetaDescription = "Описание убийства по неосторожности в контексте уголовного дела: состав, особенности расследования и подробности события"
             }
         );
         modelBuilder.Entity<Video>().HasData(
