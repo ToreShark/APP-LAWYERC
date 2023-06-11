@@ -1,28 +1,31 @@
 @model APP_LAWYER.WEB.Models.CategoryDetailsViewModel
 
-<h1>@Model.Category.Name</h1>
-<p>@Model.Category.Description</p>
+<section>
+    <header>
+        <h1>@Model.Category.Name</h1>
+        <p>@Model.Category.Description</p>
+        <figure>
+            <img src="@Model.Category.ImageUrl" alt="@Model.Category.Name" class="img-fluid" style="max-width: 1200px; height: auto;"/>
+            <figcaption>@Model.Category.Name</figcaption>
+        </figure>
+    </header>
 
-<div class="row">
-    @foreach (var subcategory in Model.Subcategories)
-    {
-        <div class="col-sm-4">
-            <div class="card shadow-sm mt-4 bg-light">
-                <div class="card-body d-flex flex-column"> <!-- Добавьте классы d-flex и flex-column -->
+    <div class="row">
+        @foreach (var subcategory in Model.Subcategories)
+        {
+            <article class="col-sm-4">
+                <div class="card shadow-sm mt-4 bg-light">
                     <img src="@subcategory.Image" alt="@subcategory.Description" class="card-img-top img-fluid"/>
-                    <div class="card-body card-content flex-grow-1"> <!-- Добавьте класс flex-grow-1 -->
+                    <div class="card-body">
                         <h5 class="card-title text-muted">@subcategory.Name</h5>
                         <p class="card-text text-muted">@subcategory.Description</p>
-                    </div>
-                    <div class="mt-auto"> <!-- Добавьте класс mt-auto -->
-                        @* <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailsModal-@subcategory.Id">Подробнее</button> *@
                         <a href="@Url.Action("Index", "Subcategory", new { id = subcategory.Id })" class="btn btn-primary">Подробнее</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    }
-</div>
+            </article>
+        }
+    </div>
+</section>
 
 @section Scripts {
     <script>

@@ -7,14 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Models/NavbarCategoriesViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/ViewModels/NavbarCategoriesViewComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/Components/NavbarCategories/Default.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_CategoriesPartial.cshtml" afterDir="false" />
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="#7 added category navbar">
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230611071123_AddedCatImage.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230611071123_AddedCatImage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Category.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +113,7 @@
       <workItem from="1686045323135" duration="10025000" />
       <workItem from="1686060782335" duration="43000" />
       <workItem from="1686060826475" duration="38283000" />
-      <workItem from="1686458406332" duration="3034000" />
+      <workItem from="1686458406332" duration="8797000" />
     </task>
     <task id="LOCAL-00001" summary="AddedSeed">
       <created>1685443831866</created>
@@ -318,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686303086276</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="#7 added category navbar">
+      <created>1686462420569</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1686462420569</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +335,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added front" />
     <MESSAGE value="Added Admin" />
     <MESSAGE value="rewritte AppDbContext" />
     <MESSAGE value="correct create subcat" />
@@ -353,7 +359,8 @@
     <MESSAGE value="Add database migration at startup" />
     <MESSAGE value="Added admin" />
     <MESSAGE value="#6 added firsName, lastName &amp; create superAdmin" />
-    <option name="LAST_COMMIT_MESSAGE" value="#6 added firsName, lastName &amp; create superAdmin" />
+    <MESSAGE value="#7 added category navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="#7 added category navbar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
