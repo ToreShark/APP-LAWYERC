@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using APP_LAWYER.BLL;
+using APP_LAWYER.DAL.Entities;
 using APP_LAWYER.WEB.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,6 +34,15 @@ namespace APP_LAWYER.WEB.Controllers
             };
 
             return View(viewModel);
+        }
+        public async Task<IActionResult> NavbarCategories()
+        {
+            var categories = await _uow.CategoriRepository.ListAllAsync();
+            var viewModel = new NavbarCategoriesViewModel
+            {
+                Categories = categories,
+            };  
+            return PartialView("_CategoriesPartial", viewModel);
         }
     }
 }
