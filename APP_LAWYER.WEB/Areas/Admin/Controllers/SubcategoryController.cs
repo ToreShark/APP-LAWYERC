@@ -32,7 +32,7 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Subcategory subcategory, string[] videoUrls, string[] videoDescriptions)
+        public async Task<IActionResult> Create(Subcategory subcategory, string[] videoUrls, string[] videoDescriptions, string[] videoTitles)
         {
             Console.WriteLine("Create method called with subcategory: " + subcategory.Name);
             ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
@@ -64,7 +64,8 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
                 {
                     Id = videoId,
                     Url = videoUrls[i],
-                    Description = videoDescriptions[i]
+                    Description = videoDescriptions[i],
+                    Title = videoTitles[i]
                 };
                 await _uow.VideoRepository.InsertAsync(video);
 

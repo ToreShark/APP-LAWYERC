@@ -66,6 +66,11 @@
 document.getElementById('add-video').addEventListener('click', function() {
     var videoContainer = document.getElementById('video-container');
 
+    var titleInput = document.createElement('input');
+    titleInput.name = 'videoTitles[]';
+    titleInput.placeholder = 'Video Title';
+    videoContainer.appendChild(titleInput);
+
     var urlInput = document.createElement('input');
     urlInput.name = 'videoUrls[]';
     urlInput.placeholder = 'Video URL';

@@ -6,6 +6,7 @@
     ViewBag.Title = Model.Name;
     Layout = "_Layout";
 }
+
 @section MetaTags {
     <meta name="title" content="@Model.MetaTitle">
     <meta name="keywords" content="@Model.MetaKeywords">
@@ -13,23 +14,39 @@
 }
 
 <div class="container">
-    <h2>@Model.Name</h2>
-    @if (Model.SubcategoryVideos != null)
-    {
-        <h3>Videos:</h3>
-        <div id="videoContainer" class="mb-3">
-            @for (int i = 0; i < Model.SubcategoryVideos.Count; i++)
+    <div class="row">
+        <div class="col-md-8">
+            <h2>@Model.Name</h2>
+            @if (Model.SubcategoryVideos != null)
             {
-                var subcategoryVideo = Model.SubcategoryVideos[i];
-                <div class="video" style="display: @(i == 0 ? "block" : "none")" data-description="@subcategoryVideo.Video.Description">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/@(subcategoryVideo.Video.Url.Split('/').Last())" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                <h3>Videos:</h3>
+                <div id="videoContainer" class="mb-3">
+                    @for (int i = 0; i < Model.SubcategoryVideos.Count; i++)
+                    {
+                        var subcategoryVideo = Model.SubcategoryVideos[i];
+                        <div class="video" style="display: @(i == 0 ? "block" : "none")" data-description="@subcategoryVideo.Video.Description">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/@(subcategoryVideo.Video.Url.Split('/').Last())" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <h4>@subcategoryVideo.Video.Title</h4>
+                        </div>
+                    }
+                    <button id="nextVideo" class="btn btn-primary">Next Video</button>
                 </div>
             }
-            <button id="nextVideo" class="btn btn-primary">Next Video</button>
         </div>
-    }
+        <div class="col-md-4">
+            <ul id="videoList" class="list-group">
+                @for (int i = 0; i < Model.SubcategoryVideos.Count; i++)
+                    {
+                        var subcategoryVideo = Model.SubcategoryVideos[i];
+                        <li class="list-group-item">
+                            <a href="#" class="video-item" data-index="@i">@subcategoryVideo.Video.Title</a>
+                        </li>
+                    }
+            </ul>
+        </div>
+    </div>
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -55,6 +72,7 @@
         <div class="tab-pane fade" id="video-description" role="tabpanel" aria-labelledby="video-description-tab">
             <p id="videoDescription"></p>
         </div>
+
         <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
             <div class="container">
                 <!-- Add comment form -->
@@ -71,7 +89,7 @@
                 <!-- Existing comments -->
                 <h3>Вопросы и ответы:</h3>
                 <div id="commentContainer">
-                    
+
                 </div>
             </div>
         </div>
@@ -103,6 +121,14 @@
                 $(videos[currentVideoIndex]).show();
                 updateVideoDescription();
             });
+            
+            $(".video-item").click(function () {
+                            var index = $(this).data("index");
+                            $(videos[currentVideoIndex]).hide();
+                            currentVideoIndex = index;
+                            $(videos[currentVideoIndex]).show();
+                            updateVideoDescription();
+                        });
 
             updateVideoDescription();
             var subcategoryId = $('[name="SubcategoryId"]').val();
