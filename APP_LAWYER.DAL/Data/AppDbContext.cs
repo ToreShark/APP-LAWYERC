@@ -123,6 +123,7 @@ public class AppDbContext : DbContext
                 Id = videoId,
                 SubcategoryId = ubiystvoId,
                 Url = "https://youtu.be/AmUenqhE1mw",
+                Title = "Описание состава убийства",
                 Description =
                     "<div class='App' style='text-align: center;'>" +
                     "<h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p>" +
@@ -163,6 +164,7 @@ public class AppDbContext : DbContext
                 Id = video1Id,
                 SubcategoryId = ubiystvoId,
                 Url = "https://youtu.be/AmUenqhE1mw",
+                Title = "Причинение смерти по неосторожности правонарушение1",
                 Description =
                     "<div class='App' style='text-align: center;'>" +
                     "<h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p>" +
@@ -174,6 +176,7 @@ public class AppDbContext : DbContext
                 Id = video2Id,
                 SubcategoryId = ubiystvoId,
                 Url = "https://youtu.be/AmUenqhE1mw",
+                Title = "Причинение смерти по неосторожности правонарушение2",
                 Description =
                     "<div class='App' style='text-align: center;'>" +
                     "<h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p>" +

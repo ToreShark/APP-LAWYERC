@@ -7,15 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="#9 added metatags">
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="#10 added subcategory description">
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230611100703_AddedFullDisc.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230611100703_AddedFullDisc.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Category.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Subcategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Subcategory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Video.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Video.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,14 +34,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Category/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Subcategory/_Comments.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/User/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/User/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.DAL/Data/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bcae882191178c8bf44c9add4cdeffa874a7afe629e3e56e9280f5896e953425/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -114,7 +105,7 @@
       <workItem from="1686045323135" duration="10025000" />
       <workItem from="1686060782335" duration="43000" />
       <workItem from="1686060826475" duration="38283000" />
-      <workItem from="1686458406332" duration="14854000" />
+      <workItem from="1686458406332" duration="15775000" />
     </task>
     <task id="LOCAL-00001" summary="AddedSeed">
       <created>1685443831866</created>
@@ -347,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686472382933</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="#10 added subcategory description">
+      <created>1686478597202</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1686478597202</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +355,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added SubcategoryDeatils" />
     <MESSAGE value="Added authorize" />
     <MESSAGE value="Added DocTemplate" />
     <MESSAGE value="Added CreateDocument" />
@@ -382,7 +379,8 @@
     <MESSAGE value="#8 added image subcategory SEO" />
     <MESSAGE value="added imageSmMd" />
     <MESSAGE value="#9 added metatags" />
-    <option name="LAST_COMMIT_MESSAGE" value="#9 added metatags" />
+    <MESSAGE value="#10 added subcategory description" />
+    <option name="LAST_COMMIT_MESSAGE" value="#10 added subcategory description" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
