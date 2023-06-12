@@ -181,7 +181,7 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-
+        
             await _uow.SubcategoryRepository.DeleteAsync(subcategory);
             return RedirectToAction(nameof(Index));
         }
