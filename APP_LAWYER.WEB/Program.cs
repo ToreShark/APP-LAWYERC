@@ -53,17 +53,14 @@ using (var scope = app.Services.CreateScope())
         var context = services.GetRequiredService<AppDbContext>();
         var uow = services.GetRequiredService<UOW>();
         context.Database.Migrate(); // Apply migrations
-
-        // Получаем Guid для роли SuperAdmin
-        // var superAdminRole = context.Roles.FirstOrDefault<Role>(r => r.RoleName == "SuperAdmin")?.Id;
-        var superAdminRole = context.Roles.FirstOrDefault<Role>(r => r.RoleName == RoleName.SuperAdmin)?.Id;
         
+        var superAdminRole = context.Roles.FirstOrDefault<Role>(r => r.RoleName == RoleName.SuperAdmin)?.RoleId;
+
         if (superAdminRole == null)
         {
             throw new Exception("Роль SuperAdmin не найдена в базе данных");
         }
 
-        // Создаем пользователя SuperAdmin, если он еще не существует
         if (!context.Users.Any(u => u.RoleId == superAdminRole))
         {
             var superAdminUser = new User

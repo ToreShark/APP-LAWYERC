@@ -25,6 +25,11 @@ namespace APP_LAWYER.WEB.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
 
         [HttpGet]
         public IActionResult Login()
@@ -39,6 +44,7 @@ namespace APP_LAWYER.WEB.Controllers
                 try
                 {
                     User? user = await _uow.UserRepository.ValidateLoginPasswordAsync(loginViewModel.PhoneNumber, loginViewModel.Password);
+                    Console.WriteLine($"User: {user?.Phone}, Role: {user?.RoleId}");
                     if (user != null)
                     {
                         await Authenticate(user); // аутентификация
@@ -54,11 +60,10 @@ namespace APP_LAWYER.WEB.Controllers
         }
         private async Task Authenticate(User user)
         {
-            var roleName = await _uow.RoleRepository.GetRoleNameById(user.RoleId);
             var claims = new List<Claim>
             {
                 new Claim(ClaimsIdentity.DefaultNameClaimType, user.Phone),
-                new Claim(ClaimsIdentity.DefaultRoleClaimType, roleName),
+                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.RoleId.ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
             };
             ClaimsIdentity id = new ClaimsIdentity(

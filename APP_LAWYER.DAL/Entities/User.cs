@@ -9,7 +9,7 @@ public class User : BaseEntity
     public string Password { get; set; }
     public List<Otp> OtpCodes { get; set; }
     public List<DocumentEntity> Docs { get; set; }
-    public Guid RoleId { get; set; }
+    public int RoleId { get; set; }
     public virtual Role? Role { get; set; }
     public List<Comment> Comments { get; set; }
     public List<Vote> Votes { get; set; }
