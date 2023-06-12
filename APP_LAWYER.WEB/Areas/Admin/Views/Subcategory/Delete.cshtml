@@ -21,9 +21,10 @@
         <!-- Add more fields as necessary -->
     </dl>
 
-    <form asp-action="DeleteConfirmed">
-        <input type="hidden" asp-for="Id" />
+    <form asp-action="DeleteConfirmed" asp-route-id="@Model.Id" method="post">
+        @* @Html.AntiForgeryToken() *@
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>
+
 </div>
