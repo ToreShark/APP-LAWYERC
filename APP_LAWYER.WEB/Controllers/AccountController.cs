@@ -54,10 +54,11 @@ namespace APP_LAWYER.WEB.Controllers
         }
         private async Task Authenticate(User user)
         {
+            var roleName = await _uow.RoleRepository.GetRoleNameById(user.RoleId);
             var claims = new List<Claim>
             {
                 new Claim(ClaimsIdentity.DefaultNameClaimType, user.Phone),
-                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.RoleId.ToString()),
+                new Claim(ClaimsIdentity.DefaultRoleClaimType, roleName),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
             };
             ClaimsIdentity id = new ClaimsIdentity(

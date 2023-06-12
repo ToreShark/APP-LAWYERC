@@ -19,4 +19,16 @@ public class RoleRepository : GenericRepositoryAsync<Role>, IRoleRepository
     {
         return await _db.Roles.Where(x => x.RoleName == RoleName.Basic).Select(x => x.Id).FirstAsync();
     }
+    public async Task<string> GetRoleNameById(Guid roleId)
+    {
+        var role = await GetByGuidAsync(roleId);
+        if (role != null)
+        {
+            return role.RoleName.ToString();
+        }
+        else
+        {
+            throw new Exception("Role not found");
+        }
+    }
 }
