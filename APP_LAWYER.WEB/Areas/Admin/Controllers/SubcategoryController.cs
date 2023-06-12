@@ -10,22 +10,24 @@ using Microsoft.AspNetCore.Mvc;
 namespace APP_LAWYER.WEB.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "SuperAdmin")]
+    [Authorize(Roles = "1")]
     public class SubcategoryController : Controller
     {
         private readonly UOW _uow;
         private readonly ILogger _logger;
-        
+
         public SubcategoryController(UOW uow, ILogger<SubcategoryController> logger)
         {
             _uow = uow;
             _logger = logger;
         }
+
         public async Task<IActionResult> Index()
         {
             _logger.LogInformation("Create method called");
             return View(await _uow.SubcategoryRepository.ListAllAsync());
         }
+
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -34,7 +36,8 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Subcategory subcategory, string[] videoUrls, string[] videoDescriptions, string[] videoTitles)
+        public async Task<IActionResult> Create(Subcategory subcategory, string[] videoUrls, string[] videoDescriptions,
+            string[] videoTitles)
         {
             Console.WriteLine("Create method called with subcategory: " + subcategory.Name);
             ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
@@ -57,6 +60,7 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
 
                 return View(subcategory);
             }
+
             await _uow.SubcategoryRepository.InsertAsync(subcategory);
 
             for (int i = 0; i < videoUrls.Length; i++)
@@ -78,8 +82,10 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
                 };
                 await _uow.SubcategoryVideoRepository.InsertAsync(subcategoryVideo);
             }
+
             return RedirectToAction(nameof(Index));
         }
+
         [HttpGet]
         public async Task<IActionResult> Update(Guid id)
         {
@@ -90,20 +96,94 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
                 Console.WriteLine("Subcategory not found");
                 return NotFound();
             }
+
             ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
             return View(subcategory);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(Subcategory subcategory)
+        public async Task<IActionResult> Update(Subcategory subcategory, string[] videoUrls, string[] videoDescriptions,
+            string[] videoTitles)
         {
             ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
             if (ModelState.IsValid)
             {
                 await _uow.SubcategoryRepository.UpdateAsync(subcategory);
+
+                // Получаем текущие видео для подкатегории
+                var currentVideos = await _uow.VideoRepository.GetVideosForSubcategory(subcategory.Id);
+
+                // Обновляем видео
+                for (int i = 0; i < videoUrls.Length; i++)
+                {
+                    var existingVideo = currentVideos.FirstOrDefault(v => v.Url == videoUrls[i]);
+
+                    if (existingVideo != null)
+                    {
+                        // Обновляем существующее видео
+                        existingVideo.Description = videoDescriptions[i];
+                        existingVideo.Title = videoTitles[i];
+                        await _uow.VideoRepository.UpdateAsync(existingVideo);
+                    }
+                    else
+                    {
+                        // Добавляем новое видео
+                        Guid videoId = Guid.NewGuid();
+                        Video video = new Video
+                        {
+                            Id = videoId,
+                            Url = videoUrls[i],
+                            Description = videoDescriptions[i],
+                            Title = videoTitles[i]
+                        };
+                        await _uow.VideoRepository.InsertAsync(video);
+
+                        var subcategoryVideo = new SubcategoryVideo
+                        {
+                            SubcategoryId = subcategory.Id,
+                            VideoId = videoId,
+                        };
+                        await _uow.SubcategoryVideoRepository.InsertAsync(subcategoryVideo);
+                    }
+                }
+
+                // Удаляем видео, которые больше не присутствуют в новом списке
+                foreach (var video in currentVideos)
+                {
+                    if (!videoUrls.Contains(video.Url))
+                    {
+                        await _uow.VideoRepository.DeleteAsync(video);
+                    }
+                }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(subcategory);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var subcategory = await _uow.SubcategoryRepository.GetByGuidSubcategoryAsync(id);
+            if (subcategory == null)
+            {
+                return NotFound();
+            }
+
+            return View(subcategory);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        {
+            var subcategory = await _uow.SubcategoryRepository.GetByGuidSubcategoryAsync(id);
+            if (subcategory == null)
+            {
+                return NotFound();
+            }
+
+            await _uow.SubcategoryRepository.DeleteAsync(subcategory);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

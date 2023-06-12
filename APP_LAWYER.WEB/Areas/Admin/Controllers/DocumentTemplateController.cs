@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using APP_LAWYER.BLL;
 using APP_LAWYER.DAL.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APP_LAWYER.WEB.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "1")]
     public class DocumentTemplateController : Controller
     {
         private readonly UOW _uow;
