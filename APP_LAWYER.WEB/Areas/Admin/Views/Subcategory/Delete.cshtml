@@ -1,5 +1,3 @@
-@model APP_LAWYER.DAL.Entities.Subcategory
-
 @{
     ViewBag.Title = "Delete Subcategory";
     Layout = "_Layout";
@@ -21,10 +19,46 @@
         <!-- Add more fields as necessary -->
     </dl>
 
-    <form asp-action="DeleteConfirmed" asp-route-id="@Model.Id" method="post">
+    <h3>Videos</h3>
+    @if (ViewBag.Videos != null)
+    {
+        foreach (var video in ViewBag.Videos)
+        {
+            <div id="video-@video.Id">
+                <h4>@video.Title</h4>
+                <p>@video.Description</p>
+                <a href="@video.Url">Watch Video</a>
+                <button onclick="deleteVideo('@video.Id')">Delete Video</button>
+            </div>
+        }
+    }
+
+    <form
+        action="/Admin/Subcategory/DeleteConfirmed"
+        @* asp-action="DeleteConfirmed" asp-controller="Subcategory"  *@
+        method="post">
         @* @Html.AntiForgeryToken() *@
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input type="hidden" name="id" value="@Model.Id" /> |
+        <button type="submit" class="btn btn-danger"> Del </button>
         <a asp-action="Index">Back to List</a>
     </form>
-
 </div>
+<script>
+    function deleteVideo(videoId) {
+        fetch(`/Admin/Subcategory/DeleteVideo/${videoId}`, {
+            method: 'POST',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById(`video-${videoId}`).remove();
+            } else {
+                alert('Error deleting video');
+            }
+        });
+    }
+</script>

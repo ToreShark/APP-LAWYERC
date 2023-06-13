@@ -170,8 +170,24 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            var subcategoryVideos = await _uow.SubcategoryVideoRepository.GetBySubcategoryIdAsync(id);
+            var videoIds = subcategoryVideos.Select(sv => sv.VideoId);
+            var videos = new List<Video>();
+            foreach (var videoId in videoIds)
+            {
+                var video = await _uow.VideoRepository.GetByIdAsync(videoId);
+                if (video != null)
+                {
+                    videos.Add(video);
+                }
+            }
+
+            // Добавление видео в ViewBag, чтобы они были доступны в представлении
+            ViewBag.Videos = videos;
+
             return View(subcategory);
         }
+
 
         [HttpPost]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
@@ -181,9 +197,34 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-        
+
+            var subcategoryVideos = await _uow.SubcategoryVideoRepository.GetBySubcategoryIdAsync(id);
+            foreach (var subcategoryVideo in subcategoryVideos)
+            {
+                var video = await _uow.VideoRepository.GetByIdAsync(subcategoryVideo.VideoId);
+                await _uow.SubcategoryVideoRepository.DeleteAsync(subcategoryVideo); // сначала удалить таблицу
+                if (video != null)
+                {
+                    await _uow.VideoRepository.DeleteAsync(video);
+                }
+            }
+
             await _uow.SubcategoryRepository.DeleteAsync(subcategory);
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [Route("Admin/Subcategory/DeleteVideo/{videoId}")]
+        public async Task<IActionResult> DeleteVideo(Guid videoId)
+        {
+            var video = await _uow.VideoRepository.GetByIdAsync(videoId);
+            if (video == null)
+            {
+                return NotFound();
+            }
+
+            await _uow.VideoRepository.DeleteAsync(video);
+            return Json(new { success = true });
         }
     }
 }
