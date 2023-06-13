@@ -20,4 +20,10 @@ public class VideoRepository : GenericRepositoryAsync<Video>, IVideoRepository
             .Select(sv => sv.Video)
             .ToListAsync();
     }
+    public async Task<Video> GetByIdAsync(Guid id)
+    {
+        return await _db.Set<Video>()
+            .AsNoTracking()
+            .FirstOrDefaultAsync(v => v.Id == id);
+    }
 }

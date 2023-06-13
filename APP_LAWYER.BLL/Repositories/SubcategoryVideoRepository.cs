@@ -17,4 +17,17 @@ public class SubcategoryVideoRepository : GenericRepositoryAsync<SubcategoryVide
     {
         return _db.Set<SubcategoryVideo>().AsNoTracking();
     }
+    public async Task<IEnumerable<SubcategoryVideo>> GetBySubcategoryIdAsync(Guid subcategoryId)
+    {
+        return await _db.Set<SubcategoryVideo>()
+            .Where(sv => sv.SubcategoryId == subcategoryId)
+            .AsNoTracking()
+            .ToListAsync();
+    }
+    public async Task<Video> GetByIdAsync(Guid id)
+    {
+        return await _db.Set<Video>()
+            .AsNoTracking()
+            .FirstOrDefaultAsync(v => v.Id == id);
+    }
 }
