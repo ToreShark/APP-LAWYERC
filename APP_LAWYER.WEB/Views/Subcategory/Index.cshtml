@@ -17,29 +17,23 @@
     <div class="row">
             <div class="col-md-8">
                 <h2>@Model.Name</h2>
-                @{
-                    int i = 0;
-                    foreach (var subcategoryVideo in Model.SubcategoryVideos)
-                    {
-                        <div class="video" style="display: @(i == 0 ? "block" : "none")" data-description="@subcategoryVideo.Video.Description">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe id="video@i" class="embed-responsive-item" src="https://www.youtube.com/embed/@subcategoryVideo.Video.YoutubeId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <h4>@subcategoryVideo.Video.Title</h4>
+                <div id="videoContainer" class="mb-3">
+                    <div class="video" data-description="@Model.SubcategoryVideos[0].Video.Description">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe id="videoPlayer" class="embed-responsive-item" src="https://www.youtube.com/embed/@Model.SubcategoryVideos[0].Video.YoutubeId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        i++;
-                    }
-                }
-                <button id="nextVideo" class="btn btn-primary">Next Video</button>
-                <button id="stopVideo" class="btn btn-primary">Stop Video</button>
+                        <h4 id="videoTitle">@Model.SubcategoryVideos[0].Video.Title</h4>
+                    </div>
+                    <button id="nextVideo" class="btn btn-primary">Next Video</button>
+                </div>
             </div>
             <div class="col-md-4">
                 <ul id="videoList" class="list-group">
-                    @for (int j = 0; j < Model.SubcategoryVideos.Count; j++)
+                    @for (int i = 0; i < Model.SubcategoryVideos.Count; i++)
                     {
-                        var subcategoryVideo = Model.SubcategoryVideos[j];
+                        var subcategoryVideo = Model.SubcategoryVideos[i];
                         <li class="list-group-item">
-                            <a href="#" class="video-item" data-index="@j">@subcategoryVideo.Video.Title</a>
+                            <a href="#" class="video-item" data-index="@i" data-youtube-id="@subcategoryVideo.Video.YoutubeId" data-description="@subcategoryVideo.Video.Description">@subcategoryVideo.Video.Title</a>
                         </li>
                     }
                 </ul>
@@ -106,36 +100,28 @@
             
 
             $("#nextVideo").click(function () {
-                 $.ajax({
-                 url: '/Subcategory/GetNextVideoId',
-                 method: 'POST',
-                 data: { index: currentVideoIndex },
-                 success: function (nextVideoId) {
-                                    // Обновите источник видео
-                                    $('#video' + currentVideoIndex).attr('src', 'https://www.youtube.com/embed/' + nextVideoId);
-                            
-                                    // Обновите индекс и описание видео
-                                    currentVideoIndex++;
-                                    if (currentVideoIndex >= videos.length) {
-                                        currentVideoIndex = 0;
-                                    }
-                                    updateVideoDescription();
-                                },
-                                error: function () {
-                                    alert('Error! Could not get next video.');
-                                }
-                            });
-                        });
+                 currentVideoIndex++;
+                if (currentVideoIndex >= videos.length) {
+                currentVideoIndex = 0;
+                }
+                var nextVideo = $(videos[currentVideoIndex]);
+                var youtubeId = nextVideo.data("youtube-id");
+                var description = nextVideo.data("description");
+                $("#videoPlayer").attr('src', 'https://www.youtube.com/embed/' + youtubeId);
+                $("#videoTitle").text(nextVideo.text());
+                updateVideoDescription(description);
+                });
             
             $(".video-item").click(function () {
-                            var index = $(this).data("index");
-                            $(videos[currentVideoIndex]).hide();
-                            currentVideoIndex = index;
-                            $(videos[currentVideoIndex]).show();
-                            updateVideoDescription();
-                        });
-            
-                        updateVideoDescription();
+            var index = $(this).data("index");
+            var youtubeId = $(this).data("youtube-id");
+            var description = $(this).data("description");
+            currentVideoIndex = index;
+            $("#videoPlayer").attr('src', 'https://www.youtube.com/embed/' + youtubeId);
+            $("#videoTitle").text($(this).text());
+            updateVideoDescription(description);
+            });
+            updateVideoDescription($(videos[0]).data("description"));
             var subcategoryId = $('[name="SubcategoryId"]').val();
             $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
                 $("#commentContainer").html(data);

@@ -37,7 +37,7 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Create(Subcategory subcategory, string[] videoUrls, string[] videoDescriptions,
-            string[] videoTitles)
+            string[] videoTitles, string[] videoYoutubeIds)
         {
             Console.WriteLine("Create method called with subcategory: " + subcategory.Name);
             ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
@@ -65,13 +65,19 @@ namespace APP_LAWYER.WEB.Areas.Admin.Controllers
 
             for (int i = 0; i < videoUrls.Length; i++)
             {
+                if (string.IsNullOrEmpty(videoUrls[i]))
+                {
+                    ModelState.AddModelError($"videoUrls[{i}]", "YoutubeId is required.");
+                    return View(subcategory);
+                }
                 Guid videoId = Guid.NewGuid();
                 Video video = new Video
                 {
                     Id = videoId,
                     Url = videoUrls[i],
                     Description = videoDescriptions[i],
-                    Title = videoTitles[i]
+                    Title = videoTitles[i],
+                    YoutubeId = videoYoutubeIds[i]
                 };
                 await _uow.VideoRepository.InsertAsync(video);
 
