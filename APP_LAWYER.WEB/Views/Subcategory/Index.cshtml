@@ -91,41 +91,39 @@
     <script>
         $(function () {
             var currentVideoIndex = 0;
-            var videos = $(".video");
-
-            function updateVideoDescription() {
-                var description = $(videos[currentVideoIndex]).data("description");
-                $("#videoDescription").text(description);
-            }
+                var videos = $("#videoContainer .video");
+                var videoIds = videos.map(function() { return $(this).find('iframe').attr('src').split('/').pop(); }).get();
             
-
-            $("#nextVideo").click(function () {
-                 currentVideoIndex++;
-                if (currentVideoIndex >= videos.length) {
-                currentVideoIndex = 0;
+                function updateVideoDescription() {
+                    var description = $(videos[currentVideoIndex]).data("description");
+                    $("#videoDescription").text(description);
                 }
-                var nextVideo = $(videos[currentVideoIndex]);
-                var youtubeId = nextVideo.data("youtube-id");
-                var description = nextVideo.data("description");
-                $("#videoPlayer").attr('src', 'https://www.youtube.com/embed/' + youtubeId);
-                $("#videoTitle").text(nextVideo.text());
-                updateVideoDescription(description);
+            
+                $("#nextVideo").click(function () {
+                    $(videos[currentVideoIndex]).hide();
+                    currentVideoIndex++;
+                    if (currentVideoIndex >= videos.length) {
+                       currentVideoIndex = 0;
+                    }
+                    $(videos[currentVideoIndex]).show();
+                    updateVideoDescription();
+                    
                 });
             
             $(".video-item").click(function () {
-            var index = $(this).data("index");
-            var youtubeId = $(this).data("youtube-id");
-            var description = $(this).data("description");
-            currentVideoIndex = index;
-            $("#videoPlayer").attr('src', 'https://www.youtube.com/embed/' + youtubeId);
-            $("#videoTitle").text($(this).text());
-            updateVideoDescription(description);
-            });
-            updateVideoDescription($(videos[0]).data("description"));
-            var subcategoryId = $('[name="SubcategoryId"]').val();
-            $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
-                $("#commentContainer").html(data);
-            });
+                var index = $(this).data("index");
+                var youtubeId = $(this).data("youtube-id");
+                var description = $(this).data("description");
+                currentVideoIndex = index;
+                $("#videoPlayer").attr('src', 'https://www.youtube.com/embed/' + youtubeId);
+                $("#videoTitle").text($(this).text());
+                updateVideoDescription(description);
+                });
+                updateVideoDescription($(videos[0]).data("description"));
+                var subcategoryId = $('[name="SubcategoryId"]').val();
+                $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
+                    $("#commentContainer").html(data);
+                });
 
             // Code for comment form
             // Code for comment form
