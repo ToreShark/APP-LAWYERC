@@ -80,5 +80,10 @@ document.getElementById('add-video').addEventListener('click', function() {
     descriptionInput.name = 'videoDescriptions[]';
     descriptionInput.placeholder = 'Video Description';
     videoContainer.appendChild(descriptionInput);
+    
+    var youtubeIdInput = document.createElement('input');
+    youtubeIdInput.name = 'videoYoutubeIds[]';
+    youtubeIdInput.placeholder = 'Video YoutubeId';
+    videoContainer.appendChild(youtubeIdInput);
 });
 </script>

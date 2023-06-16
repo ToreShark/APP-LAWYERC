@@ -7,8 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added videoYtube">
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="test1">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Create.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +32,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/508faba49f6b95b2b23598f5fdfcbf6689b36f6c186726e94ec3a057b397b9f3/RazorView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -104,7 +107,7 @@
       <workItem from="1686060782335" duration="43000" />
       <workItem from="1686060826475" duration="38283000" />
       <workItem from="1686458406332" duration="59607000" />
-      <workItem from="1686809698613" duration="36022000" />
+      <workItem from="1686809698613" duration="37965000" />
     </task>
     <task id="LOCAL-00001" summary="AddedSeed">
       <created>1685443831866</created>
@@ -407,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686944802585</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="test1">
+      <created>1686946535940</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1686946535940</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +438,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="#2 Added Delete index.cshtml user" />
     <MESSAGE value="#3 Added create doc" />
     <MESSAGE value="#4 added comments and date for comments" />
     <MESSAGE value="#5 added reply" />
@@ -453,7 +462,8 @@
     <MESSAGE value="Added comment APBD" />
     <MESSAGE value="Added video" />
     <MESSAGE value="added videoYtube" />
-    <option name="LAST_COMMIT_MESSAGE" value="added videoYtube" />
+    <MESSAGE value="test1" />
+    <option name="LAST_COMMIT_MESSAGE" value="test1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -476,10 +486,10 @@
           <line>218</line>
           <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="218" containingFunctionPresentation="Method 'DeleteVideo'">
             <startOffsets>
-              <option value="7993" />
+              <option value="8222" />
             </startOffsets>
             <endOffsets>
-              <option value="7994" />
+              <option value="8223" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="70" />
@@ -489,10 +499,10 @@
           <line>193</line>
           <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="193" containingFunctionPresentation="Method 'DeleteConfirmed'">
             <startOffsets>
-              <option value="6968" />
+              <option value="7197" />
             </startOffsets>
             <endOffsets>
-              <option value="6969" />
+              <option value="7198" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="76" />
@@ -502,10 +512,10 @@
           <line>196</line>
           <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="196" containingFunctionPresentation="Method 'DeleteConfirmed'">
             <startOffsets>
-              <option value="7113" />
+              <option value="7342" />
             </startOffsets>
             <endOffsets>
-              <option value="7114" />
+              <option value="7343" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="77" />
@@ -515,10 +525,10 @@
           <line>203</line>
           <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="203" containingFunctionPresentation="Method 'DeleteConfirmed'">
             <startOffsets>
-              <option value="7362" />
+              <option value="7591" />
             </startOffsets>
             <endOffsets>
-              <option value="7440" />
+              <option value="7669" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="78" />
