@@ -99,15 +99,16 @@
                     $("#videoDescription").text(description);
                 }
             
-                $("#nextVideo").click(function () {
-                    $(videos[currentVideoIndex]).hide();
-                    currentVideoIndex++;
-                    if (currentVideoIndex >= videos.length) {
-                       currentVideoIndex = 0;
-                    }
-                    $(videos[currentVideoIndex]).show();
-                    updateVideoDescription();
-                    
+            $("#nextVideo").click(function () {
+                $(videos[currentVideoIndex]).hide();
+                currentVideoIndex++;
+                if (currentVideoIndex >= videos.length) {
+                   currentVideoIndex = 0;
+                }
+                var nextVideoId = $(videos[currentVideoIndex]).find('iframe').attr('src').split('/').pop();
+                $('.embed-responsive-item').attr('src', 'https://www.youtube.com/embed/' + nextVideoId);
+                $(videos[currentVideoIndex]).show();
+                updateVideoDescription();
                 });
             
             $(".video-item").click(function () {
