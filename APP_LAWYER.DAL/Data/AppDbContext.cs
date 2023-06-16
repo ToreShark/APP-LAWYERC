@@ -25,6 +25,7 @@ public class AppDbContext : DbContext
     public DbSet<SubcategoryVideo> SubcategoryVideos { get; set; }
     public DbSet<Role> Roles { get; set; }
     public DbSet<DocumentTemplate> DocumentTemplates { get; set; }
+    public DbSet<VideoInfo> VideoInfos { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -57,6 +58,10 @@ public class AppDbContext : DbContext
             .HasOne(v => v.User)
             .WithMany(u => u.Votes)
             .OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<Video>()
+            .HasOne(v => v.VideoInfo)
+            .WithOne()
+            .HasForeignKey<VideoInfo>(v => v.VideoId);
 
         Guid ugolovnoeDeloId = Guid.NewGuid();
         Guid grazhdanskoeDeloId = Guid.NewGuid();
@@ -144,7 +149,8 @@ public class AppDbContext : DbContext
                     "<div class='App' style='text-align: center;'>" +
                     "<h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p>" +
                     "<p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p>" +
-                    "<hr class='remove'></div>"
+                    "<hr class='remove'></div>",
+                YoutubeId = "AmUenqhE1mw",
             }
         );
         modelBuilder.Entity<SubcategoryVideo>().HasData(
@@ -187,7 +193,8 @@ public class AppDbContext : DbContext
                     "<div class='App' style='text-align: center;'>" +
                     "<h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p>" +
                     "<p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p>" +
-                    "<hr class='remove'></div>"
+                    "<hr class='remove'></div>",
+                YoutubeId = "AmUenqhE1mw",
             },
             new
             {
@@ -199,7 +206,8 @@ public class AppDbContext : DbContext
                     "<div class='App' style='text-align: center;'>" +
                     "<h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p>" +
                     "<p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p>" +
-                    "<hr class='remove'></div>"
+                    "<hr class='remove'></div>",
+                YoutubeId = "AmUenqhE1mw",
             }
         );
         modelBuilder.Entity<SubcategoryVideo>().HasData(

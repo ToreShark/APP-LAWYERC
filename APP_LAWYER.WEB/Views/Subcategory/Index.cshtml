@@ -17,33 +17,31 @@
     <div class="row">
         <div class="col-md-8">
             <h2>@Model.Name</h2>
-            @if (Model.SubcategoryVideos != null)
-            {
-                @* <h3>Videos:</h3> *@
-                <div id="videoContainer" class="mb-3">
-                    @for (int i = 0; i < Model.SubcategoryVideos.Count; i++)
-                    {
-                        var subcategoryVideo = Model.SubcategoryVideos[i];
-                        <div class="video" style="display: @(i == 0 ? "block" : "none")" data-description="@subcategoryVideo.Video.Description">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/@(subcategoryVideo.Video.Url.Split('/').Last())" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <h4>@subcategoryVideo.Video.Title</h4>
+            @{
+                int i = 0;
+                foreach (var subcategoryVideo in Model.SubcategoryVideos)
+                {
+                    <div class="video" style="display: @(i == 0 ? "block" : "none")" data-description="@subcategoryVideo.Video.Description">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/@subcategoryVideo.Video.YoutubeId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                    }
-                    <button id="nextVideo" class="btn btn-primary">Next Video</button>
-                </div>
+                        <h4>@subcategoryVideo.Video.Title</h4>
+                    </div>
+                    i++;
+                }
             }
+            <button id="nextVideo" class="btn btn-primary">Next Video</button>
+            <button id="stopVideo" class="btn btn-primary">Stop Video</button>
         </div>
         <div class="col-md-4">
             <ul id="videoList" class="list-group">
-                @for (int i = 0; i < Model.SubcategoryVideos.Count; i++)
-                    {
-                        var subcategoryVideo = Model.SubcategoryVideos[i];
-                        <li class="list-group-item">
-                            <a href="#" class="video-item" data-index="@i">@subcategoryVideo.Video.Title</a>
-                        </li>
-                    }
+                @for (int j = 0; j < Model.SubcategoryVideos.Count; j++)
+                {
+                    var subcategoryVideo = Model.SubcategoryVideos[j];
+                    <li class="list-group-item">
+                        <a href="#" class="video-item" data-index="@j">@subcategoryVideo.Video.Title</a>
+                    </li>
+                }
             </ul>
         </div>
     </div>
@@ -95,82 +93,108 @@
         </div>
     </div>
 </div>
-
 @section Scripts {
-    <script src="https://www.youtube.com/iframe_api"></script>
-        <script>
-            var players = [];
+    <script>
+        $(function () {
             var currentVideoIndex = 0;
-            var videos = $("#videoContainer .video");
-    
-            function onYouTubeIframeAPIReady() {
-                console.log("onYouTubeIframeAPIReady called");
-                $('.video iframe').each(function(index, iframe) {
-                    var player = new YT.Player(iframe, {
-                        events: {
-                            'onReady': function(event) {
-                                players.push(event.target);
-                                console.log("Player created:", event.target);  // Log the player that was created
-                            },
-                            'onError': function(event) {
-                                console.error("An error occurred with the YouTube player", event);
+            var videos = Model.SubcategoryVideos;
+
+            function updateVideoDescription() {
+                var description = $(videos[currentVideoIndex]).data("description");
+                $("#videoDescription").text(description);
+            }
+            $(document).ajaxComplete(function() {
+                $(".replyButton").off('click').click(function() {
+                    $(this).next(".replies").toggle();
+                });
+            });
+
+            $("#nextVideo").click(function () {
+                $.ajax({
+                        url: '/Subcategory/GetNextVideoId',
+                        method: 'POST',
+                        data: { index: currentVideoIndex },
+                        success: function (nextVideoId) {
+                            // Обновите источник видео
+                            $('.embed-responsive-item').attr('src', 'https://www.youtube.com/embed/' + nextVideoId);
+                
+                            // Обновите индекс и описание видео
+                            currentVideoIndex++;
+                            if (currentVideoIndex >= videos.length) {
+                                currentVideoIndex = 0;
                             }
+                            updateVideoDescription();
+                        },
+                        error: function () {
+                            alert('Error! Could not get next video.');
                         }
                     });
-                });
-                console.log("Players:", players);  // Log the players array
-            }
-
-        videos.each(function() {
-            var src = $(this).find("iframe").attr("src");
-            console.log("Video source URL:", src);
-        });
+            });
             
-        function updateVideoDescription() {
-            var description = $(videos[currentVideoIndex]).data("description");
-            $("#videoDescription").text(description);
-        }
+            $(".video-item").click(function () {
+                            var index = $(this).data("index");
+                            $(videos[currentVideoIndex]).hide();
+                            currentVideoIndex = index;
+                            $(videos[currentVideoIndex]).show();
+                            updateVideoDescription();
+                        });
 
-        function stopCurrentVideo() {
-            if (players[currentVideoIndex] && players[currentVideoIndex].getPlayerState() !== -1) {
-                    console.log("Stopping video:", currentVideoIndex, "Player state before:", players[currentVideoIndex].getPlayerState());
-                    players[currentVideoIndex].stopVideo();
-                    console.log("Player state after:", players[currentVideoIndex].getPlayerState());
-                } else {
-                    console.log("Unable to stop video:", currentVideoIndex, "Player:", players[currentVideoIndex]);
-                }
-        }
-
-        $("#nextVideo").click(function () {
-            console.log("Next video button clicked");
-            stopCurrentVideo();
-            $(videos[currentVideoIndex]).hide();
-            currentVideoIndex++;
-            if (currentVideoIndex >= videos.length) {
-                currentVideoIndex = 0;
-            }
-            $(videos[currentVideoIndex]).show();
             updateVideoDescription();
-            if (players[currentVideoIndex]) {
-                players[currentVideoIndex].playVideo();
-            }
-        });
+            var subcategoryId = $('[name="SubcategoryId"]').val();
+            $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
+                $("#commentContainer").html(data);
+            });
 
-        $(".video-item").click(function () {
-            console.log("Video item clicked");
-            stopCurrentVideo();
-            var index = $(this).data("index");
-            $(videos[currentVideoIndex]).hide();
-            currentVideoIndex = index;
-            $(videos[currentVideoIndex]).show();
-            updateVideoDescription();
-            if (players[currentVideoIndex]) {
-                players[currentVideoIndex].playVideo();
-            }
+            // Code for comment form
+            // Code for comment form
+           $("#createCommentForm").on('submit', function (event) {
+               event.preventDefault();
+               var form = $(this);
+               $.ajax({
+                   url: form.attr("action"),
+                   method: form.attr("method"),
+                   data: form.serialize(),
+                   xhrFields: {
+                       withCredentials: true
+                   },
+                   success: function (data) {
+                       console.log(data); // Log the response data
+                       // Reload comments
+                       $.get("/Subcategory/Comments/" + form.find('[name="SubcategoryId"]').val(), function(data) {
+                           $("#commentContainer").html(data);
+                       });
+                       form[0].reset();
+                   },
+                   error: function () {
+                       alert('Error! Could not submit form.');
+                   }
+               });
+           });
+           
+           // Code for reply form
+           $("#commentContainer").on('submit', '.createReplyForm', function (event) {
+               event.preventDefault();
+               var form = $(this);
+               $.ajax({
+                   url: form.attr("action"),
+                   method: form.attr("method"),
+                   data: form.serialize(),
+                   xhrFields: {
+                       withCredentials: true
+                   },
+                   success: function (data) {
+                       console.log(data); // Log the response data
+                       // Reload comments
+                       $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
+                           $("#commentContainer").html(data);
+                       });
+                       form[0].reset();
+                   },
+                   error: function () {
+                       alert('Error! Could not submit form.');
+                   }
+               });
+           });
         });
-
-        updateVideoDescription();
     </script>
 }
-
-

@@ -6,4 +6,6 @@ public class Video : BaseEntity
     public string Description { get; set; }
     public string Title { get; set; }
     public List<SubcategoryVideo> SubcategoryVideos { get; set; }
+    public string YoutubeId { get; set; }
+    public VideoInfo VideoInfo { get; set; }
 }
