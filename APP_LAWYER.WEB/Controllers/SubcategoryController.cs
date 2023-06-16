@@ -73,7 +73,6 @@ namespace APP_LAWYER.WEB.Controllers
                 .Include(sv => sv.Video)
                 .OrderBy(sv => sv.Video.Title)
                 .ToListAsync();
-
             if (index < 0 || index >= videos.Count)
             {
                 return null;  
