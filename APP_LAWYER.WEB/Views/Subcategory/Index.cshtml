@@ -24,7 +24,7 @@
                         </div>
                         <h4 id="videoTitle">@Model.SubcategoryVideos[0].Video.Title</h4>
                     </div>
-                    <button id="nextVideo" class="btn btn-primary">Next Video</button>
+                    @* <button id="nextVideo" class="btn btn-primary">Next Video</button> *@
                 </div>
             </div>
             <div class="col-md-4">
@@ -100,15 +100,13 @@
                 }
             
             $("#nextVideo").click(function () {
-                $(videos[currentVideoIndex]).hide();
                 currentVideoIndex++;
-                if (currentVideoIndex >= videos.length) {
-                   currentVideoIndex = 0;
-                }
-                var nextVideoId = $(videos[currentVideoIndex]).find('iframe').attr('src').split('/').pop();
-                $('.embed-responsive-item').attr('src', 'https://www.youtube.com/embed/' + nextVideoId);
-                $(videos[currentVideoIndex]).show();
-                updateVideoDescription();
+                    if (currentVideoIndex >= videos.length) {
+                        currentVideoIndex = 0;
+                    }
+                    var nextVideoId = $(videos[currentVideoIndex]).find('iframe').attr('src').split('/').pop();
+                    $('.embed-responsive-item').attr('src', 'https://www.youtube.com/embed/' + nextVideoId);
+                    updateVideoDescription();
                 });
             
             $(".video-item").click(function () {
