@@ -64,6 +64,8 @@ namespace APP_LAWYER.WEB.Controllers
 
             return videoInfo;
         }
+        [HttpPost]
+        [Route("/Subcategory/GetNextVideoId")]
         public async Task<string> GetNextVideoId(int index)
         {
             var videos = await _uow.SubcategoryVideoRepository
@@ -71,12 +73,10 @@ namespace APP_LAWYER.WEB.Controllers
                 .Include(sv => sv.Video)
                 .OrderBy(sv => sv.Video.Title)
                 .ToListAsync();
-
             if (index < 0 || index >= videos.Count)
             {
                 return null;  
             }
-
             var nextIndex = (index + 1) % videos.Count;
             return videos[nextIndex].Video.YoutubeId;
         }
