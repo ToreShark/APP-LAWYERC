@@ -77,7 +77,6 @@ namespace APP_LAWYER.WEB.Controllers
             {
                 return null;  
             }
-
             var nextIndex = (index + 1) % videos.Count;
             return videos[nextIndex].Video.YoutubeId;
         }
