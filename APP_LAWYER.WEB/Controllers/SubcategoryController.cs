@@ -26,7 +26,8 @@ namespace APP_LAWYER.WEB.Controllers
                 .Include(sv => sv.Video)
                 .Where(sv => sv.SubcategoryId == subcategory.Id)
                 .ToListAsync();
-
+            subcategory.SubcategoryVideos = subcategory.SubcategoryVideos.OrderBy(sv => sv.Video.Title).ToList();
+            
             ViewBag.SubcategoryId = subcategory.Id;
             return View(subcategory);
         }

@@ -19,7 +19,7 @@
             <h2>@Model.Name</h2>
             @if (Model.SubcategoryVideos != null)
             {
-                <h3>Videos:</h3>
+                @* <h3>Videos:</h3> *@
                 <div id="videoContainer" class="mb-3">
                     @for (int i = 0; i < Model.SubcategoryVideos.Count; i++)
                     {
@@ -97,95 +97,80 @@
 </div>
 
 @section Scripts {
-    <script>
-        $(function () {
+    <script src="https://www.youtube.com/iframe_api"></script>
+        <script>
+            var players = [];
             var currentVideoIndex = 0;
             var videos = $("#videoContainer .video");
-
-            function updateVideoDescription() {
-                var description = $(videos[currentVideoIndex]).data("description");
-                $("#videoDescription").text(description);
-            }
-            $(document).ajaxComplete(function() {
-                $(".replyButton").off('click').click(function() {
-                    $(this).next(".replies").toggle();
+    
+            function onYouTubeIframeAPIReady() {
+                console.log("onYouTubeIframeAPIReady called");
+                $('.video iframe').each(function(index, iframe) {
+                    var player = new YT.Player(iframe, {
+                        events: {
+                            'onReady': function(event) {
+                                players.push(event.target);
+                                console.log("Player created:", event.target);  // Log the player that was created
+                            },
+                            'onError': function(event) {
+                                console.error("An error occurred with the YouTube player", event);
+                            }
+                        }
+                    });
                 });
-            });
+                console.log("Players:", players);  // Log the players array
+            }
 
-            $("#nextVideo").click(function () {
-                $(videos[currentVideoIndex]).hide();
-                currentVideoIndex++;
-                if (currentVideoIndex >= videos.length) {
-                    currentVideoIndex = 0;
-                }
-                $(videos[currentVideoIndex]).show();
-                updateVideoDescription();
-            });
-            
-            $(".video-item").click(function () {
-                            var index = $(this).data("index");
-                            $(videos[currentVideoIndex]).hide();
-                            currentVideoIndex = index;
-                            $(videos[currentVideoIndex]).show();
-                            updateVideoDescription();
-                        });
-
-            updateVideoDescription();
-            var subcategoryId = $('[name="SubcategoryId"]').val();
-            $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
-                $("#commentContainer").html(data);
-            });
-
-            // Code for comment form
-            // Code for comment form
-           $("#createCommentForm").on('submit', function (event) {
-               event.preventDefault();
-               var form = $(this);
-               $.ajax({
-                   url: form.attr("action"),
-                   method: form.attr("method"),
-                   data: form.serialize(),
-                   xhrFields: {
-                       withCredentials: true
-                   },
-                   success: function (data) {
-                       console.log(data); // Log the response data
-                       // Reload comments
-                       $.get("/Subcategory/Comments/" + form.find('[name="SubcategoryId"]').val(), function(data) {
-                           $("#commentContainer").html(data);
-                       });
-                       form[0].reset();
-                   },
-                   error: function () {
-                       alert('Error! Could not submit form.');
-                   }
-               });
-           });
-           
-           // Code for reply form
-           $("#commentContainer").on('submit', '.createReplyForm', function (event) {
-               event.preventDefault();
-               var form = $(this);
-               $.ajax({
-                   url: form.attr("action"),
-                   method: form.attr("method"),
-                   data: form.serialize(),
-                   xhrFields: {
-                       withCredentials: true
-                   },
-                   success: function (data) {
-                       console.log(data); // Log the response data
-                       // Reload comments
-                       $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
-                           $("#commentContainer").html(data);
-                       });
-                       form[0].reset();
-                   },
-                   error: function () {
-                       alert('Error! Could not submit form.');
-                   }
-               });
-           });
+        videos.each(function() {
+            var src = $(this).find("iframe").attr("src");
+            console.log("Video source URL:", src);
         });
+            
+        function updateVideoDescription() {
+            var description = $(videos[currentVideoIndex]).data("description");
+            $("#videoDescription").text(description);
+        }
+
+        function stopCurrentVideo() {
+            if (players[currentVideoIndex] && players[currentVideoIndex].getPlayerState() !== -1) {
+                    console.log("Stopping video:", currentVideoIndex, "Player state before:", players[currentVideoIndex].getPlayerState());
+                    players[currentVideoIndex].stopVideo();
+                    console.log("Player state after:", players[currentVideoIndex].getPlayerState());
+                } else {
+                    console.log("Unable to stop video:", currentVideoIndex, "Player:", players[currentVideoIndex]);
+                }
+        }
+
+        $("#nextVideo").click(function () {
+            console.log("Next video button clicked");
+            stopCurrentVideo();
+            $(videos[currentVideoIndex]).hide();
+            currentVideoIndex++;
+            if (currentVideoIndex >= videos.length) {
+                currentVideoIndex = 0;
+            }
+            $(videos[currentVideoIndex]).show();
+            updateVideoDescription();
+            if (players[currentVideoIndex]) {
+                players[currentVideoIndex].playVideo();
+            }
+        });
+
+        $(".video-item").click(function () {
+            console.log("Video item clicked");
+            stopCurrentVideo();
+            var index = $(this).data("index");
+            $(videos[currentVideoIndex]).hide();
+            currentVideoIndex = index;
+            $(videos[currentVideoIndex]).show();
+            updateVideoDescription();
+            if (players[currentVideoIndex]) {
+                players[currentVideoIndex].playVideo();
+            }
+        });
+
+        updateVideoDescription();
     </script>
 }
+
+
