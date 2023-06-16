@@ -15,36 +15,36 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            <h2>@Model.Name</h2>
-            @{
-                int i = 0;
-                foreach (var subcategoryVideo in Model.SubcategoryVideos)
-                {
-                    <div class="video" style="display: @(i == 0 ? "block" : "none")" data-description="@subcategoryVideo.Video.Description">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/@subcategoryVideo.Video.YoutubeId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="col-md-8">
+                <h2>@Model.Name</h2>
+                @{
+                    int i = 0;
+                    foreach (var subcategoryVideo in Model.SubcategoryVideos)
+                    {
+                        <div class="video" style="display: @(i == 0 ? "block" : "none")" data-description="@subcategoryVideo.Video.Description">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe id="video@i" class="embed-responsive-item" src="https://www.youtube.com/embed/@subcategoryVideo.Video.YoutubeId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <h4>@subcategoryVideo.Video.Title</h4>
                         </div>
-                        <h4>@subcategoryVideo.Video.Title</h4>
-                    </div>
-                    i++;
+                        i++;
+                    }
                 }
-            }
-            <button id="nextVideo" class="btn btn-primary">Next Video</button>
-            <button id="stopVideo" class="btn btn-primary">Stop Video</button>
+                <button id="nextVideo" class="btn btn-primary">Next Video</button>
+                <button id="stopVideo" class="btn btn-primary">Stop Video</button>
+            </div>
+            <div class="col-md-4">
+                <ul id="videoList" class="list-group">
+                    @for (int j = 0; j < Model.SubcategoryVideos.Count; j++)
+                    {
+                        var subcategoryVideo = Model.SubcategoryVideos[j];
+                        <li class="list-group-item">
+                            <a href="#" class="video-item" data-index="@j">@subcategoryVideo.Video.Title</a>
+                        </li>
+                    }
+                </ul>
+            </div>
         </div>
-        <div class="col-md-4">
-            <ul id="videoList" class="list-group">
-                @for (int j = 0; j < Model.SubcategoryVideos.Count; j++)
-                {
-                    var subcategoryVideo = Model.SubcategoryVideos[j];
-                    <li class="list-group-item">
-                        <a href="#" class="video-item" data-index="@j">@subcategoryVideo.Video.Title</a>
-                    </li>
-                }
-            </ul>
-        </div>
-    </div>
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -97,39 +97,35 @@
     <script>
         $(function () {
             var currentVideoIndex = 0;
-            var videos = Model.SubcategoryVideos;
+            var videos = $(".video");
 
             function updateVideoDescription() {
                 var description = $(videos[currentVideoIndex]).data("description");
                 $("#videoDescription").text(description);
             }
-            $(document).ajaxComplete(function() {
-                $(".replyButton").off('click').click(function() {
-                    $(this).next(".replies").toggle();
-                });
-            });
+            
 
             $("#nextVideo").click(function () {
-                $.ajax({
-                        url: '/Subcategory/GetNextVideoId',
-                        method: 'POST',
-                        data: { index: currentVideoIndex },
-                        success: function (nextVideoId) {
-                            // Обновите источник видео
-                            $('.embed-responsive-item').attr('src', 'https://www.youtube.com/embed/' + nextVideoId);
-                
-                            // Обновите индекс и описание видео
-                            currentVideoIndex++;
-                            if (currentVideoIndex >= videos.length) {
-                                currentVideoIndex = 0;
-                            }
-                            updateVideoDescription();
-                        },
-                        error: function () {
-                            alert('Error! Could not get next video.');
-                        }
-                    });
-            });
+                 $.ajax({
+                 url: '/Subcategory/GetNextVideoId',
+                 method: 'POST',
+                 data: { index: currentVideoIndex },
+                 success: function (nextVideoId) {
+                                    // Обновите источник видео
+                                    $('#video' + currentVideoIndex).attr('src', 'https://www.youtube.com/embed/' + nextVideoId);
+                            
+                                    // Обновите индекс и описание видео
+                                    currentVideoIndex++;
+                                    if (currentVideoIndex >= videos.length) {
+                                        currentVideoIndex = 0;
+                                    }
+                                    updateVideoDescription();
+                                },
+                                error: function () {
+                                    alert('Error! Could not get next video.');
+                                }
+                            });
+                        });
             
             $(".video-item").click(function () {
                             var index = $(this).data("index");
@@ -138,8 +134,8 @@
                             $(videos[currentVideoIndex]).show();
                             updateVideoDescription();
                         });
-
-            updateVideoDescription();
+            
+                        updateVideoDescription();
             var subcategoryId = $('[name="SubcategoryId"]').val();
             $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
                 $("#commentContainer").html(data);

@@ -7,19 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="Added video">
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/VideoInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230616142838_AddedNewMovie.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230616142838_AddedNewMovie.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230616170159_AddedNewMovieInfo.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230616170159_AddedNewMovieInfo.cs" afterDir="false" />
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added videoYtube">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Subcategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Subcategory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Video.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Video.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/APP_LAWYER.WEB.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/APP_LAWYER.WEB.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +104,7 @@
       <workItem from="1686060782335" duration="43000" />
       <workItem from="1686060826475" duration="38283000" />
       <workItem from="1686458406332" duration="59607000" />
-      <workItem from="1686809698613" duration="33003000" />
+      <workItem from="1686809698613" duration="36022000" />
     </task>
     <task id="LOCAL-00001" summary="AddedSeed">
       <created>1685443831866</created>
@@ -411,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686896071703</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="added videoYtube">
+      <created>1686944802585</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1686944802585</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +428,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="#1 added my documents for user" />
     <MESSAGE value="#2 Added Delete index.cshtml user" />
     <MESSAGE value="#3 Added create doc" />
     <MESSAGE value="#4 added comments and date for comments" />
@@ -457,7 +452,8 @@
     <MESSAGE value="Added Radik end" />
     <MESSAGE value="Added comment APBD" />
     <MESSAGE value="Added video" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added video" />
+    <MESSAGE value="added videoYtube" />
+    <option name="LAST_COMMIT_MESSAGE" value="added videoYtube" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
