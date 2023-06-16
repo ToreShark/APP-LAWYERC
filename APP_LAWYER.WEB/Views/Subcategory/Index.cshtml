@@ -24,7 +24,7 @@
                         </div>
                         <h4 id="videoTitle">@Model.SubcategoryVideos[0].Video.Title</h4>
                     </div>
-                    @* <button id="nextVideo" class="btn btn-primary">Next Video</button> *@
+                    <button id="nextVideo" class="btn btn-primary">Next Video</button>
                 </div>
             </div>
             <div class="col-md-4">
@@ -100,13 +100,25 @@
                 }
             
             $("#nextVideo").click(function () {
-                currentVideoIndex++;
-                    if (currentVideoIndex >= videos.length) {
-                        currentVideoIndex = 0;
-                    }
-                    var nextVideoId = $(videos[currentVideoIndex]).find('iframe').attr('src').split('/').pop();
-                    $('.embed-responsive-item').attr('src', 'https://www.youtube.com/embed/' + nextVideoId);
-                    updateVideoDescription();
+                $.ajax({
+                        url: '/Subcategory/GetNextVideoId',
+                        method: 'POST',
+                        data: { index: currentVideoIndex },
+                        success: function (nextVideoId) {
+                            // Обновите источник видео
+                            $('.embed-responsive-item').attr('src', 'https://www.youtube.com/embed/' + nextVideoId);
+                    
+                            // Обновите индекс и описание видео
+                            currentVideoIndex++;
+                            if (currentVideoIndex >= videos.length) {
+                                currentVideoIndex = 0;
+                            }
+                            updateVideoDescription();
+                        },
+                        error: function () {
+                            alert('Error! Could not get next video.');
+                        }
+                    });
                 });
             
             $(".video-item").click(function () {

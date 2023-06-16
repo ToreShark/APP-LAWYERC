@@ -64,6 +64,8 @@ namespace APP_LAWYER.WEB.Controllers
 
             return videoInfo;
         }
+        [HttpPost]
+        [Route("/Subcategory/GetNextVideoId")]
         public async Task<string> GetNextVideoId(int index)
         {
             var videos = await _uow.SubcategoryVideoRepository
