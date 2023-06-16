@@ -103,10 +103,9 @@
                     $(videos[currentVideoIndex]).hide();
                     currentVideoIndex++;
                     if (currentVideoIndex >= videos.length) {
-                        currentVideoIndex = 0;
+                       currentVideoIndex = 0;
                     }
                     $(videos[currentVideoIndex]).show();
-                    $('.embed-responsive-item').attr('src', 'https://www.youtube.com/embed/' + videoIds[currentVideoIndex]);
                     updateVideoDescription();
                 });
             
