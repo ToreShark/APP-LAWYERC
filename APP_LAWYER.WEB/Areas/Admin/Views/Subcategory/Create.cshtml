@@ -62,28 +62,37 @@
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
 </form>
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('FullDescription');
+</script>
 <script>
 document.getElementById('add-video').addEventListener('click', function() {
     var videoContainer = document.getElementById('video-container');
 
-    var titleInput = document.createElement('input');
+    var titleInput = document.createElement('textarea');
     titleInput.name = 'videoTitles[]';
     titleInput.placeholder = 'Video Title';
+    titleInput.className = 'form-control';
     videoContainer.appendChild(titleInput);
+    CKEDITOR.replace(titleInput);
 
     var urlInput = document.createElement('input');
     urlInput.name = 'videoUrls[]';
     urlInput.placeholder = 'Video URL';
     videoContainer.appendChild(urlInput);
 
-    var descriptionInput = document.createElement('input');
+    var descriptionInput = document.createElement('textarea');
     descriptionInput.name = 'videoDescriptions[]';
     descriptionInput.placeholder = 'Video Description';
+    descriptionInput.className = 'form-control';
     videoContainer.appendChild(descriptionInput);
+    CKEDITOR.replace(descriptionInput);
     
     var youtubeIdInput = document.createElement('input');
     youtubeIdInput.name = 'videoYoutubeIds[]';
     youtubeIdInput.placeholder = 'Video YoutubeId';
     videoContainer.appendChild(youtubeIdInput);
+    
 });
 </script>
