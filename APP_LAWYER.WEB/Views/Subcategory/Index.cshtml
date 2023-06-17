@@ -22,7 +22,8 @@
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe id="videoPlayer" class="embed-responsive-item" src="https://www.youtube.com/embed/@Model.SubcategoryVideos[0].Video.YoutubeId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <h4 id="videoTitle">@Model.SubcategoryVideos[0].Video.Title</h4>
+                        @* <h4 id="videoTitle">@Model.SubcategoryVideos[0].Video.Title</h4> *@
+                        <h4 id="videoTitle">@Html.Raw(Model.SubcategoryVideos[0].Video.Title)</h4>
                     </div>
                     <button id="nextVideo" class="btn btn-primary">Next Video</button>
                 </div>
@@ -33,7 +34,8 @@
                     {
                         var subcategoryVideo = Model.SubcategoryVideos[i];
                         <li class="list-group-item">
-                            <a href="#" class="video-item" data-index="@i" data-youtube-id="@subcategoryVideo.Video.YoutubeId" data-description="@subcategoryVideo.Video.Description">@subcategoryVideo.Video.Title</a>
+                            <a href="#" class="video-item" data-index="@i" data-youtube-id="@subcategoryVideo.Video.YoutubeId" data-description="@subcategoryVideo.Video.Description">@Html.Raw(subcategoryVideo.Video.Title)</a>
+                            @* <a href="#" class="video-item" data-index="@i" data-youtube-id="@subcategoryVideo.Video.YoutubeId" data-description="@subcategoryVideo.Video.Description">@subcategoryVideo.Video.Title</a> *@
                         </li>
                     }
                 </ul>
@@ -56,14 +58,15 @@
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-            <p>@Model.FullDescription</p>
+           @Html.Raw(Model.FullDescription)
         </div>
         <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="content-tab">
-            <p>@Model.Content</p>
+            @* <p>@Model.Content</p> *@
+             @Html.Raw(Model.Content)
         </div>
-        <div class="tab-pane fade" id="video-description" role="tabpanel" aria-labelledby="video-description-tab">
-            <p id="videoDescription"></p>
-        </div>
+       <div class="tab-pane fade" id="video-description" role="tabpanel" aria-labelledby="video-description-tab">
+           <div id="videoDescription"></div>
+       </div>
 
         <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
             <div class="container">
@@ -94,30 +97,29 @@
                 var videos = $("#videoContainer .video");
                 var videoIds = videos.map(function() { return $(this).find('iframe').attr('src').split('/').pop(); }).get();
             
-                function updateVideoDescription() {
-                    var description = $(videos[currentVideoIndex]).data("description");
-                    $("#videoDescription").text(description);
+                function updateVideoDescription(description) {
+                    $("#videoDescription").html(description);
                 }
             
             $("#nextVideo").click(function () {
                 $.ajax({
-                        url: '/Subcategory/GetNextVideoId',
-                        method: 'POST',
-                        data: { index: currentVideoIndex },
-                        success: function (nextVideoId) {
+                url: '/Subcategory/GetNextVideoId',
+                method: 'POST',
+                data: { index: currentVideoIndex },
+                success: function (nextVideoId) {
                             // Обновите источник видео
-                            $('.embed-responsive-item').attr('src', 'https://www.youtube.com/embed/' + nextVideoId);
+                $('.embed-responsive-item').attr('src', 'https://www.youtube.com/embed/' + nextVideoId);
                     
                             // Обновите индекс и описание видео
-                            currentVideoIndex++;
-                            if (currentVideoIndex >= videos.length) {
-                                currentVideoIndex = 0;
-                            }
-                            updateVideoDescription();
-                        },
-                        error: function () {
-                            alert('Error! Could not get next video.');
-                        }
+                currentVideoIndex++;
+                if (currentVideoIndex >= videos.length) {
+                    currentVideoIndex = 0;
+                }
+                updateVideoDescription();
+                },
+                    error: function () {
+                    alert('Error! Could not get next video.');
+                    }
                     });
                 });
             
@@ -130,11 +132,12 @@
                 $("#videoTitle").text($(this).text());
                 updateVideoDescription(description);
                 });
-                updateVideoDescription($(videos[0]).data("description"));
-                var subcategoryId = $('[name="SubcategoryId"]').val();
-                $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
-                    $("#commentContainer").html(data);
-                });
+            
+            updateVideoDescription($(videos[0]).data("description"));
+            var subcategoryId = $('[name="SubcategoryId"]').val();
+            $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
+                 $("#commentContainer").html(data);
+              });
 
             // Code for comment form
             // Code for comment form
