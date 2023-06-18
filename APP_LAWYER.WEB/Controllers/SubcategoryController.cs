@@ -31,6 +31,23 @@ public class SubcategoryController : Controller
         ViewBag.SubcategoryId = subcategory.Id;
         return View(subcategory);
     }
+    [HttpGet]
+    public async Task<IActionResult> Index(string slug)
+    {
+        var subcategory = await _uow.SubcategoryRepository.GetBySlugAsyncRepo(slug);
+        if (subcategory == null) return NotFound();
+
+        subcategory.SubcategoryVideos = await _uow.SubcategoryVideoRepository
+            .GetAll()
+            .Include(sv => sv.Video)
+            .Where(sv => sv.SubcategoryId == subcategory.Id)
+            .ToListAsync();
+        subcategory.SubcategoryVideos = subcategory.SubcategoryVideos.OrderBy(sv => sv.Video.Title).ToList();
+
+        ViewBag.SubcategoryId = subcategory.Id;
+        return View(subcategory);
+    }
+
 
     public async Task<IActionResult> Comments(Guid id)
     {

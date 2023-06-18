@@ -37,7 +37,8 @@
                 <div class="card-body">
                     <h5 class="card-title text-muted">@category.Name</h5>
                     <p class="card-text text-muted">@category.Description</p>
-                    <a href="@Url.Action("Details", "Category", new { id = category.Id })" class="btn btn-primary">Подробнее</a>
+                    <a href="@Url.Action("Details", "Category", new { slug = category.Slug })" class="btn btn-primary">Подробнее</a>
+                    @* <a href="@Url.Action("Details", "Category", new { id = category.Id })" class="btn btn-primary">Подробнее</a> *@
                 </div>
             </div>
         </div>

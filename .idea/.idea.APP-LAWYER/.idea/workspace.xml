@@ -7,98 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="Test test">
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added slug234">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/APP_LAWYER.BLL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/APP_LAWYER.BLL.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/CommentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/CommentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/DocumentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/DocumentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/GenericRepositoryAsync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/GenericRepositoryAsync.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/ReplyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/ReplyRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/RoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/RoleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/CategoriRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/CategoriRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/SubcategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/SubcategoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/SubcategoryVideoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/SubcategoryVideoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/VideoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/VideoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/UOW.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/UOW.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/APP_LAWYER.DAL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/APP_LAWYER.DAL.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Data/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/BaseEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/BaseEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Category.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/DocumentEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/DocumentEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/OTP.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/OTP.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Reply.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Reply.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Role.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Role.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Subcategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Subcategory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Vote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/Vote.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Enums/RoleName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Enums/RoleName.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/ICategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/ICategoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/ICommentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/ICommentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IDocumentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IDocumentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IDocumentTemplateRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IDocumentTemplateRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IOtpRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IOtpRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IReplyRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IReplyRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IRoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IRoleRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/ISubcategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/ISubcategoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/ISubcategoryVideoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/ISubcategoryVideoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IVideoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IVideoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IVoteRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Interfaces/IVoteRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/APP_LAWYER.WEB.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/APP_LAWYER.WEB.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/AdminController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/DocumentTemplateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/DocumentTemplateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Admin/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Admin/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Category/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Category/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Delete.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Delete.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Update.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/DocumentTemplate/Update.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Delete.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Delete.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Update.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Update.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/AccountController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CommentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CommentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/ReplyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/ReplyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/ViewModels/LoginviewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/ViewModels/LoginviewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/ViewModels/NavbarCategoriesViewComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/ViewModels/NavbarCategoriesViewComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Account/AccessDenied.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Account/AccessDenied.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Account/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Account/Login.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Account/Registration.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Account/Registration.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/Components/NavbarCategories/Default.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/Components/NavbarCategories/Default.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_CategoriesPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_CategoriesPartial.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/EditProfile.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/EditProfile.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/Update.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/User/Update.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/jquery-validation/dist/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/jquery-validation/dist/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +41,11 @@
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Category/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Category/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Category/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Category/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_CategoriesPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
@@ -209,42 +131,7 @@
       <workItem from="1686060782335" duration="43000" />
       <workItem from="1686060826475" duration="38283000" />
       <workItem from="1686458406332" duration="59607000" />
-      <workItem from="1686809698613" duration="58049000" />
-    </task>
-    <task id="LOCAL-00009" summary="Added SubcategoryDeatils">
-      <created>1685703476881</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1685703476881</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Added authorize">
-      <created>1685774351120</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1685774351121</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Added DocTemplate">
-      <created>1685851992051</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1685851992051</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Added CreateDocument">
-      <created>1685875269454</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1685875269454</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Added upadte">
-      <created>1685956617334</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1685956617334</updated>
+      <workItem from="1686809698613" duration="62835000" />
     </task>
     <task id="LOCAL-00014" summary="Added Comment Reply">
       <created>1686057034725</created>
@@ -554,7 +441,42 @@
       <option name="project" value="LOCAL" />
       <updated>1686987358435</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="added slug">
+      <created>1687075734256</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1687075734257</updated>
+    </task>
+    <task id="LOCAL-00059" summary="added slug1">
+      <created>1687075857126</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1687075857126</updated>
+    </task>
+    <task id="LOCAL-00060" summary="added slug2">
+      <created>1687075991907</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1687075991907</updated>
+    </task>
+    <task id="LOCAL-00061" summary="added slug1234">
+      <created>1687076043857</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1687076043857</updated>
+    </task>
+    <task id="LOCAL-00062" summary="added slug234">
+      <created>1687076145210</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1687076145210</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,11 +497,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="added imageSmMd" />
-    <MESSAGE value="#9 added metatags" />
-    <MESSAGE value="#10 added subcategory description" />
-    <MESSAGE value="#11 added title video" />
-    <MESSAGE value="#12 added title video list" />
     <MESSAGE value="added roles" />
     <MESSAGE value="added delete and correct" />
     <MESSAGE value="added work" />
@@ -600,7 +517,12 @@
     <MESSAGE value="321" />
     <MESSAGE value="added movies description" />
     <MESSAGE value="Test test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test test" />
+    <MESSAGE value="added slug" />
+    <MESSAGE value="added slug1" />
+    <MESSAGE value="added slug2" />
+    <MESSAGE value="added slug1234" />
+    <MESSAGE value="added slug234" />
+    <option name="LAST_COMMIT_MESSAGE" value="added slug234" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -669,58 +591,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs</url>
-          <line>32</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs" initialLine="32" containingFunctionPresentation="Method 'Details'">
-            <startOffsets>
-              <option value="850" />
-            </startOffsets>
-            <endOffsets>
-              <option value="851" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs</url>
-          <line>33</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs" initialLine="33" containingFunctionPresentation="Method 'Details'">
-            <startOffsets>
-              <option value="860" />
-            </startOffsets>
-            <endOffsets>
-              <option value="926" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs</url>
-          <line>35</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs" initialLine="35" containingFunctionPresentation="Method 'Details'">
-            <startOffsets>
-              <option value="984" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1071" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs</url>
-          <line>41</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/CategoryController.cs" initialLine="41" containingFunctionPresentation="Method 'Details'">
-            <startOffsets>
-              <option value="1229" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1252" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

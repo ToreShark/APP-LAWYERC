@@ -31,7 +31,7 @@ public class CategoryController : Controller
 
     public async Task<IActionResult> Details(string slug)
     {
-        var category = await _uow.CategoriRepository.GetBySlugAsync(slug);
+        var category = await _uow.CategoriRepository.GetBySlugAsyncRepo(slug);
         if (category == null) return NotFound();
         var subcategories = await _uow.SubcategoryRepository.GetByCategoryIdAsync(category.Id);
         var viewModel = new CategoryDetailsViewModel

@@ -4,7 +4,7 @@
     <header>
         <h1>@Model.Category.Name</h1>
         <p>@Model.Category.FullDescription</p>
-        <figure>
+        <figure style="max-height: 500px; overflow: hidden;">
             <picture>
                 <source media="(max-width: 768px)" srcset="@Model.Category.ImageUrlSmall">
                 <source media="(max-width: 1200px)" srcset="@Model.Category.ImageUrlMedium">
@@ -22,11 +22,9 @@
                 <div class="card shadow-sm mt-4 bg-light">
                     <img src="@subcategory.Image" alt="@subcategory.Description" class="card-img-top img-fluid"/>
                     <div class="card-body">
-                        
                         <h5 class="card-title text-muted">@subcategory.Name</h5>
                         <p class="card-text text-muted">@subcategory.Description</p>
                         <a href="@Url.Action("Index", "Subcategory", new { slug = subcategory.Slug })" class="btn btn-primary">Подробнее</a>
-                        @* <a href="@Url.Action("Index", "Subcategory", new { id = subcategory.Id })" class="btn btn-primary">Подробнее</a> *@
                     </div>
                 </div>
             </article>
