@@ -110,10 +110,8 @@ public class SubcategoryController : Controller
         {
             await _uow.SubcategoryRepository.UpdateAsync(subcategory);
 
-            // Получаем текущие видео для подкатегории
             var currentVideos = await _uow.VideoRepository.GetVideosForSubcategory(subcategory.Id);
 
-            // Обновляем видео
             for (var i = 0; i < videoUrls.Length; i++)
             {
                 var existingVideo = currentVideos.FirstOrDefault(v => v.Url == videoUrls[i]);
