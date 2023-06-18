@@ -22,6 +22,7 @@
                 <div class="card shadow-sm mt-4 bg-light">
                     <img src="@subcategory.Image" alt="@subcategory.Description" class="card-img-top img-fluid"/>
                     <div class="card-body">
+                        
                         <h5 class="card-title text-muted">@subcategory.Name</h5>
                         <p class="card-text text-muted">@subcategory.Description</p>
                         <a href="@Url.Action("Index", "Subcategory", new { slug = subcategory.Slug })" class="btn btn-primary">Подробнее</a>
