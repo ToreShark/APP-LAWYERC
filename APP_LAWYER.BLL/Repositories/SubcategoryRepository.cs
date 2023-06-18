@@ -20,4 +20,9 @@ public class SubcategoryRepository : GenericRepositoryAsync<Subcategory>, ISubca
             .Where(s => s.CategoryId == categoryId)
             .ToListAsync();
     }
+    public async Task<Subcategory> GetBySlugAsyncRepo(string slug)
+    {
+        return await _db.Subcategories
+            .FirstOrDefaultAsync(s => s.Slug == slug);
+    }
 }
