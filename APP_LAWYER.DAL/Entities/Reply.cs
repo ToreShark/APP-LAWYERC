@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace APP_LAWYER.DAL.Entities;
 
 public class Reply : BaseEntity

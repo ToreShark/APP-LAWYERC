@@ -1,4 +1,3 @@
-@using System.Security.Claims
 @using Microsoft.AspNetCore.Mvc.TagHelpers
 @model APP_LAWYER.DAL.Entities.Subcategory
 
@@ -15,32 +14,32 @@
 
 <div class="container">
     <div class="row">
-            <div class="col-md-8">
-                <h2>@Model.Name</h2>
-                <div id="videoContainer" class="mb-3">
-                    <div class="video" data-description="@Model.SubcategoryVideos[0].Video.Description">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe id="videoPlayer" class="embed-responsive-item" src="https://www.youtube.com/embed/@Model.SubcategoryVideos[0].Video.YoutubeId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        @* <h4 id="videoTitle">@Model.SubcategoryVideos[0].Video.Title</h4> *@
-                        <h4 id="videoTitle">@Html.Raw(Model.SubcategoryVideos[0].Video.Title)</h4>
+        <div class="col-md-8">
+            <h2>@Model.Name</h2>
+            <div id="videoContainer" class="mb-3">
+                <div class="video" data-description="@Model.SubcategoryVideos[0].Video.Description">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe id="videoPlayer" class="embed-responsive-item" src="https://www.youtube.com/embed/@Model.SubcategoryVideos[0].Video.YoutubeId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <button id="nextVideo" class="btn btn-primary">Next Video</button>
+                    @* <h4 id="videoTitle">@Model.SubcategoryVideos[0].Video.Title</h4> *@
+                    <h4 id="videoTitle">@Html.Raw(Model.SubcategoryVideos[0].Video.Title)</h4>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <ul id="videoList" class="list-group">
-                    @for (int i = 0; i < Model.SubcategoryVideos.Count; i++)
-                    {
-                        var subcategoryVideo = Model.SubcategoryVideos[i];
-                        <li class="list-group-item">
-                            <a href="#" class="video-item" data-index="@i" data-youtube-id="@subcategoryVideo.Video.YoutubeId" data-description="@subcategoryVideo.Video.Description">@Html.Raw(subcategoryVideo.Video.Title)</a>
-                            @* <a href="#" class="video-item" data-index="@i" data-youtube-id="@subcategoryVideo.Video.YoutubeId" data-description="@subcategoryVideo.Video.Description">@subcategoryVideo.Video.Title</a> *@
-                        </li>
-                    }
-                </ul>
+                <button id="nextVideo" class="btn btn-primary">Next Video</button>
             </div>
         </div>
+        <div class="col-md-4">
+            <ul id="videoList" class="list-group">
+                @for (var i = 0; i < Model.SubcategoryVideos.Count; i++)
+                {
+                    var subcategoryVideo = Model.SubcategoryVideos[i];
+                    <li class="list-group-item">
+                        <a href="#" class="video-item" data-index="@i" data-youtube-id="@subcategoryVideo.Video.YoutubeId" data-description="@subcategoryVideo.Video.Description">@Html.Raw(subcategoryVideo.Video.Title)</a>
+                        @* <a href="#" class="video-item" data-index="@i" data-youtube-id="@subcategoryVideo.Video.YoutubeId" data-description="@subcategoryVideo.Video.Description">@subcategoryVideo.Video.Title</a> *@
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -58,15 +57,15 @@
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-           @Html.Raw(Model.FullDescription)
+            @Html.Raw(Model.FullDescription)
         </div>
         <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="content-tab">
             @* <p>@Model.Content</p> *@
-             @Html.Raw(Model.Content)
+            @Html.Raw(Model.Content)
         </div>
-       <div class="tab-pane fade" id="video-description" role="tabpanel" aria-labelledby="video-description-tab">
-           <div id="videoDescription"></div>
-       </div>
+        <div class="tab-pane fade" id="video-description" role="tabpanel" aria-labelledby="video-description-tab">
+            <div id="videoDescription"></div>
+        </div>
 
         <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
             <div class="container">
@@ -90,6 +89,7 @@
         </div>
     </div>
 </div>
+
 @section Scripts {
     <script>
         $(function () {
@@ -100,7 +100,11 @@
                 function updateVideoDescription(description) {
                     $("#videoDescription").html(description);
                 }
-            
+            $(document).ajaxComplete(function() {
+                $(".replyButton").off('click').click(function() {
+                    $(this).next(".replies").toggle();
+                });
+            });
                 
             $("#nextVideo").click(function () {
                 $.ajax({
@@ -165,31 +169,28 @@
                    }
                });
            });
-           
-           // Code for reply form
-           $("#commentContainer").on('submit', '.createReplyForm', function (event) {
-               event.preventDefault();
-               var form = $(this);
-               $.ajax({
-                   url: form.attr("action"),
-                   method: form.attr("method"),
-                   data: form.serialize(),
-                   xhrFields: {
-                       withCredentials: true
-                   },
-                   success: function (data) {
-                       console.log(data); // Log the response data
-                       // Reload comments
-                       $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
-                           $("#commentContainer").html(data);
-                       });
-                       form[0].reset();
-                   },
-                   error: function () {
-                       alert('Error! Could not submit form.');
-                   }
-               });
-           });
+         $("#commentContainer").on('submit', '.createReplyForm', function (event) {
+             event.preventDefault();
+             var form = $(this);
+             $.ajax({
+             url: form.attr("action"),
+             method: form.attr("method"),
+             data: form.serialize(),
+             xhrFields: {
+                 withCredentials: true
+                 },
+                 success: function (data) {
+                 console.log(data); // Log the response data
+                 $.get("/Subcategory/Comments/" + subcategoryId, function(data) {
+                     $("#commentContainer").html(data);
+                 });
+                 form[0].reset();
+                 },
+                 error: function () {
+                 alert('Error! Could not submit form.');
+             }
+             });
+         });
         });
     </script>
 }

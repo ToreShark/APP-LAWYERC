@@ -18,7 +18,7 @@ public class NavbarCategoriesViewComponent : ViewComponent
         var categories = await _uow.CategoriRepository.ListAllAsync();
         var viewModel = new NavbarCategoriesViewModel
         {
-            Categories = categories,
+            Categories = categories
         };
         return View(viewModel);
     }

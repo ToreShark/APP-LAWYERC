@@ -8,11 +8,12 @@ namespace APP_LAWYER.BLL.Repositories;
 public class CommentRepository : GenericRepositoryAsync<Comment>, ICommentRepository
 {
     private readonly AppDbContext _db;
+
     public CommentRepository(AppDbContext db) : base(db)
     {
         _db = db;
     }
-    
+
     public async Task<IEnumerable<Comment>> GetBySubcategoryIdAsync(Guid subcategoryId)
     {
         return await _db.Comments
@@ -22,6 +23,7 @@ public class CommentRepository : GenericRepositoryAsync<Comment>, ICommentReposi
             .Where(c => c.SubcategoryId == subcategoryId)
             .ToListAsync();
     }
+
     public async Task<Comment> GetByCommentIdAsync(Guid commentId)
     {
         return await _db.Comments
