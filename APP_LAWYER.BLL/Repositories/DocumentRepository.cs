@@ -1,4 +1,3 @@
-using System.Reflection.Metadata;
 using APP_LAWYER.DAL.Data;
 using APP_LAWYER.DAL.Entities;
 using APP_LAWYER.DAL.Interfaces;
@@ -9,6 +8,5 @@ public class DocumentRepository : GenericRepositoryAsync<DocumentEntity>, IDocum
 {
     public DocumentRepository(AppDbContext db) : base(db)
     {
-        
     }
 }

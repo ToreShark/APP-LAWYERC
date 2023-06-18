@@ -9,5 +9,5 @@ public class Category : BaseEntity
     public string ImageUrl { get; set; }
     public string ImageUrlSmall { get; set; }
     public string ImageUrlMedium { get; set; }
-    public List<Subcategory> Subcategories { get; set; } = new List<Subcategory>();
+    public List<Subcategory> Subcategories { get; set; } = new();
 }

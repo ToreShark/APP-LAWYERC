@@ -11,7 +11,9 @@ public class User : BaseEntity
     public List<DocumentEntity> Docs { get; set; }
     public int RoleId { get; set; }
     public virtual Role? Role { get; set; }
+
     public List<Comment> Comments { get; set; }
+
     // строка оплаты
     public List<Vote> Votes { get; set; }
     public List<Reply> Replies { get; set; }
