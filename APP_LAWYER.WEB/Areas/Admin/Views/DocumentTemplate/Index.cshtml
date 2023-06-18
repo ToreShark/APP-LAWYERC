@@ -1,4 +1,5 @@
-@model IReadOnlyList<APP_LAWYER.DAL.Entities.DocumentTemplate>
+@using APP_LAWYER.WEB.Areas.Admin.Models
+@model IEnumerable<APP_LAWYER.DAL.Entities.DocumentTemplate>
 
 @{
     ViewBag.Title = "title";
@@ -7,12 +8,16 @@
 
 <h2>@ViewBag.Title</h2>
 
-<table>
+<p>
+    <a href="@Url.Action("Create", "DocumentTemplate")" class="btn btn-primary">Create New Template</a>
+</p>
+
+<table class="table">
     <thead>
     <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Actions</th>
+        <th>Имя подкатегории</th>
+        <th>Описание</th>
+        <th>Действия</th>
     </tr>
     </thead>
     <tbody>
@@ -20,16 +25,14 @@
     {
         <tr>
             <td>@template.Title</td>
-            <td>@template.Description</td>
+            <td>@Html.Raw(template.Description.TruncateAtWord(10))</td>
             <td>
-                <a href="@Url.Action("Update", "DocumentTemplate", new { id = template.Id })">Update</a> |
-                <a href="@Url.Action("Delete", "DocumentTemplate", new { id = template.Id })">Delete</a>
+                <div class="d-flex">
+                    <a href="@Url.Action("Update", "DocumentTemplate", new { id = template.Id })" class="btn btn-primary mr-2">Редактировать</a>
+                    <a href="@Url.Action("Delete", "DocumentTemplate", new { id = template.Id })" class="btn btn-danger">Удалить</a>
+                </div>
             </td>
         </tr>
     }
     </tbody>
 </table>
-
-<p>
-    <a href="@Url.Action("Create", "DocumentTemplate")">Create New Template</a>
-</p>
