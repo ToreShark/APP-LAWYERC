@@ -33,9 +33,10 @@ public class DocumentTemplateController : Controller
         if (!ModelState.IsValid)
         {
             var errors = ModelState.SelectMany(x => x.Value.Errors.Select(z => z.ErrorMessage));
-
-            foreach (var error in errors) Console.WriteLine(error);
-
+            foreach (var error in errors)
+            {
+                Console.WriteLine(error);
+            }
             return View(documentTemplate);
         }
 

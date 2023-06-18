@@ -1,4 +1,5 @@
-@model dynamic
+@using APP_LAWYER.WEB.Areas.Admin.Models
+@model IEnumerable<APP_LAWYER.DAL.Entities.DocumentEntity>
 
 @{
     ViewBag.Title = "title";
@@ -17,15 +18,15 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var documents in Model)
+    @foreach (var document in Model)
     {
         <tr>
-            <td>@documents.Name</td>
-            <td>@documents.Description</td>
+            <td>@document.Name</td>
+            <td>@Html.Raw(document.Description.TruncateAtWord(10))</td>
             <td>
                 <div class="d-flex">
-                    <a href="@Url.Action("Update", "User", new { id = documents.Id })" class="btn btn-primary mr-2">Редактировать</a>
-                    <a asp-action="Delete" asp-route-id="@documents.Id" class="btn btn-danger">Удалить</a>
+                    <a href="@Url.Action("Update", "User", new { id = document.Id })" class="btn btn-primary mr-2">Редактировать</a>
+                    <a asp-action="Delete" asp-route-id="@document.Id" class="btn btn-danger">Удалить</a>
                 </div>
             </td>
         </tr>

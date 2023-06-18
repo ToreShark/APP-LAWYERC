@@ -1,3 +1,4 @@
+@using APP_LAWYER.WEB.Areas.Admin.Models
 @model APP_LAWYER.DAL.Entities.DocumentEntity
 
 @{
@@ -17,7 +18,7 @@
 
     <div class="form-group">
         <label asp-for="Description"></label>
-        <textarea class="form-control" asp-for="Description"></textarea>
+        <textarea class="form-control" id="Description" name="Description">@Model.Description</textarea>
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
 
@@ -25,6 +26,18 @@
         <input type="submit" value="Update" class="btn btn-primary"/>
     </div>
 </form>
+
+<script src="https://cdn.ckeditor.com/4.16.0/full-all/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('Description');
+</script>
+<script>
+    document.querySelector('form').addEventListener('submit', function() {
+        for (var instanceName in CKEDITOR.instances) {
+            CKEDITOR.instances[instanceName].updateElement();
+        }
+    });
+</script>
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }

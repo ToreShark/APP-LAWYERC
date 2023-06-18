@@ -103,7 +103,7 @@ public class SubcategoryController : Controller
 
     [HttpPost]
     public async Task<IActionResult> Update(Subcategory subcategory, string[] videoUrls, string[] videoDescriptions,
-        string[] videoTitles)
+        string[] videoTitles, string[] videoYoutubeIds) // Добавьте videoYoutubeIds здесь
     {
         ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
         if (ModelState.IsValid)
@@ -123,6 +123,7 @@ public class SubcategoryController : Controller
                     // Обновляем существующее видео
                     existingVideo.Description = videoDescriptions[i];
                     existingVideo.Title = videoTitles[i];
+                    existingVideo.YoutubeId = videoYoutubeIds[i]; // Обновляем YoutubeId
                     await _uow.VideoRepository.UpdateAsync(existingVideo);
                 }
                 else
@@ -134,7 +135,8 @@ public class SubcategoryController : Controller
                         Id = videoId,
                         Url = videoUrls[i],
                         Description = videoDescriptions[i],
-                        Title = videoTitles[i]
+                        Title = videoTitles[i],
+                        YoutubeId = videoYoutubeIds[i] // Устанавливаем YoutubeId
                     };
                     await _uow.VideoRepository.InsertAsync(video);
 
@@ -157,6 +159,7 @@ public class SubcategoryController : Controller
 
         return View(subcategory);
     }
+
 
     [HttpGet]
     public async Task<IActionResult> Delete(Guid id)
