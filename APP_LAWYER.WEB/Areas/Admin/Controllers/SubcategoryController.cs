@@ -102,14 +102,21 @@ public class SubcategoryController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Update(Subcategory subcategory, string[] videoUrls, string[] videoDescriptions,
-        string[] videoTitles, string[] videoYoutubeIds) // Добавьте videoYoutubeIds здесь
+    public async Task<IActionResult> Update(Guid id, string[] videoUrls, string[] videoDescriptions,
+        string[] videoTitles, string[] videoYoutubeIds)
     {
         ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
+        Subcategory subcategory = await _uow.SubcategoryRepository.GetByGuidSubcategoryAsync(id);
+
+        if (subcategory == null)
+        {
+            return NotFound();
+        }
+
         if (ModelState.IsValid)
         {
+            Console.WriteLine("CategoryId: " + subcategory.CategoryId);
             await _uow.SubcategoryRepository.UpdateAsync(subcategory);
-
             var currentVideos = await _uow.VideoRepository.GetVideosForSubcategory(subcategory.Id);
 
             for (var i = 0; i < videoUrls.Length; i++)
@@ -118,15 +125,13 @@ public class SubcategoryController : Controller
 
                 if (existingVideo != null)
                 {
-                    // Обновляем существующее видео
                     existingVideo.Description = videoDescriptions[i];
                     existingVideo.Title = videoTitles[i];
-                    existingVideo.YoutubeId = videoYoutubeIds[i]; // Обновляем YoutubeId
+                    existingVideo.YoutubeId = videoYoutubeIds[i];
                     await _uow.VideoRepository.UpdateAsync(existingVideo);
                 }
                 else
                 {
-                    // Добавляем новое видео
                     var videoId = Guid.NewGuid();
                     var video = new Video
                     {
@@ -134,7 +139,7 @@ public class SubcategoryController : Controller
                         Url = videoUrls[i],
                         Description = videoDescriptions[i],
                         Title = videoTitles[i],
-                        YoutubeId = videoYoutubeIds[i] // Устанавливаем YoutubeId
+                        YoutubeId = videoYoutubeIds[i]
                     };
                     await _uow.VideoRepository.InsertAsync(video);
 
@@ -147,7 +152,6 @@ public class SubcategoryController : Controller
                 }
             }
 
-            // Удаляем видео, которые больше не присутствуют в новом списке
             foreach (var video in currentVideos)
                 if (!videoUrls.Contains(video.Url))
                     await _uow.VideoRepository.DeleteAsync(video);
@@ -158,7 +162,7 @@ public class SubcategoryController : Controller
         return View(subcategory);
     }
 
-
+    
     [HttpGet]
     public async Task<IActionResult> Delete(Guid id)
     {
