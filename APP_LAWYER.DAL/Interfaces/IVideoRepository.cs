@@ -4,5 +4,4 @@ namespace APP_LAWYER.DAL.Interfaces;
 
 public interface IVideoRepository : IGenericRepositoryAsync<Video>
 {
-    
 }

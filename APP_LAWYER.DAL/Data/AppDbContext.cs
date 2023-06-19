@@ -1,4 +1,3 @@
-using System.Reflection.Metadata;
 using APP_LAWYER.DAL.Entities;
 using APP_LAWYER.DAL.Enums;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +24,7 @@ public class AppDbContext : DbContext
     public DbSet<SubcategoryVideo> SubcategoryVideos { get; set; }
     public DbSet<Role> Roles { get; set; }
     public DbSet<DocumentTemplate> DocumentTemplates { get; set; }
+    public DbSet<VideoInfo> VideoInfos { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -57,10 +57,14 @@ public class AppDbContext : DbContext
             .HasOne(v => v.User)
             .WithMany(u => u.Votes)
             .OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<Video>()
+            .HasOne(v => v.VideoInfo)
+            .WithOne()
+            .HasForeignKey<VideoInfo>(v => v.VideoId);
 
-        Guid ugolovnoeDeloId = Guid.NewGuid();
-        Guid grazhdanskoeDeloId = Guid.NewGuid();
-        Guid administrativnoeDeloId = Guid.NewGuid();
+        var ugolovnoeDeloId = Guid.NewGuid();
+        var grazhdanskoeDeloId = Guid.NewGuid();
+        var administrativnoeDeloId = Guid.NewGuid();
 
         modelBuilder.Entity<Category>().HasData(
             new Category
@@ -112,8 +116,8 @@ public class AppDbContext : DbContext
                     "https://images.unsplash.com/photo-1608657872827-9fbdb711bdc4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
             }
         );
-        Guid ubiystvoId = Guid.NewGuid();
-        Guid videoId = Guid.NewGuid();
+        var ubiystvoId = Guid.NewGuid();
+        var videoId = Guid.NewGuid();
         modelBuilder.Entity<Subcategory>().HasData(
             new Subcategory
             {
@@ -130,7 +134,7 @@ public class AppDbContext : DbContext
                 MetaTitle = "Убийство: Категория уголовного дела и особенности расследования",
                 MetaKeywords = "убийство, уголовное дело, расследование, уголовное право",
                 MetaDescription =
-                    "Описание убийства в контексте уголовного дела: состав, особенности расследования и подробности события",
+                    "Описание убийства в контексте уголовного дела: состав, особенности расследования и подробности события"
             }
         );
         modelBuilder.Entity<Video>().HasData(
@@ -144,19 +148,20 @@ public class AppDbContext : DbContext
                     "<div class='App' style='text-align: center;'>" +
                     "<h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p>" +
                     "<p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p>" +
-                    "<hr class='remove'></div>"
+                    "<hr class='remove'></div>",
+                YoutubeId = "AmUenqhE1mw"
             }
         );
         modelBuilder.Entity<SubcategoryVideo>().HasData(
             new SubcategoryVideo
             {
                 SubcategoryId = ubiystvoId,
-                VideoId = videoId,
+                VideoId = videoId
             }
         );
-        Guid ubiystvoponeostorozhnostiId = Guid.NewGuid();
-        Guid video1Id = Guid.NewGuid();
-        Guid video2Id = Guid.NewGuid();
+        var ubiystvoponeostorozhnostiId = Guid.NewGuid();
+        var video1Id = Guid.NewGuid();
+        var video2Id = Guid.NewGuid();
         modelBuilder.Entity<Subcategory>().HasData(
             new Subcategory
             {
@@ -187,7 +192,8 @@ public class AppDbContext : DbContext
                     "<div class='App' style='text-align: center;'>" +
                     "<h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p>" +
                     "<p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p>" +
-                    "<hr class='remove'></div>"
+                    "<hr class='remove'></div>",
+                YoutubeId = "AmUenqhE1mw"
             },
             new
             {
@@ -199,37 +205,38 @@ public class AppDbContext : DbContext
                     "<div class='App' style='text-align: center;'>" +
                     "<h1>Заявление</h1><p>от [name]</p><p>для [nameFor]</p>" +
                     "<p><a href='https://github.com/remarkablemark/html-react-parser' target='_blank' rel='noopener noreferrer'>View GitHub repository</a></p>" +
-                    "<hr class='remove'></div>"
+                    "<hr class='remove'></div>",
+                YoutubeId = "AmUenqhE1mw"
             }
         );
         modelBuilder.Entity<SubcategoryVideo>().HasData(
             new SubcategoryVideo
             {
                 SubcategoryId = ubiystvoponeostorozhnostiId,
-                VideoId = video1Id,
+                VideoId = video1Id
             },
             new SubcategoryVideo
             {
                 SubcategoryId = ubiystvoponeostorozhnostiId,
-                VideoId = video2Id,
+                VideoId = video2Id
             }
         );
         modelBuilder.Entity<Role>().HasData(new Role
         {
             RoleId = 1,
-            RoleName = RoleName.SuperAdmin,
+            RoleName = RoleName.SuperAdmin
         }, new Role
         {
             RoleId = 2,
-            RoleName = RoleName.Admin,
+            RoleName = RoleName.Admin
         }, new Role
         {
             RoleId = 3,
-            RoleName = RoleName.Moderator,
+            RoleName = RoleName.Moderator
         }, new Role
         {
             RoleId = 4,
-            RoleName = RoleName.Basic,
+            RoleName = RoleName.Basic
         });
     }
 }

@@ -1,9 +1,8 @@
-    using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
-    namespace APP_LAWYER.DAL.Entities;
+namespace APP_LAWYER.DAL.Entities;
 
-    public class BaseEntity
-    {
-        [Key]
-        public Guid Id { get; set; }
-    }
+public class BaseEntity
+{
+    [Key] public Guid Id { get; set; }
+}

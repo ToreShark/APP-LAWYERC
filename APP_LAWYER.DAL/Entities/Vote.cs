@@ -4,8 +4,7 @@ namespace APP_LAWYER.DAL.Entities;
 
 public class Vote : BaseEntity
 {
-    [Column(TypeName = "bit")]
-    public bool Value { get; set; } = true;
+    [Column(TypeName = "bit")] public bool Value { get; set; } = true;
 
     public User User { get; set; }
 

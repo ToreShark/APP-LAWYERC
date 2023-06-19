@@ -3,7 +3,6 @@ using APP_LAWYER.DAL.Data;
 using APP_LAWYER.DAL.Entities;
 using APP_LAWYER.DAL.Enums;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,10 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<UOW>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.LoginPath = new PathString("/Account/Login");
-    });
+    .AddCookie(options => { options.LoginPath = new PathString("/Account/Login"); });
 
 var app = builder.Build();
 
@@ -39,12 +35,12 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(
-    name : "areas",
-    pattern : "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+    "areas",
+    "{area:exists}/{controller=Home}/{action=Index}/{id?}"
 );
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    "default",
+    "{controller=Home}/{action=Index}/{id?}");
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -53,13 +49,10 @@ using (var scope = app.Services.CreateScope())
         var context = services.GetRequiredService<AppDbContext>();
         var uow = services.GetRequiredService<UOW>();
         context.Database.Migrate(); // Apply migrations
-        
-        var superAdminRole = context.Roles.FirstOrDefault<Role>(r => r.RoleName == RoleName.SuperAdmin)?.RoleId;
 
-        if (superAdminRole == null)
-        {
-            throw new Exception("Роль SuperAdmin не найдена в базе данных");
-        }
+        var superAdminRole = context.Roles.FirstOrDefault(r => r.RoleName == RoleName.SuperAdmin)?.RoleId;
+
+        if (superAdminRole == null) throw new Exception("Роль SuperAdmin не найдена в базе данных");
 
         if (!context.Users.Any(u => u.RoleId == superAdminRole))
         {

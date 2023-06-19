@@ -1,4 +1,4 @@
-@model System.Collections.Generic.IReadOnlyList<APP_LAWYER.DAL.Entities.DocumentTemplate>
+@model IEnumerable<APP_LAWYER.DAL.Entities.DocumentTemplate>
 
 @{
     ViewBag.Title = "Create Document";
@@ -10,7 +10,7 @@
 <form method="post" action="/User/CreateDocumentForUser">
     <div>
         <label for="templateId">Template:</label>
-        <select id="templateId" name="templateId" onchange="document.getElementById('documentContent').value = this.options[this.selectedIndex].getAttribute('data-description')" required>
+        <select id="templateId" name="templateId" onchange="CKEDITOR.instances.documentContent.setData(this.options[this.selectedIndex].getAttribute('data-description'))" required>
             @foreach (var template in Model)
             {
                 <option value="@template.Id" data-description="@template.Description">@template.Title</option>
@@ -25,3 +25,15 @@
         <button type="submit">Create Document</button>
     </div>
 </form>
+
+<script src="https://cdn.ckeditor.com/4.16.0/full-all/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('documentContent');
+</script>
+<script>
+    document.querySelector('form').addEventListener('submit', function() {
+        for (var instanceName in CKEDITOR.instances) {
+            CKEDITOR.instances[instanceName].updateElement();
+        }
+    });
+</script>
