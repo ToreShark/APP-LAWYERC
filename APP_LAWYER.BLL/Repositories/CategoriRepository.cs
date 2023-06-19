@@ -17,4 +17,9 @@ public class CategoriRepository : GenericRepositoryAsync<Category>, ICategoryRep
     {
         return await _db.Categories.FirstOrDefaultAsync(c => c.Slug == slug);
     }
+    public async Task<Category> GetByIdAsync(Guid id)
+    {
+        return await _db.Categories.FirstOrDefaultAsync(c => c.Id == id);
+    }
+
 }
