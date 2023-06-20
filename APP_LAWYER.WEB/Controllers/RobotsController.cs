@@ -51,7 +51,6 @@ namespace APP_LAWYER.WEB.Controllers
                         xml.WriteEndElement();
                     }
                 }
-
                 xml.WriteEndElement();
             }
 
