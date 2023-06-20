@@ -7,10 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added subcate123">
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/RobotsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/CategoriRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/CategoriRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/SubcategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/SubcategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/VideoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/VideoRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +33,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.BLL/Repositories/CategoriRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.BLL/Repositories/CategoriRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Create.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
@@ -129,14 +132,7 @@
       <workItem from="1686060782335" duration="43000" />
       <workItem from="1686060826475" duration="38283000" />
       <workItem from="1686458406332" duration="59607000" />
-      <workItem from="1686809698613" duration="91932000" />
-    </task>
-    <task id="LOCAL-00018" summary="#1 added my documents for user">
-      <created>1686196344304</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1686196344304</updated>
+      <workItem from="1686809698613" duration="102192000" />
     </task>
     <task id="LOCAL-00019" summary="#2 Added Delete index.cshtml user">
       <created>1686196977970</created>
@@ -474,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687118661518</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Added end work">
+      <created>1687170207840</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1687170207840</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +498,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added comment APBD" />
     <MESSAGE value="Added video" />
     <MESSAGE value="added videoYtube" />
     <MESSAGE value="done part" />
@@ -520,7 +522,8 @@
     <MESSAGE value="added seo1" />
     <MESSAGE value="added update for subcate" />
     <MESSAGE value="added subcate123" />
-    <option name="LAST_COMMIT_MESSAGE" value="added subcate123" />
+    <MESSAGE value="Added end work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added end work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
