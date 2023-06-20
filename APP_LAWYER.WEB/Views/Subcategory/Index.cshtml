@@ -17,77 +17,89 @@
         <div class="col-md-8">
             <h2>@Model.Name</h2>
             <div id="videoContainer" class="mb-3">
-                <div class="video" data-description="@Model.SubcategoryVideos[0].Video.Description">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe id="videoPlayer" class="embed-responsive-item" src="https://www.youtube.com/embed/@Model.SubcategoryVideos[0].Video.YoutubeId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    @* <h4 id="videoTitle">@Model.SubcategoryVideos[0].Video.Title</h4> *@
-                    <h4 id="videoTitle">@Html.Raw(Model.SubcategoryVideos[0].Video.Title)</h4>
-                </div>
-                @* <button id="nextVideo" class="btn btn-primary">Next Video</button> *@
-            </div>
-        </div>
-        <div class="col-md-4">
-            <ul id="videoList" class="list-group">
-                @for (var i = 0; i < Model.SubcategoryVideos.Count; i++)
+                @if (User.Identity.IsAuthenticated)
                 {
-                    var subcategoryVideo = Model.SubcategoryVideos[i];
-                    <li class="list-group-item">
-                        <a href="#" class="video-item" data-index="@i" data-youtube-id="@subcategoryVideo.Video.YoutubeId" data-description="@subcategoryVideo.Video.Description">@Html.Raw(subcategoryVideo.Video.Title)</a>
-                        @* <a href="#" class="video-item" data-index="@i" data-youtube-id="@subcategoryVideo.Video.YoutubeId" data-description="@subcategoryVideo.Video.Description">@subcategoryVideo.Video.Title</a> *@
-                    </li>
-                }
-            </ul>
-        </div>
-    </div>
-
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="description-tab" data-bs-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Описание дела</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="content-tab" data-bs-toggle="tab" href="#content" role="tab" aria-controls="content" aria-selected="false">Юридическое заключение и законодательство</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="video-description-tab" data-bs-toggle="tab" href="#video-description" role="tab" aria-controls="video-description" aria-selected="false">Образец документа</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="comments-tab" data-bs-toggle="tab" href="#comments" role="tab" aria-controls="comments" aria-selected="false">Комментарий</a>
-        </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-            @Html.Raw(Model.FullDescription)
-        </div>
-        <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="content-tab">
-            @* <p>@Model.Content</p> *@
-            @Html.Raw(Model.Content)
-        </div>
-        <div class="tab-pane fade" id="video-description" role="tabpanel" aria-labelledby="video-description-tab">
-            <div id="videoDescription"></div>
-        </div>
-
-        <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
-            <div class="container">
-                <!-- Add comment form -->
-                <h4>Оставьте вопрос:</h4>
-                <form id="createCommentForm" method="post" action="/Comment/Create">
-                    <div class="form-group">
-                        <label for="commentContent">Вопрос:</label>
-                        <textarea class="form-control" id="commentContent" name="Content" rows="3"></textarea>
+                    <div class="video" data-description="@Model.SubcategoryVideos[0].Video.Description">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe id="videoPlayer" class="embed-responsive-item" src="https://www.youtube.com/embed/@Model.SubcategoryVideos[0].Video.YoutubeId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <h4 id="videoTitle">@Html.Raw(Model.SubcategoryVideos[0].Video.Title)</h4>
                     </div>
-                    <input type="hidden" name="SubcategoryId" value="@Model.Id"/>
-                    <button type="submit" class="btn btn-primary">Отправить</button>
-                </form>
-                <!-- Existing comments -->
-                <!-- Existing comments -->
-                <h3>Вопросы и ответы:</h3>
-                <div id="commentContainer">
-
-                </div>
+                }
+                else
+                {
+                    <img src="@Model.Image" alt="Изображение подкатегории" class="img-fluid">
+                    <p style="font-weight:bold; color:red;">При регистрации получите доступ к видеоматериалам и комментариям</p>
+                    <p>@Html.Raw(Model.FullDescription)</p>
+                }
             </div>
         </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="col-md-4">
+                <ul id="videoList" class="list-group">
+                    @for (var i = 0; i < Model.SubcategoryVideos.Count; i++)
+                    {
+                        var subcategoryVideo = Model.SubcategoryVideos[i];
+                        <li class="list-group-item">
+                            <a href="#" class="video-item" data-index="@i" data-youtube-id="@subcategoryVideo.Video.YoutubeId" data-description="@subcategoryVideo.Video.Description">@Html.Raw(subcategoryVideo.Video.Title)</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
     </div>
+
+     @if (User.Identity.IsAuthenticated)
+     {
+         <ul class="nav nav-tabs" id="myTab" role="tablist">
+             <li class="nav-item" role="presentation">
+                 <a class="nav-link active" id="description-tab" data-bs-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Описание дела</a>
+             </li>
+             <li class="nav-item" role="presentation">
+                 <a class="nav-link" id="content-tab" data-bs-toggle="tab" href="#content" role="tab" aria-controls="content" aria-selected="false">Юридическое заключение и законодательство</a>
+             </li>
+             <li class="nav-item" role="presentation">
+                 <a class="nav-link" id="video-description-tab" data-bs-toggle="tab" href="#video-description" role="tab" aria-controls="video-description" aria-selected="false">Образец документа</a>
+             </li>
+             <li class="nav-item" role="presentation">
+                 <a class="nav-link" id="comments-tab" data-bs-toggle="tab" href="#comments" role="tab" aria-controls="comments" aria-selected="false">Комментарий</a>
+             </li>
+         </ul>
+         <div class="tab-content" id="myTabContent">
+             <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                 @Html.Raw(Model.FullDescription)
+             </div>
+             <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="content-tab">
+                 @* <p>@Model.Content</p> *@
+                 @Html.Raw(Model.Content)
+             </div>
+             <div class="tab-pane fade" id="video-description" role="tabpanel" aria-labelledby="video-description-tab">
+                 <div id="videoDescription"></div>
+             </div>
+
+             <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
+                 <div class="container">
+                     <!-- Add comment form -->
+                     <h4>Оставьте вопрос:</h4>
+                     <form id="createCommentForm" method="post" action="/Comment/Create">
+                         <div class="form-group">
+                             <label for="commentContent">Вопрос:</label>
+                             <textarea class="form-control" id="commentContent" name="Content" rows="3"></textarea>
+                         </div>
+                         <input type="hidden" name="SubcategoryId" value="@Model.Id"/>
+                         <button type="submit" class="btn btn-primary">Отправить</button>
+                     </form>
+                     <!-- Existing comments -->
+                     <!-- Existing comments -->
+                     <h3>Вопросы и ответы:</h3>
+                     <div id="commentContainer">
+
+                     </div>
+                 </div>
+             </div>
+         </div>
+     }
 </div>
 
 @section Scripts {
