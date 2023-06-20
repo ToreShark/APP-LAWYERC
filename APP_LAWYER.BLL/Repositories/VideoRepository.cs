@@ -28,4 +28,9 @@ public class VideoRepository : GenericRepositoryAsync<Video>, IVideoRepository
             .AsNoTracking()
             .FirstOrDefaultAsync(v => v.Id == id);
     }
+    public async Task AddVideo(Video video)
+    {
+        await _db.Videos.AddAsync(video);
+        await _db.SaveChangesAsync();
+    }
 }
