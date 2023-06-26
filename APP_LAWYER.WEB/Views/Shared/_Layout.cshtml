@@ -34,9 +34,6 @@
 <!-- End Google Tag Manager (noscript) -->
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <a aria-label="Chat on WhatsApp" href="@Context.Session.GetString("WhatsAppLink")">
-            <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenLarge.svg" />
-        </a>
         <div class="container-fluid">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PRIME LEGAL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -116,7 +113,9 @@
         </div>
     </div>
 </div>
-
+<a aria-label="Chat on WhatsApp" href="https://wa.me/77073816081?text=Здравствуйте,%20мне%20нужна%20юридическая%20помощь." class="whatsapp-button">
+    <img alt="Chat on WhatsApp" src="~/ChatOnWhatsAppButton/WhatsAppButtonGreenSmall.png"/>
+</a>
 
 <footer class="border-top footer text-muted">
     <div class="container">

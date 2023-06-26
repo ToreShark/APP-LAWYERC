@@ -46,14 +46,6 @@ public class SubcategoryController : Controller
             subcategory.SubcategoryVideos = subcategory.SubcategoryVideos.OrderBy(sv => sv.Video.Title).ToList();
         }
         ViewBag.SubcategoryId = subcategory.Id;
-        string phoneNumber = "77073816081"; 
-        string message = "Здравствуйте, мне нужна юридическая помощь."; 
-        string urlEncodedMessage = System.Net.WebUtility.UrlEncode(message); 
-
-        string link = $"https://wa.me/{phoneNumber}?text={urlEncodedMessage}"; 
-        HttpContext.Session.SetString("WhatsAppLink", link);
-
-        ViewBag.WhatsAppLink = link; 
         return View(subcategory);
     }
 
