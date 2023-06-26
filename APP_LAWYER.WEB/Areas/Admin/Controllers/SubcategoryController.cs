@@ -119,12 +119,23 @@ public class SubcategoryController : Controller
             await _uow.SubcategoryRepository.UpdateAsync(subcategory);
             var currentVideos = await _uow.VideoRepository.GetVideosForSubcategory(subcategory.Id);
 
+            // Delete videos that are not in the updated list
+            foreach (var video in currentVideos)
+            {
+                if (!videoUrls.Contains(video.Url))
+                {
+                    await _uow.VideoRepository.DeleteAsync(video);
+                }
+            }
+
+            // Update existing videos and add new ones
             for (var i = 0; i < videoUrls.Length; i++)
             {
                 var existingVideo = currentVideos.FirstOrDefault(v => v.Url == videoUrls[i]);
 
                 if (existingVideo != null)
                 {
+                    // Update existing video
                     existingVideo.Description = videoDescriptions[i];
                     existingVideo.Title = videoTitles[i];
                     existingVideo.YoutubeId = videoYoutubeIds[i];
@@ -132,6 +143,7 @@ public class SubcategoryController : Controller
                 }
                 else
                 {
+                    // Add new video
                     var videoId = Guid.NewGuid();
                     var video = new Video
                     {
@@ -152,22 +164,13 @@ public class SubcategoryController : Controller
                 }
             }
 
-            foreach (var video in currentVideos)
-            {
-                if (!videoUrls.Contains(video.Url))
-                {
-                    // Set a breakpoint here
-                    await _uow.VideoRepository.DeleteAsync(video);
-                }
-            }
-
             return RedirectToAction(nameof(Index));
         }
 
         return View(subcategory);
     }
 
-    
+
     [HttpGet]
     public async Task<IActionResult> Delete(Guid id)
     {
