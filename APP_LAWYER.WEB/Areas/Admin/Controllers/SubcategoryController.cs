@@ -131,6 +131,12 @@ public class SubcategoryController : Controller
             // Update existing videos and add new ones
             for (var i = 0; i < videoUrls.Length; i++)
             {
+                if (string.IsNullOrEmpty(videoUrls[i]) || string.IsNullOrEmpty(videoDescriptions[i]) || string.IsNullOrEmpty(videoTitles[i]) || string.IsNullOrEmpty(videoYoutubeIds[i]))
+                {
+                    // Skip this iteration if any of the values is null or empty
+                    continue;
+                }
+
                 var existingVideo = currentVideos.FirstOrDefault(v => v.Url == videoUrls[i]);
 
                 if (existingVideo != null)
