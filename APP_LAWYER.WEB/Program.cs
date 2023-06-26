@@ -52,7 +52,6 @@ using (var scope = app.Services.CreateScope())
         var context = services.GetRequiredService<AppDbContext>();
         var uow = services.GetRequiredService<UOW>();
         context.Database.Migrate(); // Apply migrations
-
         var superAdminRole = context.Roles.FirstOrDefault(r => r.RoleName == RoleName.SuperAdmin)?.RoleId;
 
         if (superAdminRole == null) throw new Exception("Роль SuperAdmin не найдена в базе данных");
