@@ -7,11 +7,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" afterDir="false" />
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added WS1">
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhatsAppButtonGreenLarge.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhatsAppButtonGreenLarge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhatsAppButtonGreenLarge.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhatsAppButtonGreenSmall.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhatsAppButtonGreenSmall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhatsAppButtonGreenSmall.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhiteTheme/WhatsAppButtonWhiteLarge.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhiteTheme/WhatsAppButtonWhiteLarge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhiteTheme/WhatsAppButtonWhiteLarge.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhiteTheme/WhatsAppButtonWhiteMedium.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhiteTheme/WhatsAppButtonWhiteMedium.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhiteTheme/WhatsAppButtonWhiteMedium.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhiteTheme/WhatsAppButtonWhiteSmall.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhiteTheme/WhatsAppButtonWhiteSmall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/ChatOnWhatsAppButton/WhiteTheme/WhatsAppButtonWhiteSmall.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,11 +46,8 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Create.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/RobotsController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Category/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/508faba49f6b95b2b23598f5fdfcbf6689b36f6c186726e94ec3a057b397b9f3/RazorView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bcae882191178c8bf44c9add4cdeffa874a7afe629e3e56e9280f5896e953425/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
@@ -112,21 +123,7 @@
       <workItem from="1686458406332" duration="59607000" />
       <workItem from="1686809698613" duration="102192000" />
       <workItem from="1687245071652" duration="8316000" />
-      <workItem from="1687620435931" duration="5243000" />
-    </task>
-    <task id="LOCAL-00025" summary="added src">
-      <created>1686230888673</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1686230888673</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Added test1">
-      <created>1686246626850</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1686246626851</updated>
+      <workItem from="1687620435931" duration="6658000" />
     </task>
     <task id="LOCAL-00027" summary="Add database migration at startup">
       <created>1686281502035</created>
@@ -457,7 +454,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687341865977</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="added watsapp">
+      <created>1687775171347</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1687775171347</updated>
+    </task>
+    <task id="LOCAL-00075" summary="added WS1">
+      <created>1687775254695</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1687775254695</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,8 +489,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="test1" />
-    <MESSAGE value="test12" />
     <MESSAGE value="test13" />
     <MESSAGE value="delete button next" />
     <MESSAGE value="req server" />
@@ -503,7 +512,9 @@
     <MESSAGE value="added123" />
     <MESSAGE value="added google tags" />
     <MESSAGE value="added google tags123" />
-    <option name="LAST_COMMIT_MESSAGE" value="added google tags123" />
+    <MESSAGE value="added watsapp" />
+    <MESSAGE value="added WS1" />
+    <option name="LAST_COMMIT_MESSAGE" value="added WS1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
