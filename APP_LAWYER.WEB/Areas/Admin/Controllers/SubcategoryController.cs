@@ -153,8 +153,13 @@ public class SubcategoryController : Controller
             }
 
             foreach (var video in currentVideos)
+            {
                 if (!videoUrls.Contains(video.Url))
+                {
+                    // Set a breakpoint here
                     await _uow.VideoRepository.DeleteAsync(video);
+                }
+            }
 
             return RedirectToAction(nameof(Index));
         }
