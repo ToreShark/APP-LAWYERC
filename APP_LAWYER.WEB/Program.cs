@@ -10,8 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddSession();
-
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext")));
 
@@ -32,7 +30,6 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseSession();
 app.UseRouting();
 
 app.UseAuthentication();
@@ -52,6 +49,7 @@ using (var scope = app.Services.CreateScope())
         var context = services.GetRequiredService<AppDbContext>();
         var uow = services.GetRequiredService<UOW>();
         context.Database.Migrate(); // Apply migrations
+
         var superAdminRole = context.Roles.FirstOrDefault(r => r.RoleName == RoleName.SuperAdmin)?.RoleId;
 
         if (superAdminRole == null) throw new Exception("Роль SuperAdmin не найдена в базе данных");
