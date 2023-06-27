@@ -7,11 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="does not work submit">
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added users">
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230627183651_AddedUsers.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/20230627183651_AddedUsers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Users/Update.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/DocumentTemplateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/DocumentTemplateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Update.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Update.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.DAL/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/UsersController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +38,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/DocumentTemplateController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -116,21 +121,7 @@
       <workItem from="1686458406332" duration="59607000" />
       <workItem from="1686809698613" duration="102192000" />
       <workItem from="1687245071652" duration="8316000" />
-      <workItem from="1687620435931" duration="28851000" />
-    </task>
-    <task id="LOCAL-00034" summary="#10 added subcategory description">
-      <created>1686478597202</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1686478597202</updated>
-    </task>
-    <task id="LOCAL-00035" summary="#11 added title video">
-      <created>1686480381592</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1686480381592</updated>
+      <workItem from="1687620435931" duration="35330000" />
     </task>
     <task id="LOCAL-00036" summary="#12 added title video list">
       <created>1686485300822</created>
@@ -461,7 +452,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687865665403</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="added work">
+      <created>1687886253816</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1687886253816</updated>
+    </task>
+    <task id="LOCAL-00084" summary="added users">
+      <created>1687888691339</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1687888691339</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,8 +487,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Test test" />
-    <MESSAGE value="added slug" />
     <MESSAGE value="added slug1" />
     <MESSAGE value="added slug2" />
     <MESSAGE value="added slug1234" />
@@ -507,7 +510,9 @@
     <MESSAGE value="added testsub" />
     <MESSAGE value="added test123" />
     <MESSAGE value="does not work submit" />
-    <option name="LAST_COMMIT_MESSAGE" value="does not work submit" />
+    <MESSAGE value="added work" />
+    <MESSAGE value="added users" />
+    <option name="LAST_COMMIT_MESSAGE" value="added users" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -524,6 +529,45 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/UsersController.cs</url>
+          <line>42</line>
+          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/UsersController.cs" initialLine="40" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="1208" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1209" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/UsersController.cs</url>
+          <line>45</line>
+          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/UsersController.cs" initialLine="43" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="1277" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1277" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/UsersController.cs</url>
+          <line>56</line>
+          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/UsersController.cs" initialLine="46" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="1726" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1767" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="215" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
