@@ -1,0 +1,34 @@
+@model APP_LAWYER.DAL.Entities.User
+
+@{
+    ViewBag.Title = "Update User";
+    Layout = "_Layout";
+}
+
+<h2>Update User</h2>
+
+<form asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label for="FirstName">First Name</label>
+        <input id="FirstName" name="FirstName" class="form-control" value="@Model.FirstName" />
+    </div>
+
+    <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <input id="LastName" name="LastName" class="form-control" value="@Model.LastName" />
+    </div>
+
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input id="Email" name="Email" class="form-control" value="@Model.Email" />
+    </div>
+
+    <div class="form-group">
+        <label for="Phone">Phone</label>
+        <input id="Phone" name="Phone" class="form-control" value="@Model.Phone" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

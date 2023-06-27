@@ -38,4 +38,9 @@ public class UserRepository : GenericRepositoryAsync<User>, IUserRepository
     {
         return await _db.Users.ToListAsync();
     }
+    
+    public async Task<User> GetUserById(Guid id)
+    {
+        return await _db.Users.FindAsync(id);
+    }
 }
