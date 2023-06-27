@@ -7,11 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="does not work submit">
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added work">
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/UsersController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Users/Details.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/DocumentTemplateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/DocumentTemplateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Update.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Update.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.BLL/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Category/Details.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Home/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +36,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/DocumentTemplateController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -116,14 +119,7 @@
       <workItem from="1686458406332" duration="59607000" />
       <workItem from="1686809698613" duration="102192000" />
       <workItem from="1687245071652" duration="8316000" />
-      <workItem from="1687620435931" duration="28851000" />
-    </task>
-    <task id="LOCAL-00034" summary="#10 added subcategory description">
-      <created>1686478597202</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1686478597202</updated>
+      <workItem from="1687620435931" duration="32322000" />
     </task>
     <task id="LOCAL-00035" summary="#11 added title video">
       <created>1686480381592</created>
@@ -461,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687865665403</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="added work">
+      <created>1687886253816</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1687886253816</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +485,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Test test" />
     <MESSAGE value="added slug" />
     <MESSAGE value="added slug1" />
     <MESSAGE value="added slug2" />
@@ -507,7 +509,8 @@
     <MESSAGE value="added testsub" />
     <MESSAGE value="added test123" />
     <MESSAGE value="does not work submit" />
-    <option name="LAST_COMMIT_MESSAGE" value="does not work submit" />
+    <MESSAGE value="added work" />
+    <option name="LAST_COMMIT_MESSAGE" value="added work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

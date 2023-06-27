@@ -34,4 +34,8 @@ public class UserRepository : GenericRepositoryAsync<User>, IUserRepository
     {
         return BCrypt.Net.BCrypt.HashPassword(password);
     }
+    public async Task<List<User>> GetAllUsers()
+    {
+        return await _db.Users.ToListAsync();
+    }
 }
