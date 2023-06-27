@@ -8,7 +8,7 @@
 
 <h2>Update Subcategory</h2>
 
-<form asp-action="Update" method="post">
+<form asp-action="Update" method="post" novalidate>
     <input type="hidden" asp-for="Id"/>
     <div class="form-group">
         <label for="Name">Name</label>
@@ -63,7 +63,6 @@
     CKEDITOR.replace('FullDescription');
     CKEDITOR.replace('Content');
 </script>
-
 <script>
 document.getElementById('add-video').addEventListener('click', function() {
     var videoContainer = document.getElementById('video-container');
@@ -91,5 +90,16 @@ document.getElementById('add-video').addEventListener('click', function() {
     youtubeIdInput.name = 'videoYoutubeIds[]';
     youtubeIdInput.placeholder = 'Video YoutubeId';
     videoContainer.appendChild(youtubeIdInput);
+});
+</script>
+<script>
+document.querySelector('form').addEventListener('submit', function(e) {
+    console.log('Form submit event triggered'); 
+    e.preventDefault();
+    for (var instanceName in CKEDITOR.instances) {
+        CKEDITOR.instances[instanceName].updateElement();
+        console.log(CKEDITOR.instances[instanceName].getData());
+    }
+    this.submit();
 });
 </script>

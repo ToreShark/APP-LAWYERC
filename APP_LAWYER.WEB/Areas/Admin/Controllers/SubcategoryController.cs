@@ -103,8 +103,12 @@ public class SubcategoryController : Controller
 
     [HttpPost]
     public async Task<IActionResult> Update(Guid id, string[] videoUrls, string[] videoDescriptions,
-        string[] videoTitles, string[] videoYoutubeIds)
+        string[] videoTitles, string[] videoYoutubeIds, string updatedName, string updatedDescription, string updatedImage, string updatedContent)
     {
+        Console.WriteLine($"Updated Name: {updatedName}");
+        Console.WriteLine($"Updated Description: {updatedDescription}");
+        Console.WriteLine($"Updated Image: {updatedImage}");
+        Console.WriteLine($"Updated Content: {updatedContent}");
         ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
         Subcategory subcategory = await _uow.SubcategoryRepository.GetByGuidSubcategoryAsync(id);
 
@@ -185,7 +189,6 @@ public class SubcategoryController : Controller
         };
         await _uow.SubcategoryVideoRepository.InsertAsync(subcategoryVideo);
     }
-
 
     [HttpGet]
     public async Task<IActionResult> Delete(Guid id)

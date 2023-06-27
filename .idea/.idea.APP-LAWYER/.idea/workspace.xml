@@ -7,12 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added image">
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added test123">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/SubcategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Update.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Update.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +31,13 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/508faba49f6b95b2b23598f5fdfcbf6689b36f6c186726e94ec3a057b397b9f3/RazorView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -110,42 +114,7 @@
       <workItem from="1686458406332" duration="59607000" />
       <workItem from="1686809698613" duration="102192000" />
       <workItem from="1687245071652" duration="8316000" />
-      <workItem from="1687620435931" duration="8523000" />
-    </task>
-    <task id="LOCAL-00028" summary="Added admin">
-      <created>1686300907734</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1686300907734</updated>
-    </task>
-    <task id="LOCAL-00029" summary="#6 added firsName, lastName &amp; create superAdmin">
-      <created>1686303086276</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1686303086276</updated>
-    </task>
-    <task id="LOCAL-00030" summary="#7 added category navbar">
-      <created>1686462420569</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1686462420569</updated>
-    </task>
-    <task id="LOCAL-00031" summary="#8 added image subcategory SEO">
-      <created>1686469833710</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1686469833710</updated>
-    </task>
-    <task id="LOCAL-00032" summary="added imageSmMd">
-      <created>1686470426582</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1686470426582</updated>
+      <workItem from="1687620435931" duration="23760000" />
     </task>
     <task id="LOCAL-00033" summary="#9 added metatags">
       <created>1686472382933</created>
@@ -455,7 +424,42 @@
       <option name="project" value="LOCAL" />
       <updated>1687775974653</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Added WS button">
+      <created>1687777676330</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1687777676330</updated>
+    </task>
+    <task id="LOCAL-00078" summary="added test subcatcontroller">
+      <created>1687817444240</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1687817444240</updated>
+    </task>
+    <task id="LOCAL-00079" summary="added testsub">
+      <created>1687818198764</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1687818198764</updated>
+    </task>
+    <task id="LOCAL-00080" summary="added test123">
+      <created>1687818756344</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1687818756344</updated>
+    </task>
+    <task id="LOCAL-00081" summary="added test123">
+      <created>1687860617917</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1687860617917</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,10 +480,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="delete button next" />
-    <MESSAGE value="req server" />
-    <MESSAGE value="123" />
-    <MESSAGE value="321" />
     <MESSAGE value="added movies description" />
     <MESSAGE value="Test test" />
     <MESSAGE value="added slug" />
@@ -501,7 +501,11 @@
     <MESSAGE value="added watsapp" />
     <MESSAGE value="added WS1" />
     <MESSAGE value="added image" />
-    <option name="LAST_COMMIT_MESSAGE" value="added image" />
+    <MESSAGE value="Added WS button" />
+    <MESSAGE value="added test subcatcontroller" />
+    <MESSAGE value="added testsub" />
+    <MESSAGE value="added test123" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test123" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -518,136 +522,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs</url>
-          <line>218</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="218" containingFunctionPresentation="Method 'DeleteVideo'">
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs</url>
-          <line>193</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="193" containingFunctionPresentation="Method 'DeleteConfirmed'">
-            <startOffsets>
-              <option value="7275" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7276" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs</url>
-          <line>196</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="196" containingFunctionPresentation="Method 'DeleteConfirmed'">
-            <startOffsets>
-              <option value="7420" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7421" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs</url>
-          <line>203</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="203" containingFunctionPresentation="Method 'DeleteConfirmed'">
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs</url>
-          <line>106</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="106" containingFunctionPresentation="Method 'Update'">
-            <startOffsets>
-              <option value="3445" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3446" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="132" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs</url>
-          <line>154</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="147" containingFunctionPresentation="Method 'Update'">
-            <startOffsets>
-              <option value="5334" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5370" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs</url>
-          <line>158</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="151" containingFunctionPresentation="Method 'Update'">
-            <startOffsets>
-              <option value="5503" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5542" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs</url>
-          <line>161</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="154" containingFunctionPresentation="Method 'Update'">
-            <startOffsets>
-              <option value="5562" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5587" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="137" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs</url>
-          <line>108</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="108" containingFunctionPresentation="Method 'Update'">
-            <startOffsets>
-              <option value="3530" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3619" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="138" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs</url>
-          <line>112</line>
-          <properties documentPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" initialLine="112" containingFunctionPresentation="Method 'Update'">
-            <startOffsets>
-              <option value="3676" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3694" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="139" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
