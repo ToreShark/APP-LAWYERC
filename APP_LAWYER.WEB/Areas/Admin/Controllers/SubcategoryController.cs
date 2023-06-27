@@ -103,12 +103,9 @@ public class SubcategoryController : Controller
 
     [HttpPost]
     public async Task<IActionResult> Update(Guid id, string[] videoUrls, string[] videoDescriptions,
-        string[] videoTitles, string[] videoYoutubeIds, string updatedName, string updatedDescription, string updatedImage, string updatedContent)
+        string[] videoTitles, string[] videoYoutubeIds, Subcategory updatedSubcategory)
     {
-        Console.WriteLine($"Updated Name: {updatedName}");
-        Console.WriteLine($"Updated Description: {updatedDescription}");
-        Console.WriteLine($"Updated Image: {updatedImage}");
-        Console.WriteLine($"Updated Content: {updatedContent}");
+        Console.WriteLine("Update method called with subcategory: " + updatedSubcategory.Name);
         ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
         Subcategory subcategory = await _uow.SubcategoryRepository.GetByGuidSubcategoryAsync(id);
 
@@ -120,6 +117,15 @@ public class SubcategoryController : Controller
         if (ModelState.IsValid)
         {
             Console.WriteLine("CategoryId: " + subcategory.CategoryId);
+            subcategory.Name = updatedSubcategory.Name;
+            subcategory.Description = updatedSubcategory.Description;
+            subcategory.FullDescription = updatedSubcategory.FullDescription;
+            subcategory.Image = updatedSubcategory.Image;
+            subcategory.Content = updatedSubcategory.Content;
+            subcategory.MetaTitle = updatedSubcategory.MetaTitle;
+            subcategory.MetaKeywords = updatedSubcategory.MetaKeywords;
+            subcategory.MetaDescription = updatedSubcategory.MetaDescription;
+            subcategory.Slug = updatedSubcategory.Slug;
             await _uow.SubcategoryRepository.UpdateAsync(subcategory);
             var currentVideos = await _uow.VideoRepository.GetVideosForSubcategory(subcategory.Id);
 
@@ -189,6 +195,7 @@ public class SubcategoryController : Controller
         };
         await _uow.SubcategoryVideoRepository.InsertAsync(subcategoryVideo);
     }
+
 
     [HttpGet]
     public async Task<IActionResult> Delete(Guid id)

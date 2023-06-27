@@ -67,7 +67,6 @@ public class DocumentTemplateController : Controller
             await _uow.DocumentTemplateRepository.UpdateAsync(documentTemplate);
             return RedirectToAction(nameof(Index));
         }
-
         return View(documentTemplate);
     }
 

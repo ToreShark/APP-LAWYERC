@@ -23,7 +23,7 @@
     {
         <tr>
             <td>@subcategory.Name</td>
-            <td>@subcategory.Description</td>
+            <td>@Html.Raw(subcategory.Description)</td>
             <td>
                 <a href="@Url.Action("Update", "Subcategory", new { id = subcategory.Id })">Редактировать</a> |
                 <a href="@Url.Action("Delete", "Subcategory", new { id = subcategory.Id })">Удалить</a>
