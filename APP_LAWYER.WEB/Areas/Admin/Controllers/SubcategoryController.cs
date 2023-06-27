@@ -103,8 +103,9 @@ public class SubcategoryController : Controller
 
     [HttpPost]
     public async Task<IActionResult> Update(Guid id, string[] videoUrls, string[] videoDescriptions,
-        string[] videoTitles, string[] videoYoutubeIds)
+        string[] videoTitles, string[] videoYoutubeIds, Subcategory updatedSubcategory)
     {
+        Console.WriteLine("Update method called with subcategory: " + updatedSubcategory.Name);
         ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
         Subcategory subcategory = await _uow.SubcategoryRepository.GetByGuidSubcategoryAsync(id);
 
@@ -116,45 +117,49 @@ public class SubcategoryController : Controller
         if (ModelState.IsValid)
         {
             Console.WriteLine("CategoryId: " + subcategory.CategoryId);
+            subcategory.Name = updatedSubcategory.Name;
+            subcategory.Description = updatedSubcategory.Description;
+            subcategory.FullDescription = updatedSubcategory.FullDescription;
+            subcategory.Image = updatedSubcategory.Image;
+            subcategory.Content = updatedSubcategory.Content;
+            subcategory.MetaTitle = updatedSubcategory.MetaTitle;
+            subcategory.MetaKeywords = updatedSubcategory.MetaKeywords;
+            subcategory.MetaDescription = updatedSubcategory.MetaDescription;
+            subcategory.Slug = updatedSubcategory.Slug;
             await _uow.SubcategoryRepository.UpdateAsync(subcategory);
             var currentVideos = await _uow.VideoRepository.GetVideosForSubcategory(subcategory.Id);
 
+            // Delete videos that are not in the updated list
+            foreach (var video in currentVideos)
+            {
+                if (!videoUrls.Contains(video.Url))
+                {
+                    await _uow.VideoRepository.DeleteAsync(video);
+                }
+            }
+
+            // Update existing videos and add new ones
             for (var i = 0; i < videoUrls.Length; i++)
             {
+                if (string.IsNullOrEmpty(videoUrls[i]) || string.IsNullOrEmpty(videoDescriptions[i]) ||
+                    string.IsNullOrEmpty(videoTitles[i]) || string.IsNullOrEmpty(videoYoutubeIds[i]))
+                {
+                    // Skip this iteration if any of the values is null or empty
+                    continue;
+                }
+
                 var existingVideo = currentVideos.FirstOrDefault(v => v.Url == videoUrls[i]);
 
                 if (existingVideo != null)
                 {
-                    existingVideo.Description = videoDescriptions[i];
-                    existingVideo.Title = videoTitles[i];
-                    existingVideo.YoutubeId = videoYoutubeIds[i];
-                    await _uow.VideoRepository.UpdateAsync(existingVideo);
+                    await UpdateExistingVideo(existingVideo, videoDescriptions[i], videoTitles[i], videoYoutubeIds[i]);
                 }
                 else
                 {
-                    var videoId = Guid.NewGuid();
-                    var video = new Video
-                    {
-                        Id = videoId,
-                        Url = videoUrls[i],
-                        Description = videoDescriptions[i],
-                        Title = videoTitles[i],
-                        YoutubeId = videoYoutubeIds[i]
-                    };
-                    await _uow.VideoRepository.InsertAsync(video);
-
-                    var subcategoryVideo = new SubcategoryVideo
-                    {
-                        SubcategoryId = subcategory.Id,
-                        VideoId = videoId
-                    };
-                    await _uow.SubcategoryVideoRepository.InsertAsync(subcategoryVideo);
+                    await AddNewVideo(subcategory.Id, videoUrls[i], videoDescriptions[i], videoTitles[i],
+                        videoYoutubeIds[i]);
                 }
             }
-
-            foreach (var video in currentVideos)
-                if (!videoUrls.Contains(video.Url))
-                    await _uow.VideoRepository.DeleteAsync(video);
 
             return RedirectToAction(nameof(Index));
         }
@@ -162,7 +167,36 @@ public class SubcategoryController : Controller
         return View(subcategory);
     }
 
-    
+    private async Task UpdateExistingVideo(Video existingVideo, string description, string title, string youtubeId)
+    {
+        existingVideo.Description = description;
+        existingVideo.Title = title;
+        existingVideo.YoutubeId = youtubeId;
+        await _uow.VideoRepository.UpdateAsync(existingVideo);
+    }
+
+    private async Task AddNewVideo(Guid subcategoryId, string url, string description, string title, string youtubeId)
+    {
+        var videoId = Guid.NewGuid();
+        var video = new Video
+        {
+            Id = videoId,
+            Url = url,
+            Description = description,
+            Title = title,
+            YoutubeId = youtubeId
+        };
+        await _uow.VideoRepository.InsertAsync(video);
+
+        var subcategoryVideo = new SubcategoryVideo
+        {
+            SubcategoryId = subcategoryId,
+            VideoId = videoId
+        };
+        await _uow.SubcategoryVideoRepository.InsertAsync(subcategoryVideo);
+    }
+
+
     [HttpGet]
     public async Task<IActionResult> Delete(Guid id)
     {

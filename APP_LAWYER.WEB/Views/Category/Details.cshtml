@@ -38,7 +38,7 @@
                     <img src="@subcategory.Image" alt="@subcategory.Description" class="card-img-top img-fluid"/>
                     <div class="card-body card-content d-flex flex-column">
                         <h5 class="card-title text-muted">@subcategory.Name</h5>
-                        <p class="card-text text-muted flex-grow-1">@subcategory.Description</p>
+                        <p class="card-text text-muted flex-grow-1">@Html.Raw(subcategory.Description)</p>
                         <a href="@Url.Action("Index", "Subcategory", new { slug = subcategory.Slug })" class="btn btn-primary mt-auto">Подробнее</a>
                     </div>
                 </div>
