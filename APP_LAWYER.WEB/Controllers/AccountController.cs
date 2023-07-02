@@ -54,10 +54,8 @@ public class AccountController : Controller
             {
                 ModelState.AddModelError("", ex.Message);
             }
-
         return View(loginViewModel);
     }
-
     private async Task Authenticate(User user)
     {
         var claims = new List<Claim>
