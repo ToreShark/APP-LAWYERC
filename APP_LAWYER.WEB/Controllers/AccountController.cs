@@ -46,7 +46,8 @@ public class AccountController : Controller
                 if (user != null)
                 {
                     await Authenticate(user); // аутентификация
-                    return RedirectToAction("Index", "Home");
+                    var referer = HttpContext.Request.Headers["Referer"].ToString();
+                    return Redirect(referer);
                 }
             }
             catch (InvalidOperationException ex)
