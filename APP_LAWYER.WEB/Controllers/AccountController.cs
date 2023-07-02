@@ -46,17 +46,16 @@ public class AccountController : Controller
                 if (user != null)
                 {
                     await Authenticate(user); // аутентификация
-                    return RedirectToAction("Index", "Home");
+                    var referer = HttpContext.Request.Headers["Referer"].ToString();
+                    return Redirect(referer);
                 }
             }
             catch (InvalidOperationException ex)
             {
                 ModelState.AddModelError("", ex.Message);
             }
-
         return View(loginViewModel);
     }
-
     private async Task Authenticate(User user)
     {
         var claims = new List<Claim>
