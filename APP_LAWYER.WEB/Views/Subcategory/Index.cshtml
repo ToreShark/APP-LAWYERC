@@ -29,7 +29,13 @@
                 else
                 {
                     <img src="@Model.Image" alt="Изображение подкатегории" class="img-fluid">
-                    <p style="font-weight:bold; color:red;">При регистрации получите доступ к видеоматериалам и комментариям</p>
+                    <div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 0.25rem; padding: 1.25rem; margin-bottom: 1.5rem;">
+                        <p style="margin-bottom: 0.5rem; font-size: 1.25rem; font-weight: 500;">При регистрации получите доступ к видеоматериалам и комментариям</p>
+                        <div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" style="margin-right: 0.5rem;">Войти</button>
+                            <a href="@Url.Action("Registration", "Account")" class="btn btn-secondary">Регистрация</a>
+                        </div>
+                    </div>
                     <p>@Html.Raw(Model.FullDescription)</p>
                 }
             </div>
