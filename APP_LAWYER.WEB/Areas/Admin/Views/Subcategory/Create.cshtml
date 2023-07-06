@@ -65,9 +65,12 @@
 </form>
 <script src="https://cdn.ckeditor.com/4.16.0/full-all/ckeditor.js"></script>
 <script>
-    // CKEDITOR.replace('Description');
-    CKEDITOR.replace('FullDescription');
-    CKEDITOR.replace('Content');
+    CKEDITOR.replace('FullDescription', {
+        autoParagraph: false,
+        });
+    CKEDITOR.replace('Content', {
+        autoParagraph: false,
+        });
 </script>
 <script>
 document.getElementById('add-video').addEventListener('click', function() {
