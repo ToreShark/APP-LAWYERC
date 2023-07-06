@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using APP_LAWYER.BLL;
 using APP_LAWYER.DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
@@ -121,7 +122,7 @@ public class SubcategoryController : Controller
             subcategory.Description = updatedSubcategory.Description;
             subcategory.FullDescription = updatedSubcategory.FullDescription;
             subcategory.Image = updatedSubcategory.Image;
-            subcategory.Content = updatedSubcategory.Content;
+            subcategory.Content = RemoveEmptyParagraphs(updatedSubcategory.Content);
             subcategory.MetaTitle = updatedSubcategory.MetaTitle;
             subcategory.MetaKeywords = updatedSubcategory.MetaKeywords;
             subcategory.MetaDescription = updatedSubcategory.MetaDescription;
@@ -165,6 +166,11 @@ public class SubcategoryController : Controller
         }
 
         return View(subcategory);
+    }
+    
+    public static string RemoveEmptyParagraphs(string html)
+    {
+        return Regex.Replace(html, @"<p>\s*</p>", string.Empty, RegexOptions.Compiled);
     }
 
     private async Task UpdateExistingVideo(Video existingVideo, string description, string title, string youtubeId)

@@ -7,8 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added login register">
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" afterDir="false" />
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="remove text">
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Areas/Admin/Controllers/SubcategoryController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +31,12 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/AccountController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/AccountController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Views/Subcategory/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/508faba49f6b95b2b23598f5fdfcbf6689b36f6c186726e94ec3a057b397b9f3/RazorView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -108,56 +114,7 @@
       <workItem from="1686809698613" duration="102192000" />
       <workItem from="1687245071652" duration="8316000" />
       <workItem from="1687620435931" duration="36894000" />
-      <workItem from="1688284868048" duration="3196000" />
-    </task>
-    <task id="LOCAL-00040" summary="Added Radik end">
-      <created>1686656216391</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1686656216391</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Added comment APBD">
-      <created>1686657333670</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1686657333670</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Added video">
-      <created>1686896071703</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1686896071703</updated>
-    </task>
-    <task id="LOCAL-00043" summary="added videoYtube">
-      <created>1686944802585</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1686944802585</updated>
-    </task>
-    <task id="LOCAL-00044" summary="test1">
-      <created>1686946535940</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1686946535940</updated>
-    </task>
-    <task id="LOCAL-00045" summary="done part">
-      <created>1686948881923</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1686948881924</updated>
-    </task>
-    <task id="LOCAL-00046" summary="added partvideo">
-      <created>1686949415556</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1686949415556</updated>
+      <workItem from="1688284868048" duration="9733000" />
     </task>
     <task id="LOCAL-00047" summary="added nextVideo does not work">
       <created>1686949813624</created>
@@ -453,7 +410,56 @@
       <option name="project" value="LOCAL" />
       <updated>1688375306418</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="added login register button">
+      <created>1688376052112</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1688376052112</updated>
+    </task>
+    <task id="LOCAL-00090" summary="added yandex tag">
+      <created>1688463545265</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1688463545265</updated>
+    </task>
+    <task id="LOCAL-00091" summary="added yandex tags123">
+      <created>1688463627330</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1688463627330</updated>
+    </task>
+    <task id="LOCAL-00092" summary="added tags1234">
+      <created>1688463714598</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1688463714598</updated>
+    </task>
+    <task id="LOCAL-00093" summary="added tags4321">
+      <created>1688464039823</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1688464039823</updated>
+    </task>
+    <task id="LOCAL-00094" summary="added yandex html">
+      <created>1688465708801</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1688465708802</updated>
+    </task>
+    <task id="LOCAL-00095" summary="remove text">
+      <created>1688556913952</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1688556913952</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,13 +480,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="added seo1" />
-    <MESSAGE value="added update for subcate" />
-    <MESSAGE value="added subcate123" />
-    <MESSAGE value="Added end work" />
-    <MESSAGE value="Added Robots" />
-    <MESSAGE value="Added Robot" />
-    <MESSAGE value="Added EndVar" />
     <MESSAGE value="added123" />
     <MESSAGE value="added google tags" />
     <MESSAGE value="added google tags123" />
@@ -499,7 +498,14 @@
     <MESSAGE value="added reffer123" />
     <MESSAGE value="added" />
     <MESSAGE value="added login register" />
-    <option name="LAST_COMMIT_MESSAGE" value="added login register" />
+    <MESSAGE value="added login register button" />
+    <MESSAGE value="added yandex tag" />
+    <MESSAGE value="added yandex tags123" />
+    <MESSAGE value="added tags1234" />
+    <MESSAGE value="added tags4321" />
+    <MESSAGE value="added yandex html" />
+    <MESSAGE value="remove text" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove text" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
