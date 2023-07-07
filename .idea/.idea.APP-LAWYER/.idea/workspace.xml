@@ -7,8 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added and correct RSS">
-      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/RssController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/RssController.cs" afterDir="false" />
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added privacy politic">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.APP-LAWYER/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +38,8 @@
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Create.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/AccountController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/AccountController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/RssController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/RssController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/RssController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/RssController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/RssController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -128,28 +132,7 @@
       <workItem from="1686809698613" duration="102192000" />
       <workItem from="1687245071652" duration="8316000" />
       <workItem from="1687620435931" duration="36894000" />
-      <workItem from="1688284868048" duration="21851000" />
-    </task>
-    <task id="LOCAL-00062" summary="added slug234">
-      <created>1687076145210</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1687076145210</updated>
-    </task>
-    <task id="LOCAL-00063" summary="added seo">
-      <created>1687080883796</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1687080883796</updated>
-    </task>
-    <task id="LOCAL-00064" summary="added seo1">
-      <created>1687080976371</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1687080976371</updated>
+      <workItem from="1688284868048" duration="28503000" />
     </task>
     <task id="LOCAL-00065" summary="added update for subcate">
       <created>1687118530297</created>
@@ -473,7 +456,28 @@
       <option name="project" value="LOCAL" />
       <updated>1688748847331</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="added image">
+      <created>1688751225367</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1688751225367</updated>
+    </task>
+    <task id="LOCAL-00112" summary="remove image">
+      <created>1688751462417</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1688751462417</updated>
+    </task>
+    <task id="LOCAL-00113" summary="added privacy politic">
+      <created>1688759474010</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1688759474010</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,9 +498,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="added reffer123" />
-    <MESSAGE value="added" />
-    <MESSAGE value="added login register" />
     <MESSAGE value="added login register button" />
     <MESSAGE value="added yandex tag" />
     <MESSAGE value="added yandex tags123" />
@@ -519,7 +520,10 @@
     <MESSAGE value="added rss1234" />
     <MESSAGE value="correct RSS1234" />
     <MESSAGE value="added and correct RSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="added and correct RSS" />
+    <MESSAGE value="added image" />
+    <MESSAGE value="remove image" />
+    <MESSAGE value="added privacy politic" />
+    <option name="LAST_COMMIT_MESSAGE" value="added privacy politic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
