@@ -41,6 +41,7 @@ namespace APP_LAWYER.WEB.Controllers
                     foreach (var subcategory in subcategories)
                     {
                         xml.WriteStartElement("item");
+                        xml.WriteAttributeString("turbo", "true");
                         xml.WriteElementString("title", subcategory.Name);
                         xml.WriteElementString("link", host + "Subcategory?slug=" + subcategory.Slug);
                         xml.WriteElementString("description", subcategory.Description);
