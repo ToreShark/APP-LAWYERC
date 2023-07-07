@@ -25,7 +25,8 @@ namespace APP_LAWYER.WEB.Controllers
             using (var xml = XmlWriter.Create(memoryStream, new XmlWriterSettings { Indent = true }))
             {
                 xml.WriteStartDocument();
-                xml.WriteStartElement("rss", "http://www.w3.org/2005/Atom");
+                xml.WriteStartElement("rss");
+                xml.WriteAttributeString("xmlns", "turbo", null, "http://turbo.yandex.ru");
                 xml.WriteStartElement("channel");
                 xml.WriteElementString("title", "Prime Legal");
                 xml.WriteElementString("link", host);
@@ -42,14 +43,14 @@ namespace APP_LAWYER.WEB.Controllers
                     {
                         xml.WriteStartElement("item");
                         xml.WriteAttributeString("turbo", "true");
+                        xml.WriteAttributeString("xmlns", "turbo", null, "http://turbo.yandex.ru");
                         xml.WriteElementString("title", subcategory.Name);
                         xml.WriteElementString("link", host + "Subcategory?slug=" + subcategory.Slug);
-                        xml.WriteStartElement("turbo:content");
+                        xml.WriteStartElement("content");
                         xml.WriteCData(subcategory.Description);
                         xml.WriteEndElement();
                         // xml.WriteElementString("pubDate", subcategory.CreatedAt.ToString("R"));
                         xml.WriteEndElement();
-                        
                     }
                 }
                 xml.WriteEndElement();
