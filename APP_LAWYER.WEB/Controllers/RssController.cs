@@ -49,6 +49,7 @@ namespace APP_LAWYER.WEB.Controllers
                         xml.WriteEndElement();
                         // xml.WriteElementString("pubDate", subcategory.CreatedAt.ToString("R"));
                         xml.WriteEndElement();
+                        
                     }
                 }
                 xml.WriteEndElement();
