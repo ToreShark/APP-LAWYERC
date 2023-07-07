@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/APP_LAWYER.WEB.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     @RenderSection("MetaTags", false)
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8N8VLS8PL"></script>
@@ -24,7 +25,7 @@
     })(window,document,'script','dataLayer','GTM-T7JC2G6');</script>
     <!-- End Google Tag Manager -->
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
+    <script type="text/javascript">
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
        m[i].l=1*new Date();
        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -37,7 +38,11 @@
             accurateTrackBounce:true
        });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/94231347" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript>
+        <div>
+            <img src="https://mc.yandex.ru/watch/94231347" style="position:absolute; left:-9999px;" alt=""/>
+        </div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
 </head>
 <body>
@@ -93,7 +98,7 @@
     </nav>
 </header>
 <div class="container">
-    <partial name="_CookieConsentPartial" />
+    <partial name="_CookieConsentPartial"/>
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
@@ -130,15 +135,25 @@
         </div>
     </div>
 </div>
-<a aria-label="Chat on WhatsApp" href="https://wa.me/77073816081?text=Здравствуйте,%20мне%20нужна%20юридическая%20помощь." class="whatsapp-button">
+<a aria-label="Chat on WhatsApp" href="https://wa.me/77073816081?text=Здравствуйте,%20мне%20нужна%20юридическая%20помощь." class="whatsapp-button" style="z-index: 1000;">
     <img alt="Chat on WhatsApp" src="~/ChatOnWhatsAppButton/WhatsAppButtonGreenSmall.png"/>
 </a>
 
 <footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2023 - PRIME LEGAL - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        &copy; @DateTime.Now.Year - PRIME LEGAL - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <a href="https://www.instagram.com/torekhan_mukhtarov/" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/tore.mukha" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/your_username" target="_blank">
+            <i class="fab fa-twitter"></i>
+        </a>
     </div>
 </footer>
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
