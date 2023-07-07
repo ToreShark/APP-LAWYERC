@@ -44,9 +44,12 @@ namespace APP_LAWYER.WEB.Controllers
                         xml.WriteAttributeString("turbo", "true");
                         xml.WriteElementString("title", subcategory.Name);
                         xml.WriteElementString("link", host + "Subcategory?slug=" + subcategory.Slug);
-                        xml.WriteElementString("description", subcategory.Description);
+                        xml.WriteStartElement("turbo:content");
+                        xml.WriteCData(subcategory.Description);
+                        xml.WriteEndElement();
                         // xml.WriteElementString("pubDate", subcategory.CreatedAt.ToString("R"));
                         xml.WriteEndElement();
+                        
                     }
                 }
                 xml.WriteEndElement();
