@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="correct RSS1234">
+    <list default="true" id="9d684490-33ec-4560-879e-70cff46fd69c" name="Changes" comment="added and correct RSS">
       <change beforePath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/RssController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/APP_LAWYER.WEB/Controllers/RssController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +36,7 @@
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Areas/Admin/Views/Subcategory/Create.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/AccountController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/AccountController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/RssController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/RssController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/RssController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/torekhanmukhtarov/Desktop/c#/app-lawyer/APP-LAWYER/APP_LAWYER.WEB/Controllers/RssController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -127,14 +128,7 @@
       <workItem from="1686809698613" duration="102192000" />
       <workItem from="1687245071652" duration="8316000" />
       <workItem from="1687620435931" duration="36894000" />
-      <workItem from="1688284868048" duration="20723000" />
-    </task>
-    <task id="LOCAL-00061" summary="added slug1234">
-      <created>1687076043857</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1687076043857</updated>
+      <workItem from="1688284868048" duration="21851000" />
     </task>
     <task id="LOCAL-00062" summary="added slug234">
       <created>1687076145210</created>
@@ -472,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688748443505</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="added and correct RSS">
+      <created>1688748847331</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1688748847331</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +494,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="added reffer" />
     <MESSAGE value="added reffer123" />
     <MESSAGE value="added" />
     <MESSAGE value="added login register" />
@@ -518,7 +518,8 @@
     <MESSAGE value="added turbo rss2" />
     <MESSAGE value="added rss1234" />
     <MESSAGE value="correct RSS1234" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct RSS1234" />
+    <MESSAGE value="added and correct RSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="added and correct RSS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

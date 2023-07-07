@@ -49,6 +49,9 @@ namespace APP_LAWYER.WEB.Controllers
                         xml.WriteStartElement("turbo", "content", null);
                         xml.WriteCData(subcategory.Description);
                         xml.WriteEndElement();
+                        xml.WriteStartElement("enclosure"); // Этот тег используется для вложений, таких как изображения
+                        xml.WriteAttributeString("url", subcategory.Image); // Замените "URL_изображения_здесь" на URL вашего изображения
+                        xml.WriteAttributeString("type", "image/jpeg"); 
                         // xml.WriteElementString("pubDate", subcategory.CreatedAt.ToString("R"));
                         xml.WriteEndElement();
                     }
