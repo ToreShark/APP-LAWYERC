@@ -46,7 +46,7 @@ namespace APP_LAWYER.WEB.Controllers
                         xml.WriteAttributeString("xmlns", "turbo", null, "http://turbo.yandex.ru");
                         xml.WriteElementString("title", subcategory.Name);
                         xml.WriteElementString("link", host + "Subcategory?slug=" + subcategory.Slug);
-                        xml.WriteStartElement("content");
+                        xml.WriteStartElement("turbo", "content", null);
                         xml.WriteCData(subcategory.Description);
                         xml.WriteEndElement();
                         // xml.WriteElementString("pubDate", subcategory.CreatedAt.ToString("R"));
