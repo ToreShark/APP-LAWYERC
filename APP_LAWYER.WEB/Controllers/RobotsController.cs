@@ -47,7 +47,7 @@ namespace APP_LAWYER.WEB.Controllers
                     foreach (var subcategory in subcategories)
                     {
                         xml.WriteStartElement("url");
-                        xml.WriteElementString("loc", host + "Subcategory/" + subcategory.Slug);
+                        xml.WriteElementString("loc", host + "Subcategory/Index/" + subcategory.Slug);
                         xml.WriteEndElement();
                     }
                 }
