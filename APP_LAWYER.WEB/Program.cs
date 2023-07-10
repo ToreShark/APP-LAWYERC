@@ -47,7 +47,7 @@ app.MapControllerRoute(
 );
 app.MapControllerRoute(
     "default",
-    "{controller=Home}/{action=Index}/{id?}");
+    "{controller=Home}/{action=Index}/{slug?}");
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
