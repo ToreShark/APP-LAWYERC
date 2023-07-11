@@ -22,7 +22,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<UOW>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options => { options.LoginPath = new PathString("/Account/Login"); });
+    .AddCookie(options =>
+    {
+        options.LoginPath = new PathString("/Account/Login"); 
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Добавьте эту строку
+        options.Cookie.SameSite = SameSiteMode.None;
+    });
 
 var app = builder.Build();
 
