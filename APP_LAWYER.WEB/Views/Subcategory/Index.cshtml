@@ -28,7 +28,7 @@
                 }
                 else
                 {
-                    <img src="@Model.Image" alt="Изображение подкатегории" class="img-fluid">
+                    <img src="@(!string.IsNullOrEmpty(Model.ImagePath) ? Model.ImagePath : Model.Image)" alt="Изображение подкатегории" class="img-fluid">
                     <div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 0.25rem; padding: 1.25rem; margin-bottom: 1.5rem;">
                         <p style="margin-bottom: 0.5rem; font-size: 1.25rem; font-weight: 500;">При регистрации получите доступ к видеоматериалам и комментариям</p>
                         <div>

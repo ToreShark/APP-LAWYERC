@@ -12,7 +12,7 @@
         {
             var item = Model.Subcategories.ElementAt(i);
             <div class="carousel-item @(i == 0 ? "active" : "")">
-                <img src="@item.Image" class="d-block w-100" alt="@item.Description">
+                <img src="@(!string.IsNullOrEmpty(item.ImagePath) ? item.ImagePath : item.Image)" class="d-block w-100" alt="@item.Description">
                 <a href="@Url.Action("Index", "Subcategory", new { slug = item.Slug })">
                     <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0, 0, 0, 0.5);">
                         <h5>@item.Name</h5>

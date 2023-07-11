@@ -8,7 +8,7 @@
 
 <h2>Update Subcategory</h2>
 
-<form asp-action="Update" method="post">
+<form asp-action="Update" method="post" enctype="multipart/form-data">
     <input type="hidden" asp-for="Id"/>
     <div class="form-group">
         <label for="Name">Name</label>
@@ -19,8 +19,8 @@
         <textarea id="Description" name="Description" class="form-control" rows="5">@Html.Raw(Model.Description)</textarea>
     </div>
     <div class="form-group">
-        <label for="Image">Image</label>
-        <input id="Image" name="Image" class="form-control" value="@Model.Image"/>
+        <label for="ImagePath">Image</label>
+        <input type="file" class="form-control" id="ImagePath" name="ImagePath">
     </div>
     <div class="form-group">
         <label for="Content">Content</label>

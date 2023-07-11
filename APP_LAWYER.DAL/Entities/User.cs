@@ -28,6 +28,7 @@ public class User : BaseEntity
     public virtual Role? Role { get; set; }
 
     public List<Comment> Comments { get; set; }
+    public string? PaymentString { get; set; }
 
     // строка оплаты
     public List<Vote> Votes { get; set; }

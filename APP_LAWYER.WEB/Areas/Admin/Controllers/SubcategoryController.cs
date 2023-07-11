@@ -12,11 +12,13 @@ public class SubcategoryController : Controller
 {
     private readonly ILogger _logger;
     private readonly UOW _uow;
+    private readonly IWebHostEnvironment _hostingEnvironment;
 
-    public SubcategoryController(UOW uow, ILogger<SubcategoryController> logger)
+    public SubcategoryController(UOW uow, ILogger<SubcategoryController> logger, IWebHostEnvironment hostingEnvironment)
     {
         _uow = uow;
         _logger = logger;
+        _hostingEnvironment = hostingEnvironment;
     }
 
     public async Task<IActionResult> Index()
@@ -34,7 +36,7 @@ public class SubcategoryController : Controller
 
     [HttpPost]
     public async Task<IActionResult> Create(Subcategory subcategory, string[] videoUrls, string[] videoDescriptions,
-        string[] videoTitles, string[] videoYoutubeIds)
+        string[] videoTitles, string[] videoYoutubeIds, IFormFile ImagePath)
     {
         Console.WriteLine("Create method called with subcategory: " + subcategory.Name);
         ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
@@ -55,6 +57,12 @@ public class SubcategoryController : Controller
             return View(subcategory);
         }
 
+        if (ImagePath != null)
+        {
+            subcategory.ImagePath = await SaveImage(ImagePath);
+        }
+
+        subcategory.Image = subcategory.Image ?? "default";
         await _uow.SubcategoryRepository.InsertAsync(subcategory);
 
         for (var i = 0; i < videoUrls.Length; i++)
@@ -74,6 +82,8 @@ public class SubcategoryController : Controller
                 Title = videoTitles[i],
                 YoutubeId = videoYoutubeIds[i]
             };
+
+
             await _uow.VideoRepository.InsertAsync(video);
 
             var subcategoryVideo = new SubcategoryVideo
@@ -85,6 +95,27 @@ public class SubcategoryController : Controller
         }
 
         return RedirectToAction(nameof(Index));
+    }
+
+    private async Task<string> SaveImage(IFormFile image)
+    {
+        var path = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+
+        // Проверка на существование директории
+        if (!Directory.Exists(path))
+        {
+            // Создание директории, если она не существует
+            Directory.CreateDirectory(path);
+        }
+
+        path = Path.Combine(path, image.FileName);
+
+        using (var stream = new FileStream(path, FileMode.Create))
+        {
+            await image.CopyToAsync(stream);
+        }
+
+        return "/images/" + image.FileName;
     }
 
     [HttpGet]
@@ -104,7 +135,7 @@ public class SubcategoryController : Controller
 
     [HttpPost]
     public async Task<IActionResult> Update(Guid id, string[] videoUrls, string[] videoDescriptions,
-        string[] videoTitles, string[] videoYoutubeIds, Subcategory updatedSubcategory)
+        string[] videoTitles, string[] videoYoutubeIds, Subcategory updatedSubcategory, IFormFile ImagePath)
     {
         Console.WriteLine("Update method called with subcategory: " + updatedSubcategory.Name);
         ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
@@ -121,12 +152,18 @@ public class SubcategoryController : Controller
             subcategory.Name = updatedSubcategory.Name;
             subcategory.Description = updatedSubcategory.Description;
             subcategory.FullDescription = updatedSubcategory.FullDescription;
-            subcategory.Image = updatedSubcategory.Image;
             subcategory.Content = RemoveEmptyParagraphs(updatedSubcategory.Content);
             subcategory.MetaTitle = updatedSubcategory.MetaTitle;
             subcategory.MetaKeywords = updatedSubcategory.MetaKeywords;
             subcategory.MetaDescription = updatedSubcategory.MetaDescription;
             subcategory.Slug = updatedSubcategory.Slug;
+
+            // Если предоставлен новый файл изображения, сохраняем его и обновляем ImagePath
+            if (ImagePath != null)
+            {
+                subcategory.ImagePath = await SaveImage(ImagePath);
+            }
+
             await _uow.SubcategoryRepository.UpdateAsync(subcategory);
             var currentVideos = await _uow.VideoRepository.GetVideosForSubcategory(subcategory.Id);
 
@@ -161,13 +198,12 @@ public class SubcategoryController : Controller
                         videoYoutubeIds[i]);
                 }
             }
-
             return RedirectToAction(nameof(Index));
         }
-
         return View(subcategory);
     }
-    
+
+
     public static string RemoveEmptyParagraphs(string html)
     {
         return Regex.Replace(html, @"<p>\s*</p>", string.Empty, RegexOptions.Compiled);

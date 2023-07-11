@@ -35,7 +35,7 @@
         {
             <article class="col-sm-4">
                 <div class="card shadow-sm mt-4 bg-light d-flex flex-column">
-                    <img src="@subcategory.Image" alt="@subcategory.Description" class="card-img-top img-fluid"/>
+                    <img src="@(!string.IsNullOrEmpty(subcategory.ImagePath) ? subcategory.ImagePath : subcategory.Image)" alt="@subcategory.Description" class="card-img-top img-fluid"/>
                     <div class="card-body card-content d-flex flex-column">
                         <h5 class="card-title text-muted">@subcategory.Name</h5>
                         <p class="card-text text-muted flex-grow-1">@Html.Raw(subcategory.Description)</p>
