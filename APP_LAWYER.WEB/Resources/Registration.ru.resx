@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- ... -->
+    <data name="PhoneNumber.Label" xml:space="preserve">
+    <value>Номер телефона</value>
+  </data>
+    <data name="Password.Label" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+    <data name="ConfirmPassword.Label" xml:space="preserve">
+    <value>Подтвердите пароль</value>
+  </data>
+    <data name="RegisterButton.Text" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+    <!-- ... -->
+</root>

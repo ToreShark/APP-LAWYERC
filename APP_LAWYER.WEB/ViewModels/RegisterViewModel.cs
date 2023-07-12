@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using APP_LAWYER.WEB.Attributes;
 
 namespace APP_LAWYER.WEB.Views.ViewModels;
 
@@ -6,6 +7,7 @@ public class RegisterViewModel
 {
     [Required(ErrorMessage = "Не указан номер телефона")]
     [DataType(DataType.PhoneNumber)]
+    [KazakhstanPhoneNumber(ErrorMessage = "Номер телефона должен быть в формате +7 (XXX) XXX-XX-XX")]
     public string PhoneNumber { get; set; }
 
     [Required(ErrorMessage = "Не указан пароль")]

@@ -1,8 +1,10 @@
+using System.Globalization;
 using APP_LAWYER.BLL;
 using APP_LAWYER.DAL.Data;
 using APP_LAWYER.DAL.Entities;
 using APP_LAWYER.DAL.Enums;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,10 +26,12 @@ builder.Services.AddScoped<UOW>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = new PathString("/Account/Login"); 
+        options.LoginPath = new PathString("/Account/Login");
         options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Добавьте эту строку
         options.Cookie.SameSite = SameSiteMode.None;
     });
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
 
 var app = builder.Build();
 
@@ -87,5 +91,19 @@ using (var scope = app.Services.CreateScope())
         logger.LogError(ex, "An error occurred while migrating the database.");
     }
 }
+
+var supportedCultures = new[]
+{
+    new CultureInfo("ru"),
+    new CultureInfo("kz"),
+    new CultureInfo("en-US"),
+};
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("ru"),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+});
+
 
 app.Run();

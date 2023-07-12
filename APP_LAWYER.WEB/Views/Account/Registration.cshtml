@@ -10,22 +10,27 @@
     <div class="validation" asp-validation-summary="ModelOnly"/>
     <div>
         <div>
-            <label asp-for="PhoneNumber"></label><br/>
+            <label asp-for="PhoneNumber">Номер телефона</label><br/>
             <input type="tel" asp-for="PhoneNumber"/>
-            <span asp-validation-for="PhoneNumber"/>
+            <span asp-validation-for="PhoneNumber" class="text-danger"/>
+            @Html.ValidationMessageFor(m => m.PhoneNumber)
         </div>
         <div>
-            <label asp-for="Password"></label><br/>
+            <label asp-for="Password">Пароль</label><br/>
             <input asp-for="Password"/>
-            <span asp-validation-for="Password"/>
+            <span asp-validation-for="Password" class="text-danger"/>
         </div>
         <div>
-            <label asp-for="ConfirmPassword"></label><br/>
+            <label asp-for="ConfirmPassword">Подтвердите пароль</label><br/>
             <input asp-for="ConfirmPassword"/>
-            <span asp-validation-for="ConfirmPassword"/>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"/>
         </div>
         <div>
             <input class="btn btn-success" type="submit" value="Регистрация"/>
         </div>
     </div>
 </form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
