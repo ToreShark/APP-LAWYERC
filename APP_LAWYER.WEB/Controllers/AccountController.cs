@@ -111,7 +111,6 @@ public class AccountController : Controller
 
             ModelState.AddModelError("PhoneNumber", "Пользователь с таким номером телефона уже существует");
         }
-
         return View(registerViewModel);
     }
 
