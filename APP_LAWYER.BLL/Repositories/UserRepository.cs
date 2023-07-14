@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using APP_LAWYER.DAL.Data;
 using APP_LAWYER.DAL.Entities;
 using APP_LAWYER.DAL.Interfaces;
@@ -42,5 +43,16 @@ public class UserRepository : GenericRepositoryAsync<User>, IUserRepository
     public async Task<User> GetUserById(Guid id)
     {
         return await _db.Users.FindAsync(id);
+    }
+    public async Task<User> Get(Expression<Func<User, bool>> predicate, Expression<Func<User, object>> include = null)
+    {
+        var query = _db.Users.Where(predicate);
+
+        if (include != null)
+        {
+            query = query.Include(include);
+        }
+
+        return await query.FirstOrDefaultAsync();
     }
 }

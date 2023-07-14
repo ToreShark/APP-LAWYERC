@@ -1,0 +1,18 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model APP_LAWYER.DAL.Entities.Subcategory
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "_Layout";
+}
+
+@if (User.IsInRole("Moderator"))
+{
+    <p>Модератор бір сәлем</p>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+        Эта информация доступна только для модераторов.
+    </div>
+}
