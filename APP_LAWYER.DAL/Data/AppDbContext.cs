@@ -221,22 +221,22 @@ public class AppDbContext : DbContext
         //         VideoId = video2Id
         //     }
         // );
-        modelBuilder.Entity<Role>().HasData(new Role
-        {
-            RoleId = 1,
-            RoleName = RoleName.SuperAdmin
-        }, new Role
-        {
-            RoleId = 2,
-            RoleName = RoleName.Admin
-        }, new Role
-        {
-            RoleId = 3,
-            RoleName = RoleName.Moderator
-        }, new Role
-        {
-            RoleId = 4,
-            RoleName = RoleName.Basic
-        });
+        // modelBuilder.Entity<Role>().HasData(new Role
+        // {
+        //     RoleId = 1,
+        //     RoleName = RoleName.SuperAdmin
+        // }, new Role
+        // {
+        //     RoleId = 2,
+        //     RoleName = RoleName.Admin
+        // }, new Role
+        // {
+        //     RoleId = 3,
+        //     RoleName = RoleName.Moderator
+        // }, new Role
+        // {
+        //     RoleId = 4,
+        //     RoleName = RoleName.Basic
+        // });
     }
 }

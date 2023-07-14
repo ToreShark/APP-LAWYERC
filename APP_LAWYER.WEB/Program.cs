@@ -4,8 +4,11 @@ using APP_LAWYER.DAL.Data;
 using APP_LAWYER.DAL.Entities;
 using APP_LAWYER.DAL.Enums;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +24,7 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext")));
+
 
 builder.Services.AddScoped<UOW>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
