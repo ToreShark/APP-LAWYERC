@@ -44,6 +44,18 @@
         <label for="Slug">Slug</label>
         <input id="Slug" name="Slug" class="form-control"/>
     </div>
+    <div class="form-group">
+        <label for="RoleId">Role</label>
+        <select id="RoleId" name="RoleId" class="form-control">
+            @if (ViewBag.Roles is List<Role> roles)
+            {
+                foreach (var role in roles)
+                {
+                    <option value="@role.RoleId">@role.RoleName</option>
+                }
+            }
+        </select>
+    </div>
     <button type="button" id="add-video">Add Video</button>
 
     <div id="video-container">

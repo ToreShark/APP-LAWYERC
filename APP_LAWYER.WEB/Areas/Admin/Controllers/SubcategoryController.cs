@@ -31,6 +31,7 @@ public class SubcategoryController : Controller
     public async Task<IActionResult> Create()
     {
         ViewBag.Categories = await _uow.CategoriRepository.ListAllAsync();
+        ViewBag.Roles = await _uow.RoleRepository.ListAllAsync();
         return View();
     }
 

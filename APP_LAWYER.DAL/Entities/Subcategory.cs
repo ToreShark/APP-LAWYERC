@@ -15,7 +15,8 @@ public class Subcategory : BaseEntity
     public List<SubcategoryVideo>? SubcategoryVideos { get; set; }
     public string MetaTitle { get; set; }
     public string MetaKeywords { get; set; }
-
     public string MetaDescription { get; set; }
+    public int RoleId { get; set; }
+    public Role? Role { get; set; }
     // public VideoInfo VideoInfo { get; set; }
 }
